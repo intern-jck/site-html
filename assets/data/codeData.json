@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Vortex Math",
+        "link": "vortex-math",
+        "url": "https://intern-jck.github.io/vortex-math/",
+        "date": "Feb 2022",
+        "short": "Shows the wonder of Vortex Math",
+        "info": "I created this app to submit to Mathologgers contest based on the video.  It's a web app which shows examples of vortex diagrams which can be downloaded as svg files to be laser cut into coasters.  The math behind the diagrams is very interesting but beyond the scope of this paragraph.  Click on the GitHub link to learn more!",
+        "tech": [
+            [
+                "JavaScript",
+                "#"
+            ],
+            [
+                "HTML",
+                "#"
+            ],
+            [
+                "CSS",
+                "#"
+            ]
+        ],
+        "photos": [
+            "https://iili.io/6pvVLJ.png",
+            "https://iili.io/6pvMXa.png",
+            "https://iili.io/6pvXqv.png"
+        ]
+    },
+    {
+        "name": "Matching Game",
+        "link": "matching-game",
+        "url": "https://intern-jck.github.io/matching-game/",
+        "date": "Oct 2021 - Present",
+        "short": "Web app version of a popular card game",
+        "info": "My gf introduced me to the popular card game Set and I became an instant fan.  I then wondered if I could turn it into a coding project.  I started with Python then soon realized rewriting the game in JavaScript would mean I could turn it into a website.  I translated the logic I had from Python to JavaScript and added some Bootstrap styling to create a nice web app.",
+        "tech": [
+            [
+                "JavaScript",
+                "#"
+            ],
+            [
+                "HTML",
+                "#"
+            ],
+            [
+                "Bootstrap 5",
+                "#"
+            ]
+        ],
+        "photos": [
+            "https://iili.io/6pUULg.png",
+            "https://iili.io/6pUShF.png",
+            "https://iili.io/6pU8I1.png",
+            "https://iili.io/6pUkmP.png",
+            "https://iili.io/6pUekB.png",
+            "https://iili.io/6pUO7V.png"
+        ]
+    },
+    {
+        "name": "Find A Makerspace",
+        "link": "find-makerspace",
+        "url": "https://intern-jck.github.io/find-makerspace/",
+        "date": "Nov 2021 - Present",
+        "short": "Website to find local US makerspaces",
+        "info": "This was another project I made to learn some basic web scraping and how to make an interactive web page.  I started by writing some Python to perform Google searches for makerspaces in each state.  I took all the data which was returned and filtered through each entry to test for valid urls and format things like names.  I wasn't clever enough to create an algorithm to do this for me and since the data set was only a few hundred rows, I made some coffee and brtue forced my way through.  I created an svg image of all the US states and added event handlers to allow the user to see the list of makerspaces by clicking on a state.  This was a very fun project and I plan to add more data soon!",
+        "tech": [
+            [
+                "JavaScript",
+                "#"
+            ],
+            [
+                "HTML",
+                "#"
+            ],
+            [
+                "Bootstrap 5",
+                "#"
+            ],
+            [
+                "Python 3",
+                "#"
+            ]
+        ],
+        "photos": [
+            "https://iili.io/6pgrw7.png",
+            "https://iili.io/6pgva4.png",
+            "https://iili.io/6pgguS.png",
+            "https://iili.io/6pgU92.png",
+            "https://iili.io/6pg88l.png"
+        ]
+    }
+]
