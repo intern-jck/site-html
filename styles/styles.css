@@ -36,16 +36,11 @@ button:hover {
   border-color: var(--active-color);
 }
 
-/* .onclick:hover {
-  cursor: pointer;
-} */
-
 .page-header {
   font-size: xxx-large;
 }
 
 .page-content {
-  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,15 +51,44 @@ button:hover {
 .home-img {
   width: 90vw;
   height: 60vh;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
 }
 
 .home-img img {
   object-fit: contain;
   width: 100%;
   height: 100%;
+}
+
+
+
+/* Photos */
+
+.photos-container {
+  border: 4px solid black;
+  width: 100%;
+  margin: 1em;
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 1em;
+}
+
+.photos-img {
+  /* border: 4px solid black; */
+  /* width: 25em; */
+  /* height: 25em; */
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+.photos-img img {
+  /* border: 4px solid black; */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 @media screen and (orientation:landscape) and (max-width: 1024px){
