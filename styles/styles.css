@@ -130,6 +130,43 @@ button:hover {
   object-fit: contain;
 }
 
+.mech-project-div {
+  border: 4px solid blue;
+  width: 90vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.mech-project-name {
+  border: 4px solid black;
+  color: black;
+}
+
+.mech-project-img {
+  /* border: 4px solid black; */
+  width: 40vw;
+  height: 60vh;
+}
+
+.mech-project-img img {
+  border: 4px solid black;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mech-project-info {
+  border: 4px solid black;
+  width: 40vw;
+  height: 60vh;
+}
+
 @media screen and (orientation:landscape) and (max-width: 1024px){
   .page-content {
     margin-top: 5em;
