@@ -6,10 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="#">
 
-  <link rel="stylesheet" href="styles/styles.css" >
-  <link rel="stylesheet" href="styles/nav.css" >
+  <link rel="stylesheet" href="../styles/styles.css" >
+  <link rel="stylesheet" href="../styles/nav.css" >
   <!-- <script type="text/javascript" src="scripts/main.js" defer></script> -->
   <!-- <script type="text/javascript" src="scripts/navbar.js" defer></script> -->
+  <script type="text/javascript" src="../scripts/photos.js" defer></script>
+
   <title>JCK Site</title>
 </head>
 
@@ -20,14 +22,13 @@
       <nav class="navbar-content">
 
         <div class="nav-brand">
-            <a href="#home" class="site-logo">/JCK</a>
+          <a href="/" class="site-logo">>JCK:~/Photos</a>
         </div>
 
         <ul class="nav-items">
-          <li><a class="nav-item" href="#">Home</a></li>
-          <li><a class="nav-item" href="templates/mecha.html">Mecha</a></li>
-          <li><a class="nav-item" href="templates/photos.html">Photos</a></li>
-          <li><a class="nav-item" href="templates/rannd.html">R&D</a></li>
+          <li><a class="nav-item" href="mecha.html">Mecha</a></li>
+          <li><a class="nav-item" href="photos.html">Photos</a></li>
+          <!-- <li><a class="nav-item" href="rannd.html">R&D</a></li> -->
         </ul>
 
         <button class="nav-toggler">
@@ -39,11 +40,12 @@
   </div>
 
   <section class="page-content">
-    <div class="home-img">
-      <img src="https://iili.io/63UZQa.jpg" />
+
+    <h1 class="page-header">Photos</h1>
+
+    <div id="photos-container" class="photos-container">      
     </div>
-    <!-- <h1 class="page-header">Justin Claude Kirk</h1> -->
-    <!-- <h2>A maker of many things.</h2> -->
+    
   </section>
 
 </body>
