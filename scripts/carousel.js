@@ -19,6 +19,7 @@ const createCarousel = (slides) => {
     if (currentSlide > 0) {
       currentSlide -= 1;
     } 
+    showSlide(slides, currentSlide);
   };
 
   const rightButton = document.createElement('button');
@@ -28,12 +29,12 @@ const createCarousel = (slides) => {
     if (currentSlide < slides.length) {
       currentSlide += 1;
     } 
+    showSlide(slides, currentSlide);
   };
 
   // Carousel image
   const carouselImageContainer = document.createElement('div');
   const carouselImage = document.createElement('img');
-
 
   // Fill Carousel
   carouselDiv.appendChild(leftButton);

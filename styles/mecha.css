@@ -1,0 +1,113 @@
+/* Mecha */
+.mecha-container {
+  border: 4px solid black;
+  /* margin: 1em;  */
+  width: 100%;
+}
+
+.mecha-projects {
+  border: 4px solid black;
+  margin: 1em;
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+}
+
+.mech-div {
+  border: 4px solid black;
+  width: 30vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
+}
+
+.mech-name {
+  color: black;
+}
+
+.mech-img {
+  /* border: 4px solid black; */
+  max-width: 80%;
+  max-height: 60%;
+}
+
+.mech-img img {
+  border: 4px solid black;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mech-project-div {
+  border: 4px solid blue;
+  width: 90vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.mech-project-name {
+  border: 4px solid black;
+  color: black;
+}
+
+.mech-project-img {
+  /* border: 4px solid black; */
+  width: 40vw;
+  height: 60vh;
+}
+
+.mech-project-img img {
+  border: 4px solid black;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mech-project-info {
+  border: 4px solid black;
+  width: 40vw;
+  height: 60vh;
+}
+
+.carousel-div {
+  border: 4px solid black;
+  width: 40vw;
+  height: 40vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.carousel-img-container {
+  border: 4px solid blue;
+  padding: 1em;
+  width: 30vw;
+  height: 30vh;
+  overflow: hidden;
+}
+
+.carousel-slide-siv {
+  border: 4px solid green;
+  width: 25vw;
+  height: 25vh;
+
+}
+
+.carousel-slide-siv img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

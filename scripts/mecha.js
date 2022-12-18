@@ -92,6 +92,13 @@ const showMechaProject = (mech) => {
   const mechImg = document.createElement('img');
   mechImg.src = mech.photos[0];
 
+  // mechImgDiv.appendChild(mechImg);
+  // mechDiv.appendChild(mechImgDiv);
+
+  mechDiv.appendChild(createCarousel(mech.photos))
+
+
+
   // Info
   const mechInfoDiv = document.createElement('div');
   mechInfoDiv.classList = "mech-project-info";
@@ -100,12 +107,91 @@ const showMechaProject = (mech) => {
   mechName.textContent = mech.name;
   mechInfoDiv.appendChild(mechName);
   
-  mechImgDiv.appendChild(mechImg);
-  mechDiv.appendChild(mechImgDiv);
 
   mechDiv.appendChild(mechInfoDiv);
   mechaDiv.appendChild(mechDiv);
 };
+
+
+
+
+let currentSlide = 0;
+
+const createCarousel = (images) => {
+
+  // Container div for carousel content
+  const carouselDiv = document.createElement('div');
+  carouselDiv.classList = 'carousel-div';
+
+  // Carousel image  NEEDED?
+  const carouselImageContainer = document.createElement('div');
+  carouselImageContainer.classList = 'carousel-img-container';
+  // const carouselImage = document.createElement('img');
+
+  // Create a slide for each image.
+  const slides = [];
+  images.forEach((image) => {
+    console.log(image)
+    const slideDiv = document.createElement('div');
+    const slide = document.createElement('img');
+    slide.src = image;
+    slideDiv.classList = 'carousel-slide-div';
+    slideDiv.appendChild(slide);
+    carouselImageContainer.appendChild(slideDiv);
+    slides.push(slideDiv);
+  });
+
+  carouselDiv.appendChild(carouselImageContainer);  
+
+  // Control buttons
+  const leftButton = document.createElement('button');
+  leftButton.classList = 'carousel-left-button';
+  leftButton.textContent = 'NEXT';
+  leftButton.onclick = (event) => {
+    if (currentSlide > 0) {
+      currentSlide -= 1;
+    } 
+    // showSlide(slides, currentSlide);
+  };
+
+  const rightButton = document.createElement('button');
+  rightButton.classList = 'carousel-left-button';
+  rightButton.textContent = 'BACK';
+  rightButton.onclick = (event) => {
+    if (currentSlide < slides.length) {
+      currentSlide += 1;
+    }
+    // showSlide(slides, currentSlide);
+  };
+
+  // Fill Carousel
+  carouselDiv.appendChild(leftButton);
+  carouselDiv.appendChild(carouselImageContainer);
+  carouselDiv.appendChild(rightButton);
+  return carouselDiv;
+};
+
+const showSlide = (slides, index) => {
+  console.log(slides, index)
+  slides.forEach((slide, i) => {
+    slide.style.transform = `translateX(${100 * (i - index)}%)`;
+  });
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 window.onload = (event) => {
   getMecha();
