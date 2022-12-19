@@ -1,7 +1,6 @@
 /* Mecha */
 .mecha-container {
   border: 4px solid black;
-  /* margin: 1em;  */
   width: 100%;
 }
 
@@ -26,12 +25,12 @@
   align-items: center ;
 }
 
+/* Mech Card */
 .mech-name {
   color: black;
 }
 
 .mech-img {
-  /* border: 4px solid black; */
   max-width: 80%;
   max-height: 60%;
 }
@@ -44,6 +43,8 @@
   object-fit: contain;
 }
 
+
+/* Mech Project Info */
 .mech-project-div {
   border: 4px solid blue;
   width: 90vw;
@@ -62,7 +63,6 @@
 }
 
 .mech-project-img {
-  /* border: 4px solid black; */
   width: 40vw;
   height: 60vh;
 }
@@ -83,31 +83,68 @@
 
 .carousel-div {
   border: 4px solid black;
+  /* padding: 1em; */
+  /* margin: 1em; */
+  width: 40vw;
+  height: 40vh;
+  /* overflow: hidden; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-content {
+  border: 4px solid blue;
   width: 40vw;
   height: 40vh;
   overflow: hidden;
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: row;
   align-items: center;
 }
 
-.carousel-img-container {
-  border: 4px solid blue;
-  padding: 1em;
-  width: 30vw;
-  height: 30vh;
-  overflow: hidden;
+.carousel-img {
+  border: 4px solid green;
+  /* padding: 1em; */
+  /* width: 20vw; */
+  /* height: 20vh; */
 }
 
+.carousel-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 
 .carousel-slide-siv {
   border: 4px solid green;
   width: 25vw;
   height: 25vh;
-
 }
 
 .carousel-slide-siv img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+*/
+
+
+.carousel-left-button {
+  
+}
+
+.carousel-right-button {
+
+}
+
+.carousel-left-button,
+.carousel-right-button {
+  border: 4px solid black;
+  background-color: white;
+  font-family: monospace;
+  font-size: xx-large;
 }
