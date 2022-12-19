@@ -70,7 +70,6 @@ const addMechaCard = (mecha) => {
 };
 
 const showMechaProject = (mech) => {
-  console.log(mech)
   
   const mechaDiv = document.getElementById('mecha-projects');
   clearDiv(mechaDiv);
@@ -83,6 +82,8 @@ const showMechaProject = (mech) => {
   createCarousel(mech.photos, mechDiv);
 
   // Info
+
+  // TODO: Write function to generate info
   const mechInfoDiv = document.createElement('div');
   mechInfoDiv.classList = "mech-project-info";
 
@@ -97,5 +98,4 @@ const showMechaProject = (mech) => {
 
 window.onload = (event) => {
   getMecha();
-  console.log('mecha page loaded')
 };

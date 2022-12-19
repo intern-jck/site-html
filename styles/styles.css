@@ -25,10 +25,17 @@ body {
   color: var(--primary-color);
 }
 
+button {
+  border: 4px solid black;
+  background-color: white;
+  font-family: monospace;
+  font-size: xx-large;
+}
+
 button:hover {
   cursor: pointer;
   color: var(--active-color);
-  border-color: var(--active-color);
+  /* border-color: var(--active-color); */
 }
 
 .page-header {

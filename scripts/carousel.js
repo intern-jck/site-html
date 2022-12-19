@@ -5,7 +5,6 @@
 let currentSlide = 0;
 
 const createCarousel = (images, mechDiv) => {
-  console.log(mechDiv)
 
   // Container div for carousel content
   const carouselDiv = document.createElement('div');
@@ -30,7 +29,7 @@ const createCarousel = (images, mechDiv) => {
   }
 
   showSlide(slides, currentSlide);
-  
+
   // Control buttons
   const leftButton = document.createElement('button');
   leftButton.classList = 'carousel-left-button';
@@ -38,7 +37,6 @@ const createCarousel = (images, mechDiv) => {
   leftButton.onclick = (event) => {
     if (currentSlide > 0) {
       currentSlide -= 1;
-      console.log('back:', currentSlide)
     } 
     showSlide(slides, currentSlide);
   };
@@ -47,9 +45,8 @@ const createCarousel = (images, mechDiv) => {
   rightButton.classList = 'carousel-right-button';
   rightButton.textContent = 'NEXT';
   rightButton.onclick = (event) => {
-    if (currentSlide < slides.length) {
+    if (currentSlide < slides.length - 1) {
       currentSlide += 1;
-      console.log('next:', currentSlide)
     } 
     showSlide(slides, currentSlide);
   };
@@ -67,8 +64,3 @@ const showSlide = (slides, index) => {
     slide.style.transform = `translateX(${100 * (i - index)}%)`;
   });
 };
-
-// window.onload = (event) => {
-//   createCarousel();
-//   console.log('carousel loaded')
-// };
