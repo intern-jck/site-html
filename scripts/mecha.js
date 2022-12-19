@@ -85,12 +85,13 @@ const showMechaProject = (mech) => {
   // Info
   const mechInfoDiv = document.createElement('div');
   mechInfoDiv.classList = "mech-project-info";
+
   const mechName = document.createElement('h2');
   mechName.classList = "mech-project-name";
   mechName.textContent = mech.name;
-  mechInfoDiv.appendChild(mechName);  
-
+  mechInfoDiv.appendChild(mechName);
   mechDiv.appendChild(mechInfoDiv);
+
   mechaDiv.appendChild(mechDiv);
 };
 

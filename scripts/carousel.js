@@ -4,7 +4,7 @@
 
 let currentSlide = 0;
 
-const createCarousel = (slides, mechDiv) => {
+const createCarousel = (images, mechDiv) => {
   console.log(mechDiv)
 
   // Container div for carousel content
@@ -13,20 +13,24 @@ const createCarousel = (slides, mechDiv) => {
 
   const carouselContent = document.createElement('div');
   carouselContent.classList = 'carousel-content';
+  const slides = [];
 
   // Create carousel images
-  const carouselImages = [];
-
-  for (let i in slides) {
+  for (let i in images) {
     const carouselImageContainer = document.createElement('div');
     carouselImageContainer.classList = 'carousel-img';
-    const carouselImage = document.createElement('img');
 
-    carouselImage.src = slides[i];
+    const carouselImage = document.createElement('img');
+    carouselImage.src = images[i];
+
     carouselImageContainer.appendChild(carouselImage);
-    carouselContent.appendChild(carouselImageContainer);    
+
+    carouselContent.appendChild(carouselImageContainer);   
+    slides.push(carouselImageContainer);
   }
 
+  showSlide(slides, currentSlide);
+  
   // Control buttons
   const leftButton = document.createElement('button');
   leftButton.classList = 'carousel-left-button';
@@ -55,12 +59,12 @@ const createCarousel = (slides, mechDiv) => {
   carouselDiv.appendChild(carouselContent); 
   carouselDiv.appendChild(rightButton);   
   mechDiv.appendChild(carouselDiv);
-  
+
 };
 
 const showSlide = (slides, index) => {
   slides.forEach((slide, i) => {
-    // slide.style.transform = `translateX(${100 * (i - index)}%)`;
+    slide.style.transform = `translateX(${100 * (i - index)}%)`;
   });
 };
 
