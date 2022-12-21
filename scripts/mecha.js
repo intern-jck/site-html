@@ -92,7 +92,6 @@ const showMechaProject = (mech) => {
   mechName.textContent = mech.name;
   mechInfoDiv.appendChild(mechName);
   mechDiv.appendChild(mechInfoDiv);
-
   mechaDiv.appendChild(mechDiv);
 };
 

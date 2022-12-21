@@ -15,28 +15,31 @@
 
 <body>
 
-  <div class="navbar">
-    <div class="nav-container">
-      <nav class="navbar-content">
+  <nav class="navbar">
 
-        <div class="nav-brand">
-          <a href="/" class="site-logo">>JCK:~/Home</a>
-        </div>
+    <div class="navbar-controls">
+      <div class="nav-brand">
+        <a href="/" class="site-logo">JCK</a>
+      </div>
 
-        <ul class="nav-items">
-          <li><a class="nav-item" href="pages/mecha.html">Mecha</a></li>
-          <li><a class="nav-item" href="pages/photos.html">Photos</a></li>
-          <!-- <li><a class="nav-item" href="templates/randd.html">R&D</a></li> -->
-          <!-- <li><a class="nav-item" href="templates/contact.html">Contact</a></li> -->
-        </ul>
-
-        <button class="nav-toggler">
-          <span>HAM</span>
-        </button>
-
-      </nav>
+      <button 
+        id="nav-toggler"
+        class="nav-toggler"
+        onclick="toggleMenu()">
+        <span>HAM</span>
+      </button>
     </div>
-  </div>
+
+    <div id="navbar-content">
+      <ul id="nav-items" class="nav-items">
+        <li><a class="nav-item" href="pages/mecha.html">Mecha</a></li>
+        <li><a class="nav-item" href="pages/photos.html">Photos</a></li>
+        <li><a class="nav-item" href="templates/randd.html">R&D</a></li>
+        <li><a class="nav-item" href="templates/contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+  </nav>
 
   <section class="page-content">
     <div class="home-img">
