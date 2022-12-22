@@ -75,7 +75,7 @@ const addMechaCard = (mecha) => {
 };
 
 const showMechaProject = (mech) => {
-  
+  console.log(Object.keys(mech))
   const mechaDiv = document.getElementById('mecha-container');
   clearDiv(mechaDiv);
   addBackButton();
@@ -94,8 +94,20 @@ const showMechaProject = (mech) => {
 
   const mechName = document.createElement('h2');
   mechName.classList = 'mech-project-name';
-  mechName.textContent = mech.name;
+  mechName.textContent = `NAME: ${mech.name}`;
   mechInfoDiv.appendChild(mechName);
+
+  const mechClient = document.createElement('h2');
+  mechClient.classList = 'mech-project-client';
+  mechClient.textContent = `CLIENT: ${mech.client}`;
+  mechInfoDiv.appendChild(mechClient);
+
+  // const mechInfo = document.createElement('h2');
+  // mechInfo.classList = 'mech-project-info';
+  // mechInfo.textContent = `INFO: ${mech.info}`;
+  // mechInfoDiv.appendChild(mechInfo);
+
+
   mechDiv.appendChild(mechInfoDiv);
   mechaDiv.appendChild(mechDiv);
 };

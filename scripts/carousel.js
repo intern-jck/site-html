@@ -33,7 +33,7 @@ const createCarousel = (images, mechDiv) => {
   // Control buttons
   const leftButton = document.createElement('button');
   leftButton.classList = 'carousel-left-button';
-  leftButton.textContent = 'BACK';
+  leftButton.textContent = 'PREV';
   leftButton.onclick = (event) => {
     if (currentSlide > 0) {
       currentSlide -= 1;
