@@ -7,7 +7,7 @@ const clearDiv = (parent) => {
   }
 };
 
-const addBackButton = (backToView) => {
+const addBackButton = () => {
   // Remove it if it's there.
   const backButton = document.createElement('button');
   backButton.textContent = 'BACK';
@@ -18,12 +18,12 @@ const addBackButton = (backToView) => {
       getMecha();      
   };
 
-  document.getElementById('mecha-projects').appendChild(backButton);
+  document.getElementById('mecha-container').appendChild(backButton);
 }
 
 const removeBackButton = () => {
   if (document.getElementById('back-button')) {
-      document.getElementById('back-button').remove();
+    document.getElementById('back-button').remove();
   }
 };
 
@@ -39,21 +39,24 @@ const getMecha = () => {
 const addMechaCard = (mecha) => {
 
   // Get div from photos page
-  const mechaDiv = document.getElementById('mecha-projects');  
+  const mechaDiv = document.getElementById('mecha-container');
+  const mechProjects = document.createElement('div');
+  mechProjects.classList = 'mecha-projects-div';
+
   clearDiv(mechaDiv);
   removeBackButton();
 
   mecha.forEach((mech) => {
 
     const mechDiv = document.createElement('div');
-    mechDiv.classList = "mech-div";
+    mechDiv.classList = 'mech-div';
 
     const mechName = document.createElement('h2');
-    mechName.classList = "mech-name";
+    mechName.classList = 'mech-name';
     mechName.textContent = mech.name;
 
     const mechImgDiv = document.createElement('div');
-    mechImgDiv.classList = "mech-img";
+    mechImgDiv.classList = 'mech-img';
     mechImgDiv.onclick = (event) => {
       event.preventDefault();
       showMechaProject(mech);
@@ -64,19 +67,21 @@ const addMechaCard = (mecha) => {
     mechDiv.appendChild(mechName);
     mechImgDiv.appendChild(mechImg);
     mechDiv.appendChild(mechImgDiv);
-    mechaDiv.appendChild(mechDiv);
+    mechProjects.appendChild(mechDiv);
   });
+
+  mechaDiv.appendChild(mechProjects);
 
 };
 
 const showMechaProject = (mech) => {
   
-  const mechaDiv = document.getElementById('mecha-projects');
+  const mechaDiv = document.getElementById('mecha-container');
   clearDiv(mechaDiv);
   addBackButton();
 
   const mechDiv = document.createElement('div');
-  mechDiv.classList = "mech-project-div";
+  mechDiv.classList = 'mech-project-div';
 
   // Carousel
   createCarousel(mech.photos, mechDiv);
@@ -85,10 +90,10 @@ const showMechaProject = (mech) => {
 
   // TODO: Write function to generate info
   const mechInfoDiv = document.createElement('div');
-  mechInfoDiv.classList = "mech-project-info";
+  mechInfoDiv.classList = 'mech-project-info';
 
   const mechName = document.createElement('h2');
-  mechName.classList = "mech-project-name";
+  mechName.classList = 'mech-project-name';
   mechName.textContent = mech.name;
   mechInfoDiv.appendChild(mechName);
   mechDiv.appendChild(mechInfoDiv);
