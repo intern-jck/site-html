@@ -10,9 +10,3 @@
 //       "collection": "people",
 //       "filter": { "name": "John Sample" }
 //   }'`;
-  
-window.onload = (event) => {
-  console.log('main loaded')
-  // getMecha();
-  // toggleMenu();
-};

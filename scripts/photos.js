@@ -15,6 +15,7 @@ const addPhotos = (photos) => {
   // Get div from photos page
   const photosDiv = document.getElementById('photos-container');
 
+  // TODO: Refactor to use pagination
   photos.forEach((photoUrl) => {
     // Create img container
     const imgDiv = document.createElement('div');
@@ -32,10 +33,6 @@ const addPhotos = (photos) => {
     photosDiv.appendChild(imgDiv);
   });
 
-
 };
 
-window.onload = (event) => {
-  getPhotos();
-  console.log('photos page loaded')
-};
+getPhotos();
