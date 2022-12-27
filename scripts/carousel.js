@@ -32,7 +32,7 @@ const createCarousel = (images, mechDiv) => {
 
   // Control buttons
   const leftButton = document.createElement('button');
-  leftButton.classList = 'carousel-left-button';
+  leftButton.classList = 'carousel-left-button onclick';
   leftButton.textContent = 'PREV';
   leftButton.onclick = (event) => {
     if (currentSlide > 0) {
@@ -42,7 +42,7 @@ const createCarousel = (images, mechDiv) => {
   };
 
   const rightButton = document.createElement('button');
-  rightButton.classList = 'carousel-right-button';
+  rightButton.classList = 'carousel-right-button onclick';
   rightButton.textContent = 'NEXT';
   rightButton.onclick = (event) => {
     if (currentSlide < slides.length - 1) {
@@ -52,9 +52,14 @@ const createCarousel = (images, mechDiv) => {
   };
 
   // Fill Carousel
-  carouselDiv.appendChild(leftButton);
-  carouselDiv.appendChild(carouselContent); 
-  carouselDiv.appendChild(rightButton);   
+  const carounselControls = document.createElement('div');
+  carounselControls.classList = 'carousel-controls';
+  // carouselDiv.appendChild(leftButton);
+  carouselDiv.appendChild(carouselContent);  
+  // carouselDiv.appendChild(rightButton);   
+  carounselControls.appendChild(leftButton);  
+  carounselControls.appendChild(rightButton);  
+  carouselDiv.appendChild(carounselControls);
   mechDiv.appendChild(carouselDiv);
 
 };

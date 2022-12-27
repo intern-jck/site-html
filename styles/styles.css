@@ -22,6 +22,11 @@ body {
   background-color: var(--background-color);
 }
 
+.onclick:hover {
+  cursor: pointer;
+  background-color: green !important;
+}
+
 
 .page-content {
   margin-top: 20vh;
