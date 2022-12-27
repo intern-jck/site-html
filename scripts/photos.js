@@ -25,6 +25,7 @@ const addPhotos = (photos) => {
     const img = document.createElement('img');
     img.src = photoUrl;
     img.loading = 'lazy';
+    img.alt = '...';
   
     // Add img to img container
     imgDiv.appendChild(img);

@@ -32,12 +32,12 @@ const getMecha = () => {
   fetch(MECHA_URL)
     .then((response) => (response.json()))
     .then((data) => {
-      addMechaCard(data.reverse());
+      addMechaCards(data.reverse());
     })
     .catch((error) => (console.log('fetching mecha url', error)));
 };
 
-const addMechaCard = (mecha) => {
+const addMechaCards = (mecha) => {
 
   // Get div from photos page
   const mechaDiv = document.getElementById('mecha-container');
@@ -108,6 +108,7 @@ const showMechaProject = (mech) => {
   mechaClient.textContent = `CLIENT:`;
   const mechaClientValue = document.createElement('a');
   mechaClientValue.href = mech.client_url;
+  mechaClientValue.target = '_blank';
   mechaClientValue.classList = 'mecha-info-value';
   mechaClientValue.textContent = `${mech.client}`
   mechaClient.appendChild(mechaClientValue);  
@@ -135,6 +136,7 @@ const showMechaProject = (mech) => {
     const techTag = document.createElement('a');
     techTag.textContent = mech.tech[i][0];
     techTag.href = mech.tech[i][1];
+    techTag.target = '_blank';
     mechaTechValue.appendChild(techTag);
   }
 

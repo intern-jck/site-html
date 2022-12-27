@@ -7,15 +7,15 @@
     align-items: center;
     justify-content: center;
 }
-  
-  .carousel-content {
+
+.carousel-content {
     width: 100%;
     height: 40vh;
     position: relative;
     overflow: hidden;
-  }
-  
-  .carousel-img {
+}
+
+.carousel-img {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -23,15 +23,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .carousel-img img {
+}
+
+.carousel-img img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-  }
+}
 
-  .carousel-controls {
+.carousel-controls {
     width: 40vw;
     display: flex;
     flex-direction: row;
@@ -39,15 +39,15 @@
     padding-top: 2em;
     padding-left: 1em;
     padding-right: 1em;
-  }
-    
-  .carousel-left-button,
-  .carousel-right-button {
+}
+
+.carousel-left-button,
+.carousel-right-button {
     border: 4px solid black;
     background-color: white;
     font-family: monospace;
     font-size: xx-large;
-  }
+}
   
 
 @media screen and (orientation:landscape) and (max-width: 1024px){
@@ -72,14 +72,12 @@
 
     .carousel-controls {
         position: absolute;
-        /* width: 100%; */
         padding-left: 0;
         padding-right: 0;
     }
 }
   
 @media screen and (orientation:portrait) {
-
     .carousel-div {
         width: 100%;
         height: 60vh;
