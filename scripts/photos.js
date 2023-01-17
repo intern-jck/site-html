@@ -16,22 +16,25 @@ const addPhotos = (photos) => {
   const photosDiv = document.getElementById('photos-container');
 
   // TODO: Refactor to use pagination
-  photos.forEach((photoUrl) => {
+  photos.forEach((photoUrl, i) => {
     // Create img container
     const imgDiv = document.createElement('div');
     imgDiv.classList = 'photos-img';
-  
+
     // Create img
-    const img = document.createElement('img');
+    // const img = document.createElement('img');
+
+    const img = new Image();
     img.src = photoUrl;
     img.loading = 'lazy';
     img.alt = '...';
-  
+
     // Add img to img container
     imgDiv.appendChild(img);
-  
+
     // Add img container to page
     photosDiv.appendChild(imgDiv);
+
   });
 
 };
