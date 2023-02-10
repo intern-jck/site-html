@@ -2,7 +2,7 @@
   --anchor-color: blue;
   --font-color: #222;
   --background-color: white;
-  --primary-color:  darkblue;
+  --primary-color: darkblue;
   --secondary-color: darkgreen;
   --active-color: green;
 }
@@ -11,7 +11,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -47,6 +49,10 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.home-header {
+  text-align: center;
 }
 
 /* Photos */
@@ -88,7 +94,7 @@ body {
   color: var(--active-color);
 }
 
-@media screen and (orientation:landscape) and (max-width: 1024px){
+@media screen and (orientation:landscape) and (max-width: 1024px) {
   .page-content {
     margin-top: 30vh;
   }
