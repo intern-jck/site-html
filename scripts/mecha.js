@@ -1,4 +1,5 @@
-const MECHA_URL = `../assets/data/mechaData.json`;
+// const MECHA_URL = `../assets/data/mechaData.json`;
+const MECHA_URL = 'https://raw.githubusercontent.com/intern-jck/site-html/main/assets/data/mechaData.json';
 
 // Helper function to clear all child elements from a parent div.
 const clearDiv = (parent) => {
@@ -16,7 +17,7 @@ const addBackButton = () => {
 
   backButton.onclick = (event) => {
     event.preventDefault();
-    getMecha();      
+    getMecha();
   };
 
   document.getElementById('mecha-container').appendChild(backButton);
@@ -99,7 +100,7 @@ const showMechaProject = (mech) => {
   const mechaNameValue = document.createElement('span');
   mechaNameValue.classList = 'mecha-info-value';
   mechaNameValue.textContent = `${mech.name}`
-  mechaName.appendChild(mechaNameValue);  
+  mechaName.appendChild(mechaNameValue);
   mechaInfoDiv.appendChild(mechaName);
 
   // Add client 
@@ -111,7 +112,7 @@ const showMechaProject = (mech) => {
   mechaClientValue.target = '_blank';
   mechaClientValue.classList = 'mecha-info-value';
   mechaClientValue.textContent = `${mech.client}`
-  mechaClient.appendChild(mechaClientValue);  
+  mechaClient.appendChild(mechaClientValue);
   mechaInfoDiv.appendChild(mechaClient);
 
   // Add date
@@ -121,7 +122,7 @@ const showMechaProject = (mech) => {
   const mechaDateValue = document.createElement('span');
   mechaDateValue.classList = 'mecha-info-value';
   mechaDateValue.textContent = `${mech.date}`
-  mechaDate.appendChild(mechaDateValue);  
+  mechaDate.appendChild(mechaDateValue);
   mechaInfoDiv.appendChild(mechaDate);
 
   // Add tech
@@ -140,7 +141,7 @@ const showMechaProject = (mech) => {
     mechaTechValue.appendChild(techTag);
   }
 
-  mechaTech.appendChild(mechaTechValue);  
+  mechaTech.appendChild(mechaTechValue);
   mechaInfoDiv.appendChild(mechaTech);
 
   // Add info
@@ -150,7 +151,7 @@ const showMechaProject = (mech) => {
   const mechaInfoValue = document.createElement('span');
   mechaInfoValue.classList = 'mecha-info-value';
   mechaInfoValue.textContent = `${mech.info}`
-  mechaInfo.appendChild(mechaInfoValue);  
+  mechaInfo.appendChild(mechaInfoValue);
   mechaInfoDiv.appendChild(mechaInfo);
 
   mechDiv.appendChild(mechaInfoDiv);

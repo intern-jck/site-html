@@ -1,12 +1,35 @@
-// const atlastURI = 'https://data.mongodb-api.com/app/data-qbimb/endpoint/data/v1';
+// function addNavbar() {
 
-// const sampleRequest = `curl --request POST \
-//   'https://data.mongodb-api.com/app/<Data API App ID>/endpoint/data/v1/action/findOne' \
-//   --header 'Content-Type: application/json' \
-//   --header 'api-key: <Data API Key>' \
-//   --data-raw '{
-//       "dataSource": "<cluster name>",
-//       "database": "learn-data-api",
-//       "collection": "people",
-//       "filter": { "name": "John Sample" }
-//   }'`;
+//   // <div class="nav-brand">
+//   //   <a href="/" class="site-logo">JCK</a>
+//   // </div>
+//   // <button id="nav-toggler" class="nav-toggler" onclick="showMenu()">
+//   //   |||
+//   // </button>
+
+//   const navbarDiv = document.getElementById('navbar');
+
+//   const navMenu = document.createElement('ul');
+
+//   const homeLink = document.createElement('li');
+//   const homeAnchor = document.createElement('a');
+//   homeAnchor.href = '/';
+//   homeAnchor.textContent = 'Home';
+
+//   const contactLink = document.createElement('li');
+//   const contactAnchor = document.createElement('a');
+//   contactAnchor.href = './contact.html';
+//   contactAnchor.textContent = 'Contact';
+
+//   homeLink.append(homeAnchor);
+//   contactLink.append(contactAnchor);
+
+//   navMenu.append(homeLink);
+//   navMenu.append(contactLink);
+
+//   navbarDiv.append(navMenu);
+// }
+
+// window.onload = ((event) => {
+//   addNavbar();
+// });
