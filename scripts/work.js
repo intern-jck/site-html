@@ -63,6 +63,7 @@ const addMechaCards = (mecha) => {
       event.preventDefault();
       showMechaProject(mech);
     };
+
     const mechImg = document.createElement('img');
     mechImg.src = mech.photos[0];
 
