@@ -159,6 +159,6 @@ const showMechaProject = (mech) => {
   mechaDiv.appendChild(mechDiv);
 };
 
-window.onload = (event) => {
+window.addEventListener("load", function (event) {
   getMecha();
-};
+}, false);
