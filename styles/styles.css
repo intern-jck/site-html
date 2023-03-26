@@ -30,7 +30,7 @@ body {
 }
 
 .page-content {
-  margin-top: 20vh;
+  margin-top: 4rem;
   width: 100%;
 }
 
@@ -95,12 +95,12 @@ body {
 
 @media screen and (orientation:landscape) and (max-width: 1024px) {
   .page-content {
-    margin-top: 30vh;
+    margin-top: 4rem;
   }
 }
 
 @media screen and (orientation:portrait) {
   .page-content {
-    margin-top: 15vh;
+    margin-top: 2rem;
   }
 }
