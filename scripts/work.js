@@ -1,5 +1,4 @@
-// const MECHA_URL = `../assets/data/mechaData.json`;
-const MECHA_URL = 'https://raw.githubusercontent.com/intern-jck/site-html/main/assets/data/mechaData.json';
+const WORK_JSON_URL = 'https://raw.githubusercontent.com/intern-jck/site-html/main/assets/data/workData.json';
 
 // Helper function to clear all child elements from a parent div.
 const clearDiv = (parent) => {
@@ -8,19 +7,17 @@ const clearDiv = (parent) => {
   }
 };
 
-const addBackButton = () => {
-  // Remove it if it's there.
+const addBackButton = (containerId) => {
   const backButton = document.createElement('button');
   backButton.textContent = 'BACK';
   backButton.classList = 'onclick';
   backButton.setAttribute('id', 'back-button');
 
   backButton.onclick = (event) => {
-    event.preventDefault();
-    getMecha();
+    getWork();
   };
 
-  document.getElementById('mecha-container').appendChild(backButton);
+  document.getElementById(containerId).appendChild(backButton);
 }
 
 const removeBackButton = () => {
@@ -29,136 +26,137 @@ const removeBackButton = () => {
   }
 };
 
-const getMecha = () => {
-  fetch(MECHA_URL)
+const getWork = () => {
+  fetch(WORK_JSON_URL)
     .then((response) => (response.json()))
     .then((data) => {
-      addMechaCards(data.reverse());
+      console.log(data)
+      addWorkCards(data.reverse());
     })
-    .catch((error) => (console.log('fetching mecha url', error)));
+    .catch((error) => (console.log('fetching work url', error)));
 };
 
-const addMechaCards = (mecha) => {
+const addWorkCards = (work) => {
+  console.log(work)
 
-  // Get div from photos page
-  const mechaDiv = document.getElementById('mecha-container');
-  clearDiv(mechaDiv);
+  const workDiv = document.getElementById('work-container');
+  clearDiv(workDiv);
   removeBackButton();
 
-  const mechProjects = document.createElement('div');
-  mechProjects.classList = 'mecha-projects-div';
+  const workProjects = document.createElement('div');
+  workProjects.classList = 'work-projects-div';
 
-  mecha.forEach((mech) => {
+  work.forEach((work) => {
 
-    const mechaCardDiv = document.createElement('div');
-    mechaCardDiv.classList = 'mecha-card-div';
+    const workCardDiv = document.createElement('div');
+    workCardDiv.classList = 'work-card-div';
 
-    const mechName = document.createElement('h2');
-    mechName.classList = 'mech-name';
-    mechName.textContent = mech.name;
+    const workName = document.createElement('h2');
+    workName.classList = 'work-name';
+    workName.textContent = work.name;
 
-    const mechImgDiv = document.createElement('div');
-    mechImgDiv.classList = 'mech-img';
-    mechImgDiv.onclick = (event) => {
+    const workImgDiv = document.createElement('div');
+    workImgDiv.classList = 'work-img';
+    workImgDiv.onclick = (event) => {
       event.preventDefault();
-      showMechaProject(mech);
+      showMechaProject(work);
     };
 
-    const mechImg = document.createElement('img');
-    mechImg.src = mech.photos[0];
+    const workImg = document.createElement('img');
+    workImg.src = work.photos[0];
 
-    mechaCardDiv.appendChild(mechName);
-    mechImgDiv.appendChild(mechImg);
-    mechaCardDiv.appendChild(mechImgDiv);
-    mechProjects.appendChild(mechaCardDiv);
+    workCardDiv.appendChild(workName);
+    workImgDiv.appendChild(workImg);
+    workCardDiv.appendChild(workImgDiv);
+    workProjects.appendChild(workCardDiv);
   });
 
-  mechaDiv.appendChild(mechProjects);
+  workDiv.appendChild(workProjects);
 
 };
 
-const showMechaProject = (mech) => {
-  console.log(Object.keys(mech))
-  const mechaDiv = document.getElementById('mecha-container');
-  clearDiv(mechaDiv);
-  addBackButton();
+// const showMechaProject = (work) => {
+//   console.log(Object.keys(work))
+//   const workDiv = document.getElementById('work-container');
+//   clearDiv(workDiv);
+//   addBackButton('work-container');
 
-  const mechDiv = document.createElement('div');
-  mechDiv.classList = 'mecha-project-div';
+//   const workDiv = document.createElement('div');
+//   workDiv.classList = 'work-project-div';
 
-  // Carousel
-  createCarousel(mech.photos, mechDiv);
+//   // Carousel
+//   createCarousel(work.photos, workDiv);
 
-  // Info
-  // TODO: Write function to generate info
-  const mechaInfoDiv = document.createElement('div');
-  mechaInfoDiv.classList = 'mecha-project-info';
+//   // Info
+//   // TODO: Write function to generate info
+//   const workInfoDiv = document.createElement('div');
+//   workInfoDiv.classList = 'work-project-info';
 
-  // Add name
-  const mechaName = document.createElement('div');
-  mechaName.classList = 'mecha-info-key';
-  mechaName.textContent = `NAME:`;
-  const mechaNameValue = document.createElement('span');
-  mechaNameValue.classList = 'mecha-info-value';
-  mechaNameValue.textContent = `${mech.name}`
-  mechaName.appendChild(mechaNameValue);
-  mechaInfoDiv.appendChild(mechaName);
+//   // Add name
+//   const workName = document.createElement('div');
+//   workName.classList = 'work-info-key';
+//   workName.textContent = `NAME:`;
+//   const workNameValue = document.createElement('span');
+//   workNameValue.classList = 'work-info-value';
+//   workNameValue.textContent = `${work.name}`
+//   workName.appendChild(workNameValue);
+//   workInfoDiv.appendChild(workName);
 
-  // Add client 
-  const mechaClient = document.createElement('div');
-  mechaClient.classList = 'mecha-info-key';
-  mechaClient.textContent = `CLIENT:`;
-  const mechaClientValue = document.createElement('a');
-  mechaClientValue.href = mech.client_url;
-  mechaClientValue.target = '_blank';
-  mechaClientValue.classList = 'mecha-info-value';
-  mechaClientValue.textContent = `${mech.client}`
-  mechaClient.appendChild(mechaClientValue);
-  mechaInfoDiv.appendChild(mechaClient);
+//   // Add client 
+//   const workClient = document.createElement('div');
+//   workClient.classList = 'work-info-key';
+//   workClient.textContent = `CLIENT:`;
+//   const workClientValue = document.createElement('a');
+//   workClientValue.href = work.client_url;
+//   workClientValue.target = '_blank';
+//   workClientValue.classList = 'work-info-value';
+//   workClientValue.textContent = `${work.client}`
+//   workClient.appendChild(workClientValue);
+//   workInfoDiv.appendChild(workClient);
 
-  // Add date
-  const mechaDate = document.createElement('div');
-  mechaDate.classList = 'mecha-info-key';
-  mechaDate.textContent = `DATE:`;
-  const mechaDateValue = document.createElement('span');
-  mechaDateValue.classList = 'mecha-info-value';
-  mechaDateValue.textContent = `${mech.date}`
-  mechaDate.appendChild(mechaDateValue);
-  mechaInfoDiv.appendChild(mechaDate);
+//   // Add date
+//   const workDate = document.createElement('div');
+//   workDate.classList = 'work-info-key';
+//   workDate.textContent = `DATE:`;
+//   const workDateValue = document.createElement('span');
+//   workDateValue.classList = 'work-info-value';
+//   workDateValue.textContent = `${work.date}`
+//   workDate.appendChild(workDateValue);
+//   workInfoDiv.appendChild(workDate);
 
-  // Add tech
-  const mechaTech = document.createElement('div');
-  mechaTech.classList = 'mecha-info-key';
-  mechaTech.textContent = `TECH:`;
+//   // Add tech
+//   const workTech = document.createElement('div');
+//   workTech.classList = 'work-info-key';
+//   workTech.textContent = `TECH:`;
 
-  const mechaTechValue = document.createElement('div');
-  mechaTechValue.classList = 'mecha-info-tech';
+//   const workTechValue = document.createElement('div');
+//   workTechValue.classList = 'work-info-tech';
 
-  for (let i in mech.tech) {
-    const techTag = document.createElement('a');
-    techTag.textContent = mech.tech[i][0];
-    techTag.href = mech.tech[i][1];
-    techTag.target = '_blank';
-    mechaTechValue.appendChild(techTag);
-  }
+//   for (let i in work.tech) {
+//     const techTag = document.createElement('a');
+//     techTag.textContent = work.tech[i][0];
+//     techTag.href = work.tech[i][1];
+//     techTag.target = '_blank';
+//     workTechValue.appendChild(techTag);
+//   }
 
-  mechaTech.appendChild(mechaTechValue);
-  mechaInfoDiv.appendChild(mechaTech);
+//   workTech.appendChild(workTechValue);
+//   workInfoDiv.appendChild(workTech);
 
-  // Add info
-  const mechaInfo = document.createElement('div');
-  mechaInfo.classList = 'mecha-info-key';
-  mechaInfo.textContent = `INFO:`;
-  const mechaInfoValue = document.createElement('span');
-  mechaInfoValue.classList = 'mecha-info-value';
-  mechaInfoValue.textContent = `${mech.info}`
-  mechaInfo.appendChild(mechaInfoValue);
-  mechaInfoDiv.appendChild(mechaInfo);
+//   // Add info
+//   const workInfo = document.createElement('div');
+//   workInfo.classList = 'work-info-key';
+//   workInfo.textContent = `INFO:`;
+//   const workInfoValue = document.createElement('span');
+//   workInfoValue.classList = 'work-info-value';
+//   workInfoValue.textContent = `${work.info}`
+//   workInfo.appendChild(workInfoValue);
+//   workInfoDiv.appendChild(workInfo);
 
-  mechDiv.appendChild(mechaInfoDiv);
-  mechaDiv.appendChild(mechDiv);
-};
+//   workDiv.appendChild(workInfoDiv);
+//   workDiv.appendChild(workDiv);
+// };
 
 window.addEventListener("load", function (event) {
-  getMecha();
+  getWork();
 }, false);

@@ -72,39 +72,13 @@
 
 }
 
-
 @media screen and (max-width: 1200px) and (orientation: landscape) {
-
-  /*
-  #nav-menu {
-    display: none;
-  }
-  */
-
   .page-content {
     margin-top: 6rem;
   }
 }
 
 @media screen and (max-width: 400px) and (orientation: portrait) {
-
-
-  /* #nav-menu {
-    display: none;
-  } */
-
-  /* .ham-input:checked~#nav-menu {
-    display: flex;
-  } */
-
-  /* #nav-ham {
-    display: flex;
-  }
-
-  #nav-menu {
-    display: none;
-  } */
-
   .page-content {
     margin-top: 6rem;
   }

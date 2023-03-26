@@ -11,6 +11,10 @@
   <link rel="stylesheet" href="../styles/nav.css">
 
   <script type="text/javascript" src="../scripts/photos.js" defer></script>
+  <script type="text/javascript" src="./scripts/nav.js" defer></script>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/cdcc65decb.js" crossorigin="anonymous"></script>
 
   <title>JCK Site</title>
 </head>
@@ -18,7 +22,12 @@
 <body>
 
   <nav id="navbar" class="navbar">
-    <ul>
+    <div id="nav-ham">
+      <button onclick="showMenu()">
+        <i class="fa-solid fa-bars fa-3x"></i>
+      </button>
+    </div>
+    <ul id="nav-menu">
       <li>
         <a href="/">
           Home
