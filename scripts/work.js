@@ -32,36 +32,9 @@ const getWork = () => {
       return response.json()
     })
     .then((data) => {
-      addCards(data.reverse(), 'work-container');
+      addCards(data.reverse(), 'work-container', showWork);
     })
     .catch((error) => (console.log('fetching work url', error)));
-};
-
-const addCards = (work, div) => {
-  const cardContainer = document.getElementById(div);
-  clearDiv(cardContainer);
-  const workProjects = document.createElement('div');
-  workProjects.classList = 'work-projects-div';
-  work.forEach((work) => {
-    const workCardDiv = document.createElement('div');
-    workCardDiv.classList = 'work-card-div';
-    const workName = document.createElement('h2');
-    workName.classList = 'work-name';
-    workName.textContent = work.name;
-    const workImgDiv = document.createElement('div');
-    workImgDiv.classList = 'work-img';
-    workImgDiv.onclick = (event) => {
-      event.preventDefault();
-      showWork(work);
-    };
-    const workImg = document.createElement('img');
-    workImg.src = work.photos[0];
-    workCardDiv.appendChild(workName);
-    workImgDiv.appendChild(workImg);
-    workCardDiv.appendChild(workImgDiv);
-    workProjects.appendChild(workCardDiv);
-  });
-  cardContainer.appendChild(workProjects);
 };
 
 const showWork = (work) => {
