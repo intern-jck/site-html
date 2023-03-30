@@ -38,7 +38,7 @@
   width: 4rem;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px) {
 
   #navbar {
     flex-direction: column;
@@ -59,16 +59,4 @@
     align-items: center;
   }
 
-}
-
-@media screen and (max-width: 1200px) and (orientation: landscape) {
-  .page-content {
-    margin-top: 6rem;
-  }
-}
-
-@media screen and (max-width: 400px) and (orientation: portrait) {
-  .page-content {
-    margin-top: 6rem;
-  }
 }
