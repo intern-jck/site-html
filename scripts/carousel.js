@@ -1,7 +1,3 @@
-
-// examples
-// https://codepen.io/czesster/pen/eYKqMPY
-
 let currentSlide = 0;
 
 const createCarousel = (images, mechDiv) => {
@@ -24,7 +20,7 @@ const createCarousel = (images, mechDiv) => {
 
     carouselImageContainer.appendChild(carouselImage);
 
-    carouselContent.appendChild(carouselImageContainer);   
+    carouselContent.appendChild(carouselImageContainer);
     slides.push(carouselImageContainer);
   }
 
@@ -37,7 +33,7 @@ const createCarousel = (images, mechDiv) => {
   leftButton.onclick = (event) => {
     if (currentSlide > 0) {
       currentSlide -= 1;
-    } 
+    }
     showSlide(slides, currentSlide);
   };
 
@@ -47,7 +43,7 @@ const createCarousel = (images, mechDiv) => {
   rightButton.onclick = (event) => {
     if (currentSlide < slides.length - 1) {
       currentSlide += 1;
-    } 
+    }
     showSlide(slides, currentSlide);
   };
 
@@ -55,10 +51,10 @@ const createCarousel = (images, mechDiv) => {
   const carounselControls = document.createElement('div');
   carounselControls.classList = 'carousel-controls';
   // carouselDiv.appendChild(leftButton);
-  carouselDiv.appendChild(carouselContent);  
+  carouselDiv.appendChild(carouselContent);
   // carouselDiv.appendChild(rightButton);   
-  carounselControls.appendChild(leftButton);  
-  carounselControls.appendChild(rightButton);  
+  carounselControls.appendChild(leftButton);
+  carounselControls.appendChild(rightButton);
   carouselDiv.appendChild(carounselControls);
   mechDiv.appendChild(carouselDiv);
 

@@ -1,0 +1,71 @@
+:root {
+  --anchor-color: blue;
+  --font-color: #222;
+  --background-color: white;
+  --primary-color: darkblue;
+  --secondary-color: darkgreen;
+  --active-color: green;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-size: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: var(--background-color);
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+button>svg {
+  pointer-events: none;
+}
+
+button:hover {
+  cursor: pointer;
+  color: var(--active-color);
+}
+
+a {
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--active-color);
+}
+
+.page-content {
+  margin-top: 10vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-header {
+  font-size: 2rem;
+}
+
+@media screen and (orientation:landscape) and (max-width: 1024px) {
+  .page-content {
+    margin-top: 4rem;
+  }
+}
+
+@media screen and (orientation:portrait) {
+  .page-content {
+    margin-top: 2rem;
+  }
+}

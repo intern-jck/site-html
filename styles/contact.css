@@ -1,0 +1,17 @@
+/* Contact */
+.contact-links {
+  font-size: 4em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.contact-links a {
+  color: var(--font-color);
+}
+
+.contact-links a:hover {
+  color: var(--active-color);
+}
