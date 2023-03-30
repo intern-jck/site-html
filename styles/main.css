@@ -1,10 +1,11 @@
 :root {
   --anchor-color: blue;
-  --font-color: #222;
+  --font-color: black;
   --background-color: white;
   --primary-color: darkblue;
   --secondary-color: darkgreen;
   --active-color: green;
+  --icon-color: black;
 }
 
 html {
@@ -55,7 +56,23 @@ a:hover {
 }
 
 .page-header {
+  max-width: 80%;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.page-header>h1,
+.page-header>h2 {
+  margin: 0;
+  text-align: center;
+}
+
+.page-header>h1 {
   font-size: 2rem;
+}
+
+.page-header>h2 {
+  font-size: 1rem;
 }
 
 @media screen and (max-width: 400px) {
