@@ -32,15 +32,14 @@ const getWork = () => {
       return response.json()
     })
     .then((data) => {
-      addWorkCards(data.reverse());
+      addCards(data.reverse(), 'work-container');
     })
     .catch((error) => (console.log('fetching work url', error)));
 };
 
-const addWorkCards = (work) => {
-  const workContainer = document.getElementById('work-container');
-  clearDiv(workContainer);
-  removeBackButton();
+const addCards = (work, div) => {
+  const cardContainer = document.getElementById(div);
+  clearDiv(cardContainer);
   const workProjects = document.createElement('div');
   workProjects.classList = 'work-projects-div';
   work.forEach((work) => {
@@ -62,7 +61,7 @@ const addWorkCards = (work) => {
     workCardDiv.appendChild(workImgDiv);
     workProjects.appendChild(workCardDiv);
   });
-  workContainer.appendChild(workProjects);
+  cardContainer.appendChild(workProjects);
 };
 
 const showWork = (work) => {

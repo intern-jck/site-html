@@ -1,6 +1,6 @@
 let currentSlide = 0;
 
-const createCarousel = (images, mechDiv) => {
+const createCarousel = (images, div) => {
 
   // Container div for carousel content
   const carouselDiv = document.createElement('div');
@@ -56,7 +56,7 @@ const createCarousel = (images, mechDiv) => {
   carounselControls.appendChild(leftButton);
   carounselControls.appendChild(rightButton);
   carouselDiv.appendChild(carounselControls);
-  mechDiv.appendChild(carouselDiv);
+  div.appendChild(carouselDiv);
 
 };
 
