@@ -54,7 +54,7 @@
             "end_month": "NOV",
             "end_year": "2018"
         },
-        "short": "A two story Rube Goldberg inspired dumb waiter",
+        "short": "A Rube Goldberg inspired dumb waiter",
         "info": "Moose Goldberg was a Rube Goldberg inspired two story dumb waiter designed and fabricated by ARCH Productions for the launch of Moose Knuckle's new store located in New York City, NY.  The machine included a functional dumb waiter to move coats between floors as well as numerous mechanical elements such as a sequence of automated bobble heads, Newton's Cradle and a coat hanger which moved a coat around the structure on a custom designed track.  An Arduino Mega was used to control the many motors and sensors throughout the structure.  A script written in the Arduino IDE controlled each of the elements through a timed sequence of events.  Each of the elements movements were written in a non-blocking fashion to allow for multiple actions to take place at the same time such as sensor readings and motor position changes.  A large red button was used as the start button for the events.  Certain elements required parts which could not be bought.  These were modeled in Fusion 360 and 3D printed using a Flashforge Creator Pro.  The dumb waiter acted independently from the ascetic elements which were triggered when a large red button at the base of the structure was pressed.",
         "tech": [
             [

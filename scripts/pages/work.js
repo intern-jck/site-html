@@ -1,4 +1,4 @@
-const WORK_JSON_URL = 'https://raw.githubusercontent.com/intern-jck/site-html/main/assets/data/workData.json';
+const WORK_JSON_URL = 'https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/work.json';
 
 // Helper function to clear all child elements from a parent div.
 const clearDiv = (parent) => {
@@ -32,7 +32,7 @@ const getWork = () => {
       return response.json()
     })
     .then((data) => {
-      addCards(data.reverse(), 'work-container', showWork);
+      addCards(data, 'work-container', showWork);
     })
     .catch((error) => (console.log('fetching work url', error)));
 };

@@ -1,0 +1,6 @@
+https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/models.json
+https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/code.json
+https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/photos.json
+https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/work.json
+https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/music.json
+
