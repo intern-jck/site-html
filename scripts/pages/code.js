@@ -1,4 +1,4 @@
-const WORK_JSON_URL = 'https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/work.json';
+const CODE_JSON_URL = 'https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/code.json';
 
 // Helper function to clear all child elements from a parent div.
 const clearDiv = (parent) => {
@@ -12,7 +12,7 @@ const addBackButton = (parentDiv) => {
   backButton.textContent = 'BACK';
   backButton.setAttribute('id', 'back-button');
   backButton.onclick = (event) => {
-    getWork();
+    getCode();
   };
   parentDiv.appendChild(backButton);
 }
@@ -23,35 +23,35 @@ const removeBackButton = () => {
   }
 };
 
-const getWork = () => {
-  fetch(WORK_JSON_URL)
+const getCode = () => {
+  fetch(CODE_JSON_URL)
     .then((response) => {
       return response.json()
     })
     .then((data) => {
-      addCards(data, 'work-container', showWork);
+      addCards(data, 'code-container', showCode);
     })
     .catch((error) => (console.log('fetching work url', error)));
 };
 
-const showWork = (work) => {
-  const workContainer = document.getElementById('work-container');
-  clearDiv(workContainer);
-  addBackButton(workContainer);
+const showCode = (code) => {
+  const codeContainer = document.getElementById('code-container');
+  clearDiv(codeContainer);
+  addBackButton(codeContainer);
 
-  const workDiv = document.createElement('div');
-  workDiv.setAttribute('id', 'work-div');
+  const codeDiv = document.createElement('div');
+  codeDiv.setAttribute('id', 'code-div');
 
-  workContainer.append(workDiv);
+  codeContainer.append(codeDiv);
 
   // Carousel
-  addCarousel(work.photos, workDiv);
+  addCarousel(code.photos, codeDiv);
 
   // Info
-  addInfo(work, workDiv, 'work');
+  addInfo(code, codeDiv, 'code');
 
 };
 
 window.addEventListener("load", function (event) {
-  getWork();
+  getCode();
 }, false);

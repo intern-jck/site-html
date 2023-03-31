@@ -1,3 +1,4 @@
+const PROJECTS_JSON_URL = 'https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/projects.json';
 const WORK_JSON_URL = 'https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/work.json';
 
 // Helper function to clear all child elements from a parent div.
@@ -11,9 +12,11 @@ const addBackButton = (parentDiv) => {
   const backButton = document.createElement('button');
   backButton.textContent = 'BACK';
   backButton.setAttribute('id', 'back-button');
+
   backButton.onclick = (event) => {
-    getWork();
+    getProjects();
   };
+
   parentDiv.appendChild(backButton);
 }
 
@@ -23,35 +26,32 @@ const removeBackButton = () => {
   }
 };
 
-const getWork = () => {
-  fetch(WORK_JSON_URL)
+const getProjects = () => {
+  fetch(PROJECTS_JSON_URL)
     .then((response) => {
+      console.log(response)
       return response.json()
     })
     .then((data) => {
-      addCards(data, 'work-container', showWork);
+      console.log(data)
+      addCards(data, 'projects-container', showProject);
     })
-    .catch((error) => (console.log('fetching work url', error)));
+    .catch((error) => (console.log('fetching projects url', error)));
 };
 
-const showWork = (work) => {
-  const workContainer = document.getElementById('work-container');
-  clearDiv(workContainer);
-  addBackButton(workContainer);
-
-  const workDiv = document.createElement('div');
-  workDiv.setAttribute('id', 'work-div');
-
-  workContainer.append(workDiv);
-
+const showProject = (project) => {
+  const projectContainer = document.getElementById('projects-container');
+  clearDiv(projectContainer);
+  addBackButton(projectContainer);
+  const projectDiv = document.createElement('div');
+  projectDiv.setAttribute('id', 'project-div');
+  projectContainer.append(projectDiv);
   // Carousel
-  addCarousel(work.photos, workDiv);
-
+  addCarousel(project.photos, projectDiv);
   // Info
-  addInfo(work, workDiv, 'work');
-
+  addInfo(project, projectDiv, 'project');
 };
 
 window.addEventListener("load", function (event) {
-  getWork();
+  getProjects();
 }, false);

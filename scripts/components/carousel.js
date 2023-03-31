@@ -12,6 +12,7 @@ function addCarousel(images, parentDiv) {
   const slides = [];
 
   for (let i in images) {
+    console.log(images[i])
     const carouselImageContainer = document.createElement('div');
     carouselImageContainer.classList = 'carousel-img';
     const carouselImage = document.createElement('img');
