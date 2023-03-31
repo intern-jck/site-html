@@ -59,12 +59,13 @@ async function addInfo(info, parentDiv, modelType) {
       case 'tech':
         const techTagDiv = document.createElement('div');
         techTagDiv.classList = 'tech-tag-div';
-        info[key].map((tag, i) => {
-          const tagName = document.createElement('a');
-          tagName.textContent = tag[0];
-          tagName.href = tag[1];
-          tagName.target = '_blank';
-          techTagDiv.append(tagName);
+        info[key].map((value) => {
+          const tag = document.createElement('a');
+          tag.classList = 'tech-tag';
+          tag.textContent = value[0];
+          tag.href = value[1];
+          tag.target = '_blank';
+          techTagDiv.append(tag);
         });
         infoValue.append(techTagDiv);
         break;
