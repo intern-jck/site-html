@@ -1,0 +1,26 @@
+.home-img {
+  width: 50%;
+  margin: auto;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-img>img {
+  width: 98%;
+  height: 98%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 400px) {
+  .home-img {
+    width: 98%;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 900px) {
+  .home-img {
+    width: 80%;
+  }
+}

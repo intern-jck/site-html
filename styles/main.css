@@ -1,0 +1,87 @@
+:root {
+  --anchor-color: blue;
+  --font-color: black;
+  --background-color: white;
+  --primary-color: darkblue;
+  --secondary-color: darkgreen;
+  --active-color: green;
+  --icon-color: black;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-size: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: var(--background-color);
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+button>svg {
+  pointer-events: none;
+}
+
+button:hover {
+  cursor: pointer;
+  color: var(--active-color);
+}
+
+a {
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--active-color);
+}
+
+.page-content {
+  margin-top: 16vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.page-header>h1,
+.page-header>h2 {
+  margin: 0;
+  text-align: center;
+}
+
+.page-header>h1 {
+  font-size: 2rem;
+}
+
+.page-header>h2 {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 400px) {
+  .page-content {
+    margin-top: 16vh;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 900px) {
+  .page-content {
+    margin-top: 20vh;
+  }
+}

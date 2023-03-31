@@ -1,10 +1,9 @@
-const PHOTOS_URL = `../assets/data/photosData.json`;
+const PHOTOS_URL = 'https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/photos.json';
 
 const getPhotos = () => {
   fetch(PHOTOS_URL)
     .then((response) => (response.json()))
     .then((data) => {
-      // console.log(data);
       addPhotos(data);
     })
     .catch((error) => (console.log('fetching photos url', error)));
@@ -39,4 +38,6 @@ const addPhotos = (photos) => {
 
 };
 
-getPhotos();
+window.addEventListener("load", function (event) {
+  getPhotos();
+}, false);
