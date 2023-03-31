@@ -1,3 +1,40 @@
 [
-  {}
+  {
+    "name": "Cyber Truck",
+    "url": "#",
+    "date": {
+      "start_month": "AUG",
+      "start_year": "2020",
+      "end_month": "",
+      "end_year": ""
+    },
+    "short": "Trying to give my truck a brain",
+    "info": "I stumbled across an open source package called Crankshaft which can link an Android and Raspberry Pi together to allow you setup your own navigation system.  I 3D printer a housing and replaced the radio console (which was dead at this point) in hopes of making my own.  Wiring was a pain and I messed up a few details like screen orientation, but learned a lot!  While it was cool while I had it, I ended up taking out due to not being able to createa safe shutdown for the Pi and the fact a slight bump in the road would disconnet the power harness, resetting the whole thing.  Oh well.  Still learnt a lot!",
+    "tech": [
+      [
+        "Raspberry Pi",
+        "https://www.raspberrypi.org/"
+      ],
+      [
+        "Crankshaft",
+        "#"
+      ]
+    ],
+    "photos": [
+      "https://iili.io/DPMBJS.jpg",
+      "https://iili.io/DPMfg2.jpg",
+      "https://iili.io/DPMFf4.jpg",
+      "https://iili.io/DPM2sf.jpg",
+      "https://iili.io/DPGmJI.jpg",
+      "https://iili.io/DPGtlp.jpg",
+      "https://iili.io/DPGZfR.jpg",
+      "https://iili.io/DPGLiv.jpg",
+      "https://iili.io/DPGOVj.jpg",
+      "https://iili.io/DPGjDu.jpg",
+      "https://iili.io/DPGhNe.jpg",
+      "https://iili.io/DPGXR9.jpg",
+      "https://iili.io/DPGMSS.jpg"
+    ],
+    "resources": []
+  }
 ]
