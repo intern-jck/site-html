@@ -1,4 +1,5 @@
 function addCards(cards, div, clickHandler) {
+  console.log(cards)
   const parentDiv = document.getElementById(div);
   clearDiv(parentDiv);
 

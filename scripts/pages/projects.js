@@ -1,4 +1,5 @@
 const PROJECTS_JSON_URL = 'https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/projects.json';
+const WORK_JSON_URL = 'https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/work.json';
 
 // Helper function to clear all child elements from a parent div.
 const clearDiv = (parent) => {
@@ -13,7 +14,7 @@ const addBackButton = (parentDiv) => {
   backButton.setAttribute('id', 'back-button');
 
   backButton.onclick = (event) => {
-    getWork();
+    getProjects();
   };
 
   parentDiv.appendChild(backButton);
@@ -28,9 +29,11 @@ const removeBackButton = () => {
 const getProjects = () => {
   fetch(PROJECTS_JSON_URL)
     .then((response) => {
+      console.log(response)
       return response.json()
     })
     .then((data) => {
+      console.log(data)
       addCards(data, 'projects-container', showProject);
     })
     .catch((error) => (console.log('fetching projects url', error)));
