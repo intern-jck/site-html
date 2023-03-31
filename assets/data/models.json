@@ -1,0 +1,83 @@
+{
+  "general": {
+    "link": "",
+    "name": "",
+    "client": {
+      "name": "",
+      "url": ""
+    },
+    "date": {
+      "start_month": "",
+      "start_year": "",
+      "end_month": "",
+      "end_year": ""
+    },
+    "short": "",
+    "info": "",
+    "tech": [],
+    "photos": [],
+    "resources": []
+  },
+  "project": {
+    "link": "",
+    "name": "",
+    "client": {
+      "name": "",
+      "url": ""
+    },
+    "date": {
+      "start_month": "",
+      "start_year": "",
+      "end_month": "",
+      "end_year": ""
+    },
+    "short": "",
+    "info": "",
+    "tech": [],
+    "photos": []
+  },
+  "code": {
+    "link": "",
+    "name": "",
+    "url": "",
+    "date": {
+      "start_month": "",
+      "start_year": "",
+      "end_month": "",
+      "end_year": ""
+    },
+    "short": "",
+    "info": "",
+    "tech": [],
+    "photos": []
+  },
+  "randd": {
+    "link": "",
+    "name": "",
+    "url": "",
+    "date": {
+      "start_month": "",
+      "start_year": "",
+      "end_month": "",
+      "end_year": ""
+    },
+    "short": "",
+    "info": "",
+    "tech": [],
+    "photos": [],
+    "resources": []
+  },
+  "music": {
+    "name": "",
+    "date": {
+      "start_month": "",
+      "start_year": "",
+      "end_month": "",
+      "end_year": ""
+    },
+    "short": "",
+    "info": "",
+    "photos": [],
+    "resources": []
+  }
+}
