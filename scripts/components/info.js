@@ -27,19 +27,17 @@ async function addInfo(info, parentDiv, modelType) {
 
     const infoRow = document.createElement('div');
     infoRow.classList = 'info-row';
-    if (key !== 'link') {
-      const infoKey = document.createElement('span');
-      infoKey.classList = 'info-key';
-      const infoValue = document.createElement('span');
-      infoValue.classList = 'info-value';
+    const infoKey = document.createElement('span');
+    infoKey.classList = 'info-key';
+    const infoValue = document.createElement('span');
+    infoValue.classList = 'info-value';
 
-      infoKey.textContent = `${key}: `;
-      infoValue.textContent = info[key];
+    infoKey.textContent = `${key}: `;
+    infoValue.textContent = info[key];
 
-      infoRow.append(infoKey);
-      infoRow.append(infoValue);
-      infoContainer.append(infoRow);
-    }
+    infoRow.append(infoKey);
+    infoRow.append(infoValue);
+    infoContainer.append(infoRow);
   });
 
   parentDiv.appendChild(infoContainer);
