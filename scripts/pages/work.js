@@ -51,7 +51,7 @@ const showWork = (work) => {
   addCarousel(work.photos, workDiv);
 
   // Info
-  addInfo(work, workDiv);
+  addInfo(work, workDiv, 'project');
 
 };
 

@@ -14,10 +14,9 @@ async function getModelType(type) {
 async function addInfo(info, parentDiv, modelType) {
 
   // Get the model for the info data
-  const model = await getModelType('project');
+  const model = await getModelType(modelType);
   // Use it's keys to access the info items
   const keys = Object.keys(model);
-  console.log(keys)
 
   // Create the container to add all info components
   const infoContainer = document.createElement('div');
@@ -25,7 +24,7 @@ async function addInfo(info, parentDiv, modelType) {
 
   keys.map((key, i) => {
 
-    // Don't need these in info
+    // Don't need photos in info
     if (key === 'photos') {
       return;
     }
@@ -39,7 +38,9 @@ async function addInfo(info, parentDiv, modelType) {
 
     infoKey.textContent = `${key}: `;
 
+    // Adjust format of elements based on info key
     switch (key) {
+
       case 'client':
         const { name, url } = info[key];
         const clientAnchor = document.createElement('a');
@@ -48,11 +49,13 @@ async function addInfo(info, parentDiv, modelType) {
         clientAnchor.textContent = name;
         infoValue.append(clientAnchor);
         break;
+
       case 'date':
         const { start_month, start_year, end_month, end_year } = info[key];
         infoValue.textContent = `${start_month} ${start_year} - ${end_month} ${end_year}`;
         break;
-      // WIll need to change this to use an array of objects instead of array of arrays
+
+      // TODO: Change this to use an array of objects instead of array of arrays
       case 'tech':
         const techTagDiv = document.createElement('div');
         techTagDiv.classList = 'tech-tag-div';
@@ -65,6 +68,8 @@ async function addInfo(info, parentDiv, modelType) {
         });
         infoValue.append(techTagDiv);
         break;
+
+      // Otherwise just keep it simple
       default:
         infoValue.textContent = info[key];
         break;
