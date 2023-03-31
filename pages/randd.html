@@ -7,40 +7,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="#">
 
-  <link rel="stylesheet" href="../../styles/styles.css">
-  <link rel="stylesheet" href="../../styles/nav.css">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/nav.css">
+  <link rel="stylesheet" href="../styles/components/cards.css">
+  <link rel="stylesheet" href="../styles/components/carousel.css">
+  <link rel="stylesheet" href="../styles/components/info.css">
 
-  <script type="text/javascript" src="../../scripts/navbar.js" defer></script>
+  <script type="text/javascript" src="../scripts/nav.js" defer></script>
+  <script type="text/javascript" src="../scripts/components/cards.js" defer></script>
+  <script type="text/javascript" src="../scripts/components/carousel.js" defer></script>
+  <script type="text/javascript" src="../scripts/components/info.js" defer></script>
   <title>JCK Site</title>
 </head>
 
 <body>
 
-  <nav class="navbar">
 
-    <div class="navbar-controls">
-      <div class="nav-brand">
-        <a href="/" class="site-logo">JCK</a>
-      </div>
-
-      <button id="nav-toggler" class="nav-toggler" onclick="toggleMenu()">
-        <span>HAM</span>
+  <nav id="navbar" class="navbar">
+    <div id="nav-ham">
+      <button onclick="showMenu()">
+        <i class="fa-solid fa-bars fa-3x"></i>
       </button>
     </div>
-
-    <div id="navbar-content">
-      <ul id="nav-items" class="nav-items">
-        <li><a class="nav-item" href="mecha.html">Mecha</a></li>
-        <li><a class="nav-item" href="photos.html">Photos</a></li>
-        <!-- <li><a class="nav-item" href="randd.html">R&D</a></li> -->
-        <!-- <li><a class="nav-item" href="contact.html">Contact</a></li> -->
-      </ul>
-    </div>
-
+    <ul id="nav-menu">
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="./work.html">
+          Work
+        </a>
+      </li>
+      <li>
+        <a href="./code.html">
+          Code
+        </a>
+      </li>
+      <li>
+        <a href="./photos.html">
+          Photos
+        </a>
+      </li>
+      <li>
+        <a href="./contact.html">
+          Contact
+        </a>
+      </li>
+    </ul>
   </nav>
 
   <section class="page-content">
-    <h1 class="page-header">Photos</h1>
+    <div class="page-header">
+      <h1 class="page-header">Research and Development</h1>
+      <h2>Things I've built for fun and not profit</h2>
+    </div>
+
+    <div class="randd-container">
+
+    </div>
   </section>
 
 </body>

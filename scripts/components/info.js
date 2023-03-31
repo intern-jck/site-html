@@ -41,6 +41,14 @@ async function addInfo(info, parentDiv, modelType) {
     // Adjust format of elements based on info key
     switch (key) {
 
+      case 'url':
+        const urlAnchor = document.createElement('a');
+        urlAnchor.textContent = info[key];
+        urlAnchor.href = info[key]
+        urlAnchor.target = '_blank';
+        infoValue.append(urlAnchor);
+        break;
+
       case 'client':
         const { name, url } = info[key];
         const clientAnchor = document.createElement('a');
@@ -52,7 +60,11 @@ async function addInfo(info, parentDiv, modelType) {
 
       case 'date':
         const { start_month, start_year, end_month, end_year } = info[key];
-        infoValue.textContent = `${start_month} ${start_year} - ${end_month} ${end_year}`;
+        if (end_month && end_year) {
+          infoValue.textContent = `${start_month} ${start_year} - ${end_month} ${end_year}`;
+        } else {
+          infoValue.textContent = `${start_month} ${start_year}`;
+        }
         break;
 
       // TODO: Change this to use an array of objects instead of array of arrays
