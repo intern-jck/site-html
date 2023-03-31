@@ -38,4 +38,6 @@ const addPhotos = (photos) => {
 
 };
 
-getPhotos();
+window.addEventListener("load", function (event) {
+  getPhotos();
+}, false);
