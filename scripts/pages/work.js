@@ -10,13 +10,10 @@ const clearDiv = (parent) => {
 const addBackButton = (parentDiv) => {
   const backButton = document.createElement('button');
   backButton.textContent = 'BACK';
-  backButton.classList = 'onclick';
   backButton.setAttribute('id', 'back-button');
-
   backButton.onclick = (event) => {
     getWork();
   };
-
   parentDiv.appendChild(backButton);
 }
 

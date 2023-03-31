@@ -29,6 +29,12 @@
             "https://iili.io/6pvVLJ.png",
             "https://iili.io/6pvMXa.png",
             "https://iili.io/6pvXqv.png"
+        ],
+        "resources": [
+            {
+                "name": "GitHub",
+                "url": "https://github.com/intern-jck/vortex-math"
+            }
         ]
     },
     {
@@ -64,6 +70,12 @@
             "https://iili.io/6pUkmP.png",
             "https://iili.io/6pUekB.png",
             "https://iili.io/6pUO7V.png"
+        ],
+        "resources": [
+            {
+                "name": "GitHub",
+                "url": "https://github.com/intern-jck/matching-game"
+            }
         ]
     },
     {
@@ -102,6 +114,48 @@
             "https://iili.io/6pgguS.png",
             "https://iili.io/6pgU92.png",
             "https://iili.io/6pg88l.png"
+        ],
+        "resources": [
+            {
+                "name": "GitHub",
+                "url": "https://github.com/intern-jck/find-makerspace"
+            }
+        ]
+    },
+    {
+        "link": "jck-portfolio",
+        "name": "Portfolio",
+        "url": "https://www.justinckirk.com",
+        "date": {
+            "start_month": "JAN",
+            "start_year": "2023",
+            "end_month": "MAR",
+            "end_year": "2023"
+        },
+        "short": "The code which built this site!",
+        "info": "I've built my portfolio site many, many ways in order understand pros and cons of the frameworks and site builder's available.  In the end, I found it easiest to just use HTML, CSS, and JavaScript to build the page then host it using GitHub Pages.  I created a custom domain name which is hosted at Name.com and linked to my GitHub page using a CNAME record.",
+        "tech": [
+            [
+                "HTML",
+                "#"
+            ],
+            [
+                "CSS",
+                "#"
+            ],
+            [
+                "JavaScript",
+                "#"
+            ]
+        ],
+        "photos": [
+            "https://iili.io/HO2yhT7.png"
+        ],
+        "resources": [
+            {
+                "name": "GitHub",
+                "url": "https://github.com/intern-jck/site-html"
+            }
         ]
     }
 ]
