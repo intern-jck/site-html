@@ -1,6 +1,6 @@
 let currentSlide = 0;
 
-const createCarousel = (images, div) => {
+const addCarousel = (images, parentDiv) => {
 
   // Container div for carousel content
   const carouselDiv = document.createElement('div');
@@ -56,7 +56,7 @@ const createCarousel = (images, div) => {
   carounselControls.appendChild(leftButton);
   carounselControls.appendChild(rightButton);
   carouselDiv.appendChild(carounselControls);
-  div.appendChild(carouselDiv);
+  parentDiv.appendChild(carouselDiv);
 
 };
 

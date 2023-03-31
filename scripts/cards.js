@@ -1,4 +1,4 @@
-const addCards = (cards, div, clickHandler) => {
+function addCards(cards, div, clickHandler) {
   const parentDiv = document.getElementById(div);
   clearDiv(parentDiv);
 

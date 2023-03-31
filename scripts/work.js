@@ -7,7 +7,7 @@ const clearDiv = (parent) => {
   }
 };
 
-const addBackButton = (containerId) => {
+const addBackButton = (parentDiv) => {
   const backButton = document.createElement('button');
   backButton.textContent = 'BACK';
   backButton.classList = 'onclick';
@@ -17,7 +17,7 @@ const addBackButton = (containerId) => {
     getWork();
   };
 
-  document.getElementById(containerId).appendChild(backButton);
+  parentDiv.appendChild(backButton);
 }
 
 const removeBackButton = () => {
@@ -40,82 +40,19 @@ const getWork = () => {
 const showWork = (work) => {
   const workContainer = document.getElementById('work-container');
   clearDiv(workContainer);
-  addBackButton('work-container');
+  addBackButton(workContainer);
 
   const workDiv = document.createElement('div');
-  workDiv.classList = 'work-project-div';
+  workDiv.setAttribute('id', 'work-div');
+
+  workContainer.append(workDiv);
 
   // Carousel
-  createCarousel(work.photos, workDiv);
+  addCarousel(work.photos, workDiv);
 
   // Info
-  // TODO: Write function to generate info
-  const workInfoDiv = document.createElement('div');
-  workInfoDiv.classList = 'work-project-info';
+  addInfo(work, workDiv);
 
-  // Add name
-  const workName = document.createElement('div');
-  workName.classList = 'work-info-key';
-  workName.textContent = `NAME:`;
-  const workNameValue = document.createElement('span');
-  workNameValue.classList = 'work-info-value';
-  workNameValue.textContent = `${work.name}`
-  workName.appendChild(workNameValue);
-  workInfoDiv.appendChild(workName);
-
-  // Add client 
-  const workClient = document.createElement('div');
-  workClient.classList = 'work-info-key';
-  workClient.textContent = `CLIENT:`;
-  const workClientValue = document.createElement('a');
-  workClientValue.href = work.client_url;
-  workClientValue.target = '_blank';
-  workClientValue.classList = 'work-info-value';
-  workClientValue.textContent = `${work.client}`
-  workClient.appendChild(workClientValue);
-  workInfoDiv.appendChild(workClient);
-
-  // Add date
-  const workDate = document.createElement('div');
-  workDate.classList = 'work-info-key';
-  workDate.textContent = `DATE:`;
-  const workDateValue = document.createElement('span');
-  workDateValue.classList = 'work-info-value';
-  workDateValue.textContent = `${work.date}`
-  workDate.appendChild(workDateValue);
-  workInfoDiv.appendChild(workDate);
-
-  // Add tech
-  const workTech = document.createElement('div');
-  workTech.classList = 'work-info-key';
-  workTech.textContent = `TECH:`;
-
-  const workTechValue = document.createElement('div');
-  workTechValue.classList = 'work-info-tech';
-
-  for (let i in work.tech) {
-    const techTag = document.createElement('a');
-    techTag.textContent = work.tech[i][0];
-    techTag.href = work.tech[i][1];
-    techTag.target = '_blank';
-    workTechValue.appendChild(techTag);
-  }
-
-  workTech.appendChild(workTechValue);
-  workInfoDiv.appendChild(workTech);
-
-  // Add info
-  const workInfo = document.createElement('div');
-  workInfo.classList = 'work-info-key';
-  workInfo.textContent = `INFO:`;
-  const workInfoValue = document.createElement('span');
-  workInfoValue.classList = 'work-info-value';
-  workInfoValue.textContent = `${work.info}`
-  workInfo.appendChild(workInfoValue);
-  workInfoDiv.appendChild(workInfo);
-
-  workDiv.appendChild(workInfoDiv);
-  workContainer.appendChild(workDiv);
 };
 
 window.addEventListener("load", function (event) {
