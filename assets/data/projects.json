@@ -175,4 +175,60 @@
     ],
     "resources": []
   },
+  {
+    "name": "Guitars",
+    "url": "",
+    "date": {
+      "start_month": "AUG",
+      "start_year": "2018",
+      "end_month": "APR",
+      "end_year": "2020"
+    },
+    "short": "A set of refirburshed guitars",
+    "info": "A friend gifted me two low end guitars to experiement with after I mentioned I wanted to try and build one myself.  After taking them apart and stripping them down to just the wood (stripping finishes is a terrible, miserable process lol), I repleced nearly all of the hardware, upgraded the pickups and added some stains to make some great sounding guitars.  I laser cut the pickguards and wired everything myself.  The bodies are still a little rough and the necks aren't the best but I think they sound great!",
+    "tech": [
+      [
+        "Guitar",
+        "#"
+      ],
+      [
+        "Humbuckers",
+        "#"
+      ]
+    ],
+    "photos": [
+      "https://iili.io/DPYl2e.jpg",
+      "https://iili.io/DPYa49.jpg",
+      "https://iili.io/DPY7BS.jpg",
+      "https://iili.io/DPYuI4.jpg",
+      "https://iili.io/DPYIpf.jpg",
+      "https://iili.io/DPYzkG.jpg",
+      "https://iili.io/DPYx7s.jpg",
+      "https://iili.io/DPYCrX.jpg",
+      "https://iili.io/DPYB1t.jpg",
+      "https://iili.io/DPYqBI.jpg",
+      "https://iili.io/DPYKLN.jpg",
+      "https://iili.io/DPYFXp.jpg",
+      "https://iili.io/DPYJkJ.jpg",
+      "https://iili.io/DPYH7a.jpg",
+      "https://iili.io/DPY9dg.jpg",
+      "https://iili.io/DP7prF.jpg",
+      "https://iili.io/DP7m11.jpg",
+      "https://iili.io/DP7bqP.jpg",
+      "https://iili.io/DP7tLB.jpg",
+      "https://iili.io/DP7smx.jpg",
+      "https://iili.io/DP7iej.jpg",
+      "https://iili.io/DP7g19.jpg",
+      "https://iili.io/DP78sS.jpg",
+      "https://iili.io/DP7vX2.jpg",
+      "https://iili.io/DP7Ob4.jpg",
+      "https://iili.io/DP7Nef.jpg",
+      "https://iili.io/DP7Xgn.jpg",
+      "https://iili.io/DP71xp.jpg",
+      "https://iili.io/DP7lbR.jpg",
+      "https://iili.io/DP7cOv.jpg",
+      "https://iili.io/DP7a5J.jpg"
+    ],
+    "resources": []
+  },
 ]
