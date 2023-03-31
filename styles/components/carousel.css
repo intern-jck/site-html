@@ -1,112 +1,61 @@
 .carousel-container {
-    border: 4px solid black;
-    width: 48%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  width: 48%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
 }
 
-.carousel-content {
-    width: 100%;
-    height: 40vh;
-    position: relative;
-    overflow: hidden;
+.carousel-slides {
+  border: 4px solid black;
+  position: relative;
+  overflow: hidden;
+  grid-column: 1;
+  grid-row: 1 / 9;
 }
 
 .carousel-img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transition: all 0.5s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  width: 98%;
+  height: 98%;
+  object-fit: contain;
 }
 
 .carousel-controls {
-    width: 40vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: 2em;
-    padding-left: 1em;
-    padding-right: 1em;
+  z-index: 2;
+  grid-column: 1;
+  grid-row: 5;
+  ;
+  top: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .carousel-left-button,
 .carousel-right-button {
-    border: 4px solid black;
-    background-color: white;
-    font-family: monospace;
-    font-size: xx-large;
+  font-size: 4rem;
 }
-
-
-@media screen and (orientation:landscape) and (max-width: 1024px) {
-    .carousel-div {
-        width: 40vw;
-        height: 60vh;
-    }
-
-    .carousel-content {
-        /* border: 4px solid green; */
-        width: 100%;
-        height: 60vh;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .carousel-img {
-        /* border: 4px solid blue; */
-        width: 100%;
-        height: 100%;
-    }
-
-    .carousel-controls {
-        position: absolute;
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-@media screen and (orientation:portrait) {
-    .carousel-div {
-        width: 100%;
-        height: 60vh;
-    }
-
-    .carousel-img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .carousel-controls {
-        position: absolute;
-        width: 100%;
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-
-
 
 @media screen and (max-width: 400px) {
-    .page-content {
-        margin-top: 16vh;
-    }
+  .carousel-container {
+    width: 100%;
+  }
 }
 
 @media (min-width: 401px) and (max-width: 900px) {
-    .page-content {
-        margin-top: 20vh;
-    }
+  .carousel-container {
+    width: 100%;
+  }
 }
