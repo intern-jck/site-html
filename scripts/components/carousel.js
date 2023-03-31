@@ -1,10 +1,10 @@
 let currentSlide = 0;
 
-const addCarousel = (images, parentDiv) => {
+function addCarousel(images, parentDiv) {
 
   // Container div for carousel content
-  const carouselDiv = document.createElement('div');
-  carouselDiv.classList = 'carousel-div';
+  const carouselContainer = document.createElement('div');
+  carouselContainer.classList = 'carousel-container';
 
   const carouselContent = document.createElement('div');
   carouselContent.classList = 'carousel-content';
@@ -50,13 +50,13 @@ const addCarousel = (images, parentDiv) => {
   // Fill Carousel
   const carounselControls = document.createElement('div');
   carounselControls.classList = 'carousel-controls';
-  // carouselDiv.appendChild(leftButton);
-  carouselDiv.appendChild(carouselContent);
-  // carouselDiv.appendChild(rightButton);   
+  // carouselContainer.appendChild(leftButton);
+  carouselContainer.appendChild(carouselContent);
+  // carouselContainer.appendChild(rightButton);   
   carounselControls.appendChild(leftButton);
   carounselControls.appendChild(rightButton);
-  carouselDiv.appendChild(carounselControls);
-  parentDiv.appendChild(carouselDiv);
+  carouselContainer.appendChild(carounselControls);
+  parentDiv.appendChild(carouselContainer);
 
 };
 
