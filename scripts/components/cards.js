@@ -1,5 +1,4 @@
 function addCards(cards, div, clickHandler) {
-  console.log(cards)
   const parentDiv = document.getElementById(div);
   clearDiv(parentDiv);
 
@@ -7,7 +6,6 @@ function addCards(cards, div, clickHandler) {
   cardsContainer.classList = 'cards-container';
 
   cards.forEach((card) => {
-
     const cardDiv = document.createElement('div');
     cardDiv.classList = 'card-div';
 
@@ -29,7 +27,6 @@ function addCards(cards, div, clickHandler) {
     cardShort.classList = 'card-short';
     cardShort.textContent = card.short;
 
-
     cardDiv.appendChild(cardName);
     cardImgDiv.appendChild(cardImg);
     cardDiv.appendChild(cardImgDiv);
@@ -38,4 +35,4 @@ function addCards(cards, div, clickHandler) {
   });
 
   parentDiv.appendChild(cardsContainer);
-};
+}

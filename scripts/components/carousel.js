@@ -1,6 +1,5 @@
-let currentSlide = 0;
-
 function addCarousel(images, parentDiv) {
+  let currentSlide = 0;
 
   // Container div for carousel slides and controls
   const carouselContainer = document.createElement('div');
@@ -12,7 +11,6 @@ function addCarousel(images, parentDiv) {
   const slides = [];
 
   for (let i in images) {
-    console.log(images[i])
     const carouselImageContainer = document.createElement('div');
     carouselImageContainer.classList = 'carousel-img';
     const carouselImage = document.createElement('img');
@@ -28,6 +26,7 @@ function addCarousel(images, parentDiv) {
 
   const leftButton = document.createElement('button');
   leftButton.classList = 'carousel-left-button';
+
   const leftIcon = document.createElement('i');
   leftIcon.classList = 'fa-solid fa-caret-left';
   leftButton.append(leftIcon);
@@ -59,7 +58,7 @@ function addCarousel(images, parentDiv) {
 
   // Show the first slide
   showSlide(slides, currentSlide);
-};
+}
 
 // For a given index, shift all the images left or right to show the slide at index.
 const showSlide = (slides, index) => {
@@ -67,3 +66,7 @@ const showSlide = (slides, index) => {
     slide.style.transform = `translateX(${100 * (i - index)}%)`;
   });
 };
+
+// window.onload = (event) => {
+//   currentSlide = 0;
+// };

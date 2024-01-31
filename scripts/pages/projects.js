@@ -1,5 +1,7 @@
-const PROJECTS_JSON_URL = 'https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/projects.json';
-const WORK_JSON_URL = 'https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/work.json';
+const PROJECTS_JSON_URL =
+  'https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/projects.json';
+const WORK_JSON_URL =
+  'https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/work.json';
 
 // Helper function to clear all child elements from a parent div.
 const clearDiv = (parent) => {
@@ -18,7 +20,7 @@ const addBackButton = (parentDiv) => {
   };
 
   parentDiv.appendChild(backButton);
-}
+};
 
 const removeBackButton = () => {
   if (document.getElementById('back-button')) {
@@ -29,14 +31,12 @@ const removeBackButton = () => {
 const getProjects = () => {
   fetch(PROJECTS_JSON_URL)
     .then((response) => {
-      console.log(response)
-      return response.json()
+      return response.json();
     })
     .then((data) => {
-      console.log(data)
       addCards(data, 'projects-container', showProject);
     })
-    .catch((error) => (console.log('fetching projects url', error)));
+    .catch((error) => console.log('fetching projects url', error));
 };
 
 const showProject = (project) => {
@@ -52,6 +52,10 @@ const showProject = (project) => {
   addInfo(project, projectDiv, 'project');
 };
 
-window.addEventListener("load", function (event) {
-  getProjects();
-}, false);
+window.addEventListener(
+  'load',
+  function (event) {
+    getProjects();
+  },
+  false
+);
