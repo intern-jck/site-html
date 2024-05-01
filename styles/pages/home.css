@@ -1,6 +1,7 @@
 .home-img {
-  width: 50%;
+  width: 40%;
   margin: auto;
+  margin-top: 2rem;
   margin-bottom: 2rem;
   display: flex;
   align-items: center;

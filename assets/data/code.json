@@ -9,7 +9,7 @@
             "end_month": "",
             "end_year": ""
         },
-        "short": "Shows the wonder of Vortex Math",
+        "short": "Vortex Math visual generator",
         "info": "I created this app to submit to Mathologgers contest based on the video.  It's a web app which shows examples of vortex diagrams which can be downloaded as svg files to be laser cut into coasters.  The math behind the diagrams is very interesting but beyond the scope of this paragraph.  Click on the GitHub link to learn more!",
         "tech": [
             [
@@ -47,7 +47,7 @@
             "end_month": "DEC",
             "end_year": "2021"
         },
-        "short": "Web app version of a popular card game",
+        "short": "Web app version of SET",
         "info": "My gf introduced me to the popular card game Set and I became an instant fan.  I then wondered if I could turn it into a coding project.  I started with Python then soon realized rewriting the game in JavaScript would mean I could turn it into a website.  I translated the logic I had from Python to JavaScript and added some Bootstrap styling to create a nice web app.",
         "tech": [
             [
@@ -132,7 +132,7 @@
             "end_month": "MAR",
             "end_year": "2023"
         },
-        "short": "The code which built this site!",
+        "short": "Source code for website",
         "info": "I've built my portfolio site many, many ways in order understand pros and cons of the frameworks and site builder's available.  In the end, I found it easiest to just use HTML, CSS, and JavaScript to build the page then host it using GitHub Pages.  I created a custom domain name which is hosted at Name.com and linked to my GitHub page using a CNAME record.",
         "tech": [
             [

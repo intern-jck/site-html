@@ -8,7 +8,7 @@
       "end_month": "",
       "end_year": ""
     },
-    "short": "Trying to give my truck a brain",
+    "short": "Attempt at adding a Raspberry Pi to my Ford Ranger",
     "info": "I stumbled across an open source package called Crankshaft which can link an Android and Raspberry Pi together to allow you setup your own navigation system.  I 3D printer a housing and replaced the radio console (which was dead at this point) in hopes of making my own.  Wiring was a pain and I messed up a few details like screen orientation, but learned a lot!  While it was cool while I had it, I ended up taking out due to not being able to createa safe shutdown for the Pi and the fact a slight bump in the road would disconnet the power harness, resetting the whole thing.  Oh well.  Still learnt a lot!",
     "tech": [
       [
@@ -88,7 +88,7 @@
       "end_month": "SEP",
       "end_year": "2018"
     },
-    "short": "Salvaging a broken amp",
+    "short": "Custom cabinet for a Red Bear tube amp",
     "info": "Red Bear was a small amp company who sold heads, cabs and studio amps in the late 80s.  I have a hard time finding anyone who has heard of them but I had a 30 watt tube studio amp and loved it.  The tone was great with a nice healthy gain.  However, my cat completely tore up the fabric coating the amp and then the speaker cracked.  I made a new head cabinet for the tube amp and laser cut a panel with some artist liberties.  Finally, some wood staind and glue to put the whole thing together.  Now I can keep that sound I loved alive!",
     "tech": [
       [
@@ -119,7 +119,7 @@
       "end_month": "NOV",
       "end_year": "2020"
     },
-    "short": "A custom cabinet for two awesome speakers",
+    "short": "Custom cabinet based on Orange designs",
     "info": "My brother gifted two Celestion guitar speakers to me from a broken guitar cab of his.  The speakers were great and similar to what is used in Orange cabinets, which happen to be a favorite of mine.  I wanted to do the amps justice and build a proper cab.  Using layers of 3/4 inch thick mdf, wood glue and inspiration from Orange cab dimensions, I built one heavy duty cabinet.  The speakers sound amazing, especially through my Red Bear head.  Who cares if it's too heavy to move?",
     "tech": [
       [
@@ -160,7 +160,7 @@
       "end_month": "SEP",
       "end_year": "2019"
     },
-    "short": "A portable CRTV Raspbery Pi monitor",
+    "short": "Using a CRTV as a Raspberry Pi Monitor",
     "info": "I picked up this portable TV from a garage sale and wanted to see if I could use it for a Raspberry Pi.  After finding the series of adapters and converters I needed, I was able to stream YouTube videos from the Pi to the TV.  I'll eventually package the whole together to make a cyber deck or just a fun Halloween prop to loop scary scenes controlled by different sensors.",
     "tech": [],
     "photos": [
@@ -184,7 +184,7 @@
       "end_month": "APR",
       "end_year": "2020"
     },
-    "short": "A set of refirburshed guitars",
+    "short": "A guitar refurbish project",
     "info": "A friend gifted me two low end guitars to experiement with after I mentioned I wanted to try and build one myself.  After taking them apart and stripping them down to just the wood (stripping finishes is a terrible, miserable process lol), I repleced nearly all of the hardware, upgraded the pickups and added some stains to make some great sounding guitars.  I laser cut the pickguards and wired everything myself.  The bodies are still a little rough and the necks aren't the best but I think they sound great!",
     "tech": [
       [
