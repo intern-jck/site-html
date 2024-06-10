@@ -7,9 +7,21 @@
   gap: 1em;
 }
 
+.photo-button {
+  border: 2px solid black;
+  /* max-width: 30rem; */
+  /* max-height: 20rem; */
+}
+
+/* .photos-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+} */
+
 .photos-img {
-  max-width: 40rem;
-  max-height: 30rem;
+  max-width: 16rem;
+  max-height: 10rem;
 }
 
 .photos-img img {

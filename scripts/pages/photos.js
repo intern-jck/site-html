@@ -17,7 +17,10 @@ const addPhotos = (photos) => {
   // TODO: Refactor to use pagination
   photos.forEach((photoUrl, i) => {
     // Create img container
+    const imgButton = document.createElement("button");
     const imgDiv = document.createElement("div");
+    
+    imgButton.classList = "photo-button";
     imgDiv.classList = "photos-img";
 
     // Create img
@@ -29,10 +32,12 @@ const addPhotos = (photos) => {
     img.alt = "...";
 
     // Add img to img container
-    imgDiv.appendChild(img);
-
+    
     // Add img container to page
-    photosDiv.appendChild(imgDiv);
+    imgDiv.appendChild(img);
+    imgButton.appendChild(imgDiv);
+    photosDiv.appendChild(imgButton);
+    // photosDiv.appendChild(imgDiv);
   });
 };
 
