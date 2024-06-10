@@ -1,7 +1,11 @@
 const PROJECTS_JSON_URL =
   'https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/projects.json';
+
 const WORK_JSON_URL =
   'https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/work.json';
+
+const ALL_PROJECTS_URL = 
+'https://raw.githubusercontent.com/intern-jck/jsons/main/jcksite/all_projects.json';
 
 // Helper function to clear all child elements from a parent div.
 const clearDiv = (parent) => {
@@ -29,7 +33,7 @@ const removeBackButton = () => {
 };
 
 const getProjects = () => {
-  fetch(PROJECTS_JSON_URL)
+  fetch(ALL_PROJECTS_URL)
     .then((response) => {
       return response.json();
     })
