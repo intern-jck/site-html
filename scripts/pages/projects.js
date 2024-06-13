@@ -50,8 +50,10 @@ const showProject = (project) => {
   const projectDiv = document.createElement('div');
   projectDiv.setAttribute('id', 'project-div');
   projectContainer.append(projectDiv);
+
   // Carousel
   addCarousel(project.photos, projectDiv);
+  
   // Info
   addInfo(project, projectDiv, 'project');
 };
