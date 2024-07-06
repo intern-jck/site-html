@@ -109,6 +109,9 @@ function addInfo(info, parentDiv, modelType) {
   console.log('adding info:', info, modelType)
   // Get the model for the info data
   // const model = getModelType(modelType);
+
+  // const name, url = "";
+
   const model = modelTypes[modelType];
   console.log(model)
 
@@ -175,6 +178,22 @@ function addInfo(info, parentDiv, modelType) {
           techTagDiv.append(tag);
         });
         infoValue.append(techTagDiv);
+        break;
+
+      case "resources":
+        const resourceDiv = document.createElement("div");
+        resourceDiv.classList = "resource-div";
+        info[key].map((value) => {
+          console.log(value)
+          const resource = document.createElement("a");
+          resource.classList = "resource";
+          resource.textContent = value.name;
+          resource.href = value.url;
+          resource.target = "_blank";
+          resourceDiv.append(resource);
+        });
+        console.log(resourceDiv)
+        infoValue.append(resourceDiv);
         break;
 
       // Otherwise just keep it simple
