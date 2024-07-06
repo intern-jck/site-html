@@ -35,6 +35,19 @@
   font-weight: bold;
 }
 
+.resource-div {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 1rem;
+}
+
+.resource {
+  border: 2px solid black;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-weight: bold;
+}
 @media screen and (max-width: 400px) {
   .info-container {
     width: 100%;
