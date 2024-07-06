@@ -1,6 +1,90 @@
 const MODELS_URL =
   "https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/models.json";
 
+
+const modelTypes = {
+  "general": {
+    "link": "",
+    "name": "",
+    "client": {
+      "name": "",
+      "url": ""
+    },
+    "date": {
+      "start_month": "",
+      "start_year": "",
+      "end_month": "",
+      "end_year": ""
+    },
+    "short": "",
+    "info": "",
+    "tech": [],
+    "photos": [],
+    "resources": []
+  },
+  "work": {
+    "name": "",
+    "client": {
+      "name": "",
+      "url": ""
+    },
+    "date": {
+      "start_month": "",
+      "start_year": "",
+      "end_month": "",
+      "end_year": ""
+    },
+    "short": "",
+    "info": "",
+    "tech": [],
+    "photos": []
+  },
+  "code": {
+    "name": "",
+    "url": "",
+    "date": {
+      "start_month": "",
+      "start_year": "",
+      "end_month": "",
+      "end_year": ""
+    },
+    "short": "",
+    "info": "",
+    "tech": [],
+    "photos": []
+  },
+  "project": {
+    "name": "",
+    "url": "",
+    "date": {
+      "start_month": "",
+      "start_year": "",
+      "end_month": "",
+      "end_year": ""
+    },
+    "short": "",
+    "info": "",
+    "tech": [],
+    "photos": [],
+    "resources": []
+  },
+  "music": {
+    "name": "",
+    "date": {
+      "start_month": "",
+      "start_year": "",
+      "end_month": "",
+      "end_year": ""
+    },
+    "short": "",
+    "info": "",
+    "photos": [],
+    "resources": []
+  }
+};
+
+
+
 function getModelType(type) {
   // try {
   //   const response = fetch(MODELS_URL);
@@ -22,8 +106,11 @@ function getModelType(type) {
 }
 
 function addInfo(info, parentDiv, modelType) {
+  console.log('adding info:', info, modelType)
   // Get the model for the info data
-  const model = getModelType(modelType);
+  // const model = getModelType(modelType);
+  const model = modelTypes[modelType];
+  console.log(model)
 
   // Use it's keys to access the info items
   const keys = Object.keys(model);
