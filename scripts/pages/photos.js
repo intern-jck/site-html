@@ -1,6 +1,8 @@
 const PHOTOS_URL =
   "https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/photos.json";
 
+const test_url = "https://ik.imagekit.io/jcksite/DSC00252.JPG?updatedAt=1733109421694?tr=h-300,w-300";
+
 const getPhotos = () => {
   fetch(PHOTOS_URL)
     .then((response) => response.json())
@@ -19,7 +21,7 @@ const addPhotos = (photos) => {
     // Create img container
     const imgButton = document.createElement("button");
     const imgDiv = document.createElement("div");
-    
+
     imgButton.classList = "photo-button";
     imgDiv.classList = "photos-img";
 
@@ -32,7 +34,7 @@ const addPhotos = (photos) => {
     img.alt = "...";
 
     // Add img to img container
-    
+
     // Add img container to page
     imgDiv.appendChild(img);
     imgButton.appendChild(imgDiv);
@@ -41,10 +43,20 @@ const addPhotos = (photos) => {
   });
 };
 
-window.addEventListener(
-  "load",
-  function (event) {
-    getPhotos();
-  },
-  false
-);
+// window.addEventListener(
+//   "load",
+//   function (event) {
+//     getPhotos();
+//   },
+//   false
+// );
+
+window.onload = () => {
+  // const photosDiv = document.getElementById("photos-div");
+  // const photos = photosDiv.children;
+  // for (let photo of photos) {
+  //   console.log(photo)
+  //   const photoImg = photo.children;
+  //   photoImg.loading = "lazy"
+  // }
+}
