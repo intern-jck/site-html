@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="#">
+  <title>JCK</title>
 
   <link rel="stylesheet" href="./styles/main.css">
   <link rel="stylesheet" href="./styles/nav.css">
@@ -13,55 +14,64 @@
 
   <script type="text/javascript" src="./scripts/nav.js" defer></script>
 
-  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/cdcc65decb.js" crossorigin="anonymous"></script>
 
-  <title>JCK</title>
 </head>
 
 <body>
 
-  <nav id="navbar" class="navbar">
-    <div id="nav-ham">
-      <button onclick="showMenu()">
-        <i class="fa-solid fa-bars fa-3x"></i>
-      </button>
+  <header class="primary-header">
+    <div class="container">
+      <span>JCK Site</span>
     </div>
-    <ul id="nav-menu">
-      <li>
-        <a href="/">
-          Home
-        </a>
-      </li>
 
-      <li>
-        <a href="./pages/projects.html">
-          Projects
-        </a>
-      </li>
+    <nav id="navbar" class="navbar">
+      <div id="nav-ham">
+        <button onclick="showMenu()">
+          <i class="fa-solid fa-bars fa-3x"></i>
+        </button>
+      </div>
+      <ul id="nav-menu" role="list" class="nav-list">
+        <li>
+          <a href="/">
+            Home
+          </a>
+        </li>
 
-      <li>
-        <a href="./pages/photos.html">
-          Photos
-        </a>
-      </li>
+        <li>
+          <a href="./pages/projects.html">
+            Projects
+          </a>
+        </li>
 
-      <li>
-        <a href="./pages/contact.html">
-          Contact
-        </a>
-      </li>
-    </ul>
-  </nav>
+        <li>
+          <a href="./pages/photos.html">
+            Photos
+          </a>
+        </li>
 
-  <section class="page-content">
-    <div class="home-img">
-      <img src="https://iili.io/63UZQa.jpg" />s
-      <!-- <img src="https://ik.imagekit.io/jcksite/DSC00252.JPG?updatedAt=1733109421694?tr=h-300,w-300" /> -->
-    </div>
-    <div class="page-header">
-    </div>
-  </section>
+        <li>
+          <a href="./pages/contact.html">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-content">
+      <div class="container">
+
+      </div>
+      <div class="home-img">
+        <img src="https://iili.io/63UZQa.jpg" />
+        <!-- <img src="https://ik.imagekit.io/jcksite/DSC00252.JPG?updatedAt=1733109421694?tr=h-300,w-300" /> -->
+      </div>
+      <div class="page-header">
+      </div>
+    </section>
+  </main>
 
 </body>
 
