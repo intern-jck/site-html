@@ -1,0 +1,13 @@
+semi: false
+overrides:
+  - files: "*.js"
+    options:
+      semi: true
+      trailingComma: "es5"
+  - files:
+      - "*.html"
+      - "legacy/**/*.js"
+    options:
+      tabWidth: 4
+      printwidth: 180
+      proseWrap: preserve

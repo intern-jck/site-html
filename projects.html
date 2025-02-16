@@ -7,28 +7,41 @@
         <link rel="shortcut icon" href="#" />
         <title>JCK</title>
 
-        <!-- Dependencies -->
-
-        <!-- https://github.com/mmdevcodes/a11y-slider -->
-        <link
-            rel="stylesheet"
-            href="//unpkg.com/a11y-slider@latest/dist/a11y-slider.css"
-        />
-
         <script
             src="https://kit.fontawesome.com/cdcc65decb.js"
             crossorigin="anonymous"
-            defer
         ></script>
 
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/utils.css" />
         <link rel="stylesheet" href="/styles/main.css" />
+        <link rel="stylesheet" href="/styles/components/cards.css" />
+        <link rel="stylesheet" href="/styles/components/carousel.css" />
+        <link rel="stylesheet" href="/styles/components/info.css" />
+
+        <script type="text/javascript" src="/scripts/main.js"></script>
 
         <!-- <script type="text/javascript" src="/scripts/nav.js" defer></script> -->
-
-        <!-- onclick="showMenu()" -->
-        <script type="text/javascript" src="/scripts/main.js" defer></script>
+        <script
+            type="text/javascript"
+            src="/scripts/pages/projects.js"
+            defer
+        ></script>
+        <script
+            type="text/javascript"
+            src="/scripts/components/cards.js"
+            defer
+        ></script>
+        <script
+            type="text/javascript"
+            src="/scripts/components/carousel.js"
+            defer
+        ></script>
+        <script
+            type="text/javascript"
+            src="/scripts/components/info.js"
+            defer
+        ></script>
     </head>
 
     <body>
@@ -38,16 +51,12 @@
                     <div class="nav-brand">
                         <a href="/">JCK Site</a>
                     </div>
-
-                    <button
-                        class="nav-toggle"
-                        aria-controls="primary-navigation"
-                        aria-expanded="false"
-                    >
-                        <i class="fa-solid fa-bars fa-3x"></i>
-                    </button>
-                    
+                  
                     <nav id="navbar" class="navbar">
+                        <button class="nav-toggle">
+                            <i class="fa-solid fa-bars fa-3x"></i>
+                        </button>
+    
                         <ul aria-label="Primary" role="list" class="nav-list">
                             <!-- <li><a href="/">Home</a></li> -->
                             <li><a href="/projects.html">Projects</a></li>
@@ -55,7 +64,7 @@
                             <li><a href="/contact.html">Contact</a></li>
                         </ul>
                     </nav>
-
+                  
                     <div class="nav-social">
                         <a href="/">SOCIAL STUFF</a>
                     </div>
@@ -64,16 +73,11 @@
         </header>
 
         <main>
-            <section class="padding-block-99">
+            <section class="projects-content">
                 <div class="container">
-                    <div class="home-img">
-                        <img src="https://iili.io/63UZQa.jpg" />
-                    </div>
+                    <div id="projects-container"></div>
                 </div>
             </section>
         </main>
-
-        <!-- https://github.com/mmdevcodes/a11y-slider -->
-        <script src="//unpkg.com/a11y-slider@latest/dist/a11y-slider.js"></script>
     </body>
 </html>
