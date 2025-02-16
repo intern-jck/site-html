@@ -15,13 +15,13 @@
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/utils.css" />
         <link rel="stylesheet" href="/styles/main.css" />
+
         <link rel="stylesheet" href="/styles/components/cards.css" />
         <link rel="stylesheet" href="/styles/components/carousel.css" />
         <link rel="stylesheet" href="/styles/components/info.css" />
 
-        <script type="text/javascript" src="/scripts/main.js"></script>
+        <script type="text/javascript" src="/scripts/main.js" defer></script>
 
-        <!-- <script type="text/javascript" src="/scripts/nav.js" defer></script> -->
         <script
             type="text/javascript"
             src="/scripts/pages/projects.js"
@@ -51,20 +51,23 @@
                     <div class="nav-brand">
                         <a href="/">JCK Site</a>
                     </div>
-                  
+
+                    <button
+                        class="nav-toggle"
+                        aria-controls="primary-navigation"
+                        aria-expanded="false"
+                    >
+                        <i class="fa-solid fa-bars fa-3x"></i>
+                    </button>
+
                     <nav id="navbar" class="navbar">
-                        <button class="nav-toggle">
-                            <i class="fa-solid fa-bars fa-3x"></i>
-                        </button>
-    
                         <ul aria-label="Primary" role="list" class="nav-list">
-                            <!-- <li><a href="/">Home</a></li> -->
                             <li><a href="/projects.html">Projects</a></li>
                             <li><a href="/photos.html">Photos</a></li>
                             <li><a href="/contact.html">Contact</a></li>
                         </ul>
                     </nav>
-                  
+
                     <div class="nav-social">
                         <a href="/">SOCIAL STUFF</a>
                     </div>
@@ -72,8 +75,9 @@
             </div>
         </header>
 
+
         <main>
-            <section class="projects-content">
+            <section class="padding-block-900">
                 <div class="container">
                     <div id="projects-container"></div>
                 </div>
