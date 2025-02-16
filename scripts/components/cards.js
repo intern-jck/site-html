@@ -36,3 +36,32 @@ function addCards(cards, div, clickHandler) {
 
   parentDiv.appendChild(cardsContainer);
 }
+
+function createCard(data) {
+  const cardDiv = document.createElement("div");
+  cardDiv.classList = "card-div";
+
+  const cardName = document.createElement("h2");
+  cardName.classList = "card-name";
+  cardName.textContent = data.name;
+
+  const cardImgDiv = document.createElement("div");
+  cardImgDiv.classList = "card-img";
+  cardImgDiv.onclick = (event) => {
+    event.preventDefault();
+    clickHandler(data);
+  };
+
+  const cardImg = document.createElement("img");
+  cardImg.src = data.photos[0];
+
+  const cardShort = document.createElement("h3");
+  cardShort.classList = "card-short";
+  cardShort.textContent = data.short;
+
+  cardImgDiv.appendChild(cardImg);
+  cardDiv.appendChild(cardImgDiv);
+  cardDiv.appendChild(cardName);
+  
+  return cardDiv;
+}
