@@ -13,50 +13,26 @@ const getPhotos = () => {
 };
 
 const addPhotos = (photos) => {
-  // Get div from photos page
+
   const photosDiv = document.getElementById("photos-container");
 
-  // TODO: Refactor to use pagination
   photos.forEach((photoUrl, i) => {
-    // Create img container
-    const imgButton = document.createElement("button");
+    
     const imgDiv = document.createElement("div");
-
-    imgButton.classList = "photo-button";
-    imgDiv.classList = "photos-img";
-
-    // Create img
-    // const img = document.createElement('img');
+    imgDiv.classList = "photo-div";
 
     const img = new Image();
     img.src = photoUrl;
+    img.classList = "photo-img"
+    console.log(photoUrl)
     img.loading = "lazy";
     img.alt = "...";
 
-    // Add img to img container
-
-    // Add img container to page
     imgDiv.appendChild(img);
-    imgButton.appendChild(imgDiv);
-    photosDiv.appendChild(imgButton);
-    // photosDiv.appendChild(imgDiv);
+    photosDiv.appendChild(img);
   });
 };
 
-// window.addEventListener(
-//   "load",
-//   function (event) {
-//     getPhotos();
-//   },
-//   false
-// );
-
 window.onload = () => {
-  // const photosDiv = document.getElementById("photos-div");
-  // const photos = photosDiv.children;
-  // for (let photo of photos) {
-  //   console.log(photo)
-  //   const photoImg = photo.children;
-  //   photoImg.loading = "lazy"
-  // }
+  getPhotos();
 }

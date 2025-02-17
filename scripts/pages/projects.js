@@ -8,11 +8,6 @@ const clearDiv = (parent) => {
   }
 };
 
-// const slider = new A11YSlider(document.querySelector(".slider"), {
-//   adaptiveHeight: true,
-//   dots: false,
-// });
-
 const getProjects = () => {
   fetch(PROJECTS_URL)
     .then((response) => {
@@ -21,25 +16,25 @@ const getProjects = () => {
     .then((data) => {
       // addCards(data, "projects-container", showProject);
 
-      const projectContainer = document.getElementById("projects-container");
       // console.log(data)
-
-      const projectSlider = document.createElement("ul");
-      projectSlider.classList = "slider";
 
       // for (let i = 0; i < 4; i++) {
       //   const li = document.createElement("li");
       //   li.textContent = i + 1;
       //   projectSlider.appendChild(li);
       // }
+      const projectContainer = document.getElementById("projects-container");
+      clearDiv(projectContainer);
+
+      const projectSlider = document.createElement("ul");
+      projectSlider.classList = "slider";
 
       data.forEach((project, i) => {
         const li = document.createElement("li");
-                
-        const card = createCard(project);
-        console.log(createCard(project))
+
+        const card = createCard(project, showProject);
         li.appendChild(card);
-        
+
         projectSlider.appendChild(li);
       });
 
@@ -69,6 +64,7 @@ const getProjects = () => {
 // });
 
 const addBackButton = (parentDiv) => {
+  console.log("back");
   const backButton = document.createElement("button");
   backButton.textContent = "BACK";
   backButton.setAttribute("id", "back-button");

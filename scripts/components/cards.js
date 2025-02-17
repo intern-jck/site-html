@@ -37,7 +37,7 @@ function addCards(cards, div, clickHandler) {
   parentDiv.appendChild(cardsContainer);
 }
 
-function createCard(data) {
+function createCard(data, clickHandler) {
   const cardDiv = document.createElement("div");
   cardDiv.classList = "card-div";
 
