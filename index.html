@@ -5,25 +5,21 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="#" />
-        <title>JCK</title>
+        <title>jck site</title>
 
         <!-- Dependencies -->
 
         <!-- https://github.com/mmdevcodes/a11y-slider -->
-        <link
-            rel="stylesheet"
-            href="//unpkg.com/a11y-slider@latest/dist/a11y-slider.css"
-        />
+        <link rel="stylesheet" href="//unpkg.com/a11y-slider@latest/dist/a11y-slider.css" />
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/cdcc65decb.js" crossorigin="anonymous" defer></script>
 
-        <script
-            src="https://kit.fontawesome.com/cdcc65decb.js"
-            crossorigin="anonymous"
-            defer
-        ></script>
-
+        <!-- Page Styles and Scripts -->
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/utils.css" />
         <link rel="stylesheet" href="/styles/main.css" />
+
+        <link rel="stylesheet" href="/styles/components/carousel-2.css" />
 
         <script type="text/javascript" src="/scripts/main.js" defer></script>
     </head>
@@ -33,27 +29,23 @@
             <div class="container">
                 <div class="nav-wrapper">
                     <div class="nav-brand">
-                        <a href="/">JCK Site</a>
+                        <a href="/">home</a>
                     </div>
 
-                    <button
-                        class="nav-toggle"
-                        aria-controls="primary-navigation"
-                        aria-expanded="false"
-                    >
+                    <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
                         <i class="fa-solid fa-bars fa-3x"></i>
                     </button>
 
                     <nav id="navbar" class="navbar">
                         <ul aria-label="Primary" role="list" class="nav-list">
-                            <li><a href="/projects.html">Projects</a></li>
-                            <li><a href="/photos.html">Photos</a></li>
-                            <li><a href="/contact.html">Contact</a></li>
+                            <li><a href="/projects.html">projects</a></li>
+                            <li><a href="/photos.html">photos</a></li>
+                            <li><a href="/contact.html">contact</a></li>
                         </ul>
                     </nav>
 
                     <div class="nav-social">
-                        <a href="/">SOCIAL STUFF</a>
+                        <a href="/">social</a>
                     </div>
                 </div>
             </div>
@@ -62,11 +54,119 @@
         <main>
             <section class="padding-block-900">
                 <div class="container">
-                    <div class="home-img">
+                    <!-- <div class="home-img">
                         <img src="https://iili.io/63UZQa.jpg" />
+                    </div> -->
+
+                    <div class="carousel-container">
+                        <ul id="carousel" class="carousel">
+                            <li id="slide-1" class="carousel-slide">
+                                <div class="slide-content">
+                                    <div class="slide-img"></div>
+                                    <div class="slide-name"></div>
+                                    <div class="slide-short"></div>
+                                </div>
+                            </li>
+                            <li id="slide-2" class="carousel-slide">
+                                <div class="slide-img"></div>
+                                <div class="slide-name"></div>
+                                <div class="slide-short"></div>
+                            </li>
+                            <li id="slide-3" class="carousel-slide">
+                                <div class="slide-img"></div>
+                                <div class="slide-name"></div>
+                                <div class="slide-short"></div>
+                            </li>
+                        </ul>
+                        <div class="carousel-controls">
+                            <button onclick="prevSlide()">PREV</button>
+                            <button onclick="nextSlide()">NEXT</button>
+                        </div>
                     </div>
                 </div>
             </section>
+
+            <script>
+                let currentSlide = 1;
+                let slideCount = 3;
+
+                function prevSlide() {
+                    currentSlide -= 1;
+                    if (currentSlide < 1) {
+                        currentSlide = slideCount;
+                    }
+                    let slide = document.getElementById("slide-" + currentSlide);
+                    slide.scrollIntoView({ behavior: "smooth" });
+                }
+
+                function nextSlide() {
+                    currentSlide += 1;
+                    if (currentSlide > slideCount) {
+                        currentSlide = 1;
+                    }
+                    let slide = document.getElementById("slide-" + currentSlide);
+                    slide.scrollIntoView({ behavior: "smooth" });
+                }
+
+                // function getSlider() {
+                //     let div = document.getElementById("slide-2");
+                //     console.log(div.getBoundingClientRect());
+                // }
+
+                function getSlideHeight(slide) {
+                    const carousel = document.getElementById("carousel");
+                    const scrollTop = carousel.scrollTop;
+                    const scrollBottom = scrollTop + carousel.clientHeight;
+                    const rect = carousel.getBoundingClientRect();
+                    const slideRect = slide.getBoundingClientRect();
+                    let r = {};
+                    console.log(rect, slideRect);
+                }
+
+                window.onload = () => {
+                    const carousel = document.getElementById("carousel");
+                    const slides = document.querySelectorAll("carousel-slide");
+
+                    carousel.addEventListener(
+                        "scroll",
+                        () => {
+                            // for (let i = 0; i < slides.length; i++) {
+                            //     const height = carousel.clientHeight;
+                            //     const slideHeight = getSlideHeight()
+                            //     currentSlide = 0;
+                            // }
+                        },
+                        false
+                    );
+                };
+
+                const carousel = document.getElementById("carousel");
+                const options = {
+                    root: carousel,
+                    threshold: 0.5,
+                };
+
+                function callback(entries) {
+                    // console.log(entries.length);
+                    // console.log("entry", entries[0]);
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            console.log("prev", entry.target.previousElementSibling);
+                            console.log("next", entry.target.nextElementSibling);
+                            // check for next and prev siblings
+                            // if null for either, set to first or last element
+                        }
+                    });
+                }
+
+                const observer = new IntersectionObserver(callback, options);
+
+                const divs = document.querySelectorAll(".carousel-slide");
+
+                for (let div of divs) {
+                    observer.observe(div);
+                }
+            </script>
         </main>
 
         <!-- https://github.com/mmdevcodes/a11y-slider -->
