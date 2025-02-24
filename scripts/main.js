@@ -40,7 +40,8 @@ function createCard(data, clickHandler) {
     return cardDiv;
 }
 
-function createCarousel(nodes) {
+function createCarousel(id, nodes) {
+
     const carousel = document.createElement("div");
     carousel.classList = "carousel";
 

@@ -113,32 +113,18 @@
                 //     console.log(div.getBoundingClientRect());
                 // }
 
-                function getSlideHeight(slide) {
-                    const carousel = document.getElementById("carousel");
-                    const scrollTop = carousel.scrollTop;
-                    const scrollBottom = scrollTop + carousel.clientHeight;
-                    const rect = carousel.getBoundingClientRect();
-                    const slideRect = slide.getBoundingClientRect();
-                    let r = {};
-                    console.log(rect, slideRect);
-                }
+                // function getSlideHeight(slide) {
+                //     const carousel = document.getElementById("carousel");
+                //     const scrollTop = carousel.scrollTop;
+                //     const scrollBottom = scrollTop + carousel.clientHeight;
+                //     const rect = carousel.getBoundingClientRect();
+                //     const slideRect = slide.getBoundingClientRect();
+                //     let r = {};
+                //     console.log(rect, slideRect);
+                // }
 
-                window.onload = () => {
-                    const carousel = document.getElementById("carousel");
-                    const slides = document.querySelectorAll("carousel-slide");
-
-                    carousel.addEventListener(
-                        "scroll",
-                        () => {
-                            // for (let i = 0; i < slides.length; i++) {
-                            //     const height = carousel.clientHeight;
-                            //     const slideHeight = getSlideHeight()
-                            //     currentSlide = 0;
-                            // }
-                        },
-                        false
-                    );
-                };
+                // window.onload = () => {
+                // };
 
                 const carousel = document.getElementById("carousel");
                 const options = {
@@ -147,8 +133,6 @@
                 };
 
                 function callback(entries) {
-                    // console.log(entries.length);
-                    // console.log("entry", entries[0]);
                     entries.forEach((entry) => {
                         if (entry.isIntersecting) {
                             console.log("prev", entry.target.previousElementSibling);
