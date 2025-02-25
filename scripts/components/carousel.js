@@ -70,3 +70,82 @@ const showSlide = (slides, index) => {
 // window.onload = (event) => {
 //   currentSlide = 0;
 // };
+
+// NEW CODE
+
+let currentSlide = "";
+let slideCount = 3;
+let slideNumber = 1;
+
+function prevSlide() {
+    slideNumber -= 1;
+    if (slideNumber < 1) {
+        slideNumber = slideCount;
+    }
+
+    // let slide = document.getElementById("slide_" + slideNumber);
+    // slide.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    let slideId = `slide_${slideNumber}`;
+    gotoSlide(slideId)
+}
+
+function nextSlide() {
+    slideNumber += 1;
+    if (slideNumber > slideCount) {
+        slideNumber = 1;
+    }
+
+    // let slide = document.getElementById("slide_" + slideNumber);
+    // slide.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    let slideId = `slide_${slideNumber}`;
+    gotoSlide(slideId)
+}
+
+function gotoSlide(slideId) {
+    let slide = document.getElementById(slideId);
+    slide.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+const carousel = document.getElementById("carousel");
+const options = {
+    root: carousel,
+    threshold: 0.85,
+};
+
+function callback(entries, observer) {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            const nextSibling = entry.target.nextElementSibling;
+            const prevSibling = entry.target.previousElementSibling;
+
+            let prevId = "";
+            let nextId = "";
+
+            if (!prevSibling) {
+                prevId = observer.root.lastElementChild.id;
+            } else {
+                prevId = prevSibling.id;
+            }
+
+            if (!nextSibling) {
+                nextId = observer.root.firstElementChild.id;
+            } else {
+                nextId = nextSibling.id;
+            }
+
+            slideNumber = parseInt(entry.target.id.split("_")[1]);
+        }
+    });
+}
+
+const observer = new IntersectionObserver(callback, options);
+
+const divs = document.querySelectorAll(".carousel-slide");
+
+for (let div of divs) {
+    observer.observe(div);
+}
+
+function createCarousel(id, nodes) {
+    console.log("creating carousel\n id: ", id);
+}
