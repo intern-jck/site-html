@@ -1,175 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="#" />
+        <title>jck site</title>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="#" />
-    <title>jck site</title>
+        <!-- Dependencies -->
 
-    <!-- Dependencies -->
+        <!-- https://github.com/mmdevcodes/a11y-slider -->
+        <link rel="stylesheet" href="//unpkg.com/a11y-slider@latest/dist/a11y-slider.css" />
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/cdcc65decb.js" crossorigin="anonymous" defer></script>
 
-    <!-- https://github.com/mmdevcodes/a11y-slider -->
-    <link rel="stylesheet" href="//unpkg.com/a11y-slider@latest/dist/a11y-slider.css" />
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/cdcc65decb.js" crossorigin="anonymous" defer></script>
+        <!-- Page Styles and Scripts -->
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/utils.css" />
+        <link rel="stylesheet" href="/styles/main.css" />
 
-    <!-- Page Styles and Scripts -->
-    <link rel="stylesheet" href="/styles/reset.css" />
-    <link rel="stylesheet" href="/styles/utils.css" />
-    <link rel="stylesheet" href="/styles/main.css" />
+        <link rel="stylesheet" href="/styles/components/carousel-2.css" />
 
-    <link rel="stylesheet" href="/styles/components/carousel-2.css" />
+        <script type="text/javascript" src="/scripts/main.js" defer></script>
+    </head>
 
-    <script type="text/javascript" src="/scripts/main.js" defer></script>
-</head>
+    <body>
+        <header class="primary-header">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="nav-brand">
+                        <a href="/">home</a>
+                    </div>
 
-<body>
-    <header class="primary-header">
-        <div class="container">
-            <div class="nav-wrapper">
-                <div class="nav-brand">
-                    <a href="/">home</a>
-                </div>
+                    <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                        <i class="fa-solid fa-bars fa-3x"></i>
+                    </button>
 
-                <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
-                    <i class="fa-solid fa-bars fa-3x"></i>
-                </button>
+                    <nav id="navbar" class="navbar">
+                        <ul aria-label="Primary" role="list" class="nav-list">
+                            <li><a href="/projects.html">projects</a></li>
+                            <li><a href="/photos.html">photos</a></li>
+                            <li><a href="/contact.html">contact</a></li>
+                        </ul>
+                    </nav>
 
-                <nav id="navbar" class="navbar">
-                    <ul aria-label="Primary" role="list" class="nav-list">
-                        <li><a href="/projects.html">projects</a></li>
-                        <li><a href="/photos.html">photos</a></li>
-                        <li><a href="/contact.html">contact</a></li>
-                    </ul>
-                </nav>
-
-                <div class="nav-social">
-                    <a href="/">social</a>
+                    <div class="nav-social">
+                        <a href="/">social</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <main>
-        <section class="padding-block-900">
-            <div class="container">
-                <!-- <div class="home-img">
+        <main>
+            <section class="padding-block-900">
+                <div class="container">
+                    <!-- <div class="home-img">
                         <img src="https://iili.io/63UZQa.jpg" />
                     </div> -->
 
-                <div class="carousel-container">
-                    <ul id="carousel" class="carousel">
-                        <li id="slide-1" class="carousel-slide">
-                            <div class="slide-content">
+                    <div class="carousel-container">
+                        <ul id="carousel" class="carousel">
+                            <li id="slide_1" class="carousel-slide">
+                                <div class="slide-content">
+                                    <div class="slide-img"></div>
+                                    <div class="slide-name"></div>
+                                    <div class="slide-short"></div>
+                                </div>
+                            </li>
+                            <li id="slide_2" class="carousel-slide">
                                 <div class="slide-img"></div>
                                 <div class="slide-name"></div>
                                 <div class="slide-short"></div>
-                            </div>
-                        </li>
-                        <li id="slide-2" class="carousel-slide">
-                            <div class="slide-img"></div>
-                            <div class="slide-name"></div>
-                            <div class="slide-short"></div>
-                        </li>
-                        <li id="slide-3" class="carousel-slide">
-                            <div class="slide-img"></div>
-                            <div class="slide-name"></div>
-                            <div class="slide-short"></div>
-                        </li>
-                    </ul>
-                    <div class="carousel-controls">
-                        <button onclick="prevSlide()">PREV</button>
-                        <button onclick="nextSlide()">NEXT</button>
-                    </div>
-                    <div>
-                        <button class="carousel-dot" value="slide-1" onclick="gotoSlide(this.value)"><i class="fa-solid fa-circle"></i></button>
-                        <button class="carousel-dot" value="slide-2" onclick="gotoSlide(this.value)"><i class="fa-solid fa-circle"></i></button>
-                        <button class="carousel-dot" value="slide-3" onclick="gotoSlide(this.value)"><i class="fa-solid fa-circle"></i></button>
+                            </li>
+                            <li id="slide_3" class="carousel-slide">
+                                <div class="slide-img"></div>
+                                <div class="slide-name"></div>
+                                <div class="slide-short"></div>
+                            </li>
+                        </ul>
+                        <div class="carousel-controls">
+                            <button onclick="prevSlide()">PREV</button>
+                            <button onclick="nextSlide()">NEXT</button>
+                        </div>
+                        <div>
+                            <button class="carousel-dot" value="slide_1" onclick="gotoSlide(this.value)">
+                                <i class="fa-solid fa-circle"></i>
+                            </button>
+                            <button class="carousel-dot" value="slide_2" onclick="gotoSlide(this.value)">
+                                <i class="fa-solid fa-circle"></i>
+                            </button>
+                            <button class="carousel-dot" value="slide_3" onclick="gotoSlide(this.value)">
+                                <i class="fa-solid fa-circle"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <script>
-            let currentSlide = "";
-            let slideCount = 3;
-            let slideNumber = 0; 
+            <script>
+                let currentSlide = "";
+                let slideCount = 3;
+                let slideNumber = 1;
 
-            function prevSlide() {
-                slideNumber -= 1;
-                if (slideNumber < 1) {
-                    slideNumber = slideCount;
-                }
-                let slide = document.getElementById("slide-" + slideNumber);
-                slide.scrollIntoView({ behavior: "smooth" , block: "nearest"});
-            }
-
-            function nextSlide() {
-                slideNumber += 1;
-                if (slideNumber > slideCount) {
-                    slideNumber = 1;
-                }
-                let slide = document.getElementById("slide-" + slideNumber);
-                slide.scrollIntoView({ behavior: "smooth" , block: "nearest"});
-            }
-
-            function gotoSlide(slideId) {
-                let slide = document.getElementById(slideId)
-                console.log(slide)
-                slide.scrollIntoView({ behavior: "smooth" , block: "nearest"})
-            }
-
-            const carousel = document.getElementById("carousel");
-            const options = {
-                root: carousel,
-                threshold: 0.85,
-            };
-
-            function callback(entries, observer) {
-                entries.forEach((entry) => {
-                    let currentSlide = entry.target.id
-                    slideNumber = currentSlide.split("-")[1]
-                    // console.log("current", currentSlide)
-
-                    if (entry.isIntersecting) {
-                        const nextSibling = entry.target.nextElementSibling;
-                        const prevSibling = entry.target.previousElementSibling;
-
-                        let prevId = "";
-                        let nextId = ""
-
-                        if (!prevSibling) {
-                            prevId = observer.root.lastElementChild.id;
-                        } else {
-                            prevId = prevSibling.id;
-                        }
-
-                        if (!nextSibling) {
-                            nextId = observer.root.firstElementChild.id;
-                        } else {
-                            nextId = nextSibling.id;
-                        }
-
-                        // console.log("prev", prevId);
-                        // console.log("next", nextId);
+                function prevSlide() {
+                    slideNumber -= 1;
+                    if (slideNumber < 1) {
+                        slideNumber = slideCount;
                     }
-                });
-            }
+                    console.log(slideNumber);
+                    let slide = document.getElementById("slide_" + slideNumber);
+                    slide.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                }
 
-            const observer = new IntersectionObserver(callback, options);
+                function nextSlide() {
+                    slideNumber += 1;
+                    if (slideNumber > slideCount) {
+                        slideNumber = 1;
+                    }
+                    console.log(slideNumber);
+                    let slide = document.getElementById("slide_" + slideNumber);
+                    slide.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                }
 
-            const divs = document.querySelectorAll(".carousel-slide");
+                function gotoSlide(slideId) {
+                    console.log(slideId)
+                    let slide = document.getElementById(slideId);
+                    console.log(slide);
+                    slide.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                }
 
-            for (let div of divs) {
-                observer.observe(div);
-            }
-        </script>
-    </main>
+                const carousel = document.getElementById("carousel");
+                const options = {
+                    root: carousel,
+                    threshold: 0.85,
+                };
 
-    <!-- https://github.com/mmdevcodes/a11y-slider -->
-    <script src="//unpkg.com/a11y-slider@latest/dist/a11y-slider.js"></script>
-</body>
+                function callback(entries, observer) {
+                    entries.forEach((entry) => {
+                        // slideNumber = currentSlide.split("-")[1];
+                        // console.log("current", slideNumber)
 
+                        if (entry.isIntersecting) {
+                            const nextSibling = entry.target.nextElementSibling;
+                            const prevSibling = entry.target.previousElementSibling;
+
+                            let prevId = "";
+                            let nextId = "";
+
+                            if (!prevSibling) {
+                                prevId = observer.root.lastElementChild.id;
+                            } else {
+                                prevId = prevSibling.id;
+                            }
+
+                            if (!nextSibling) {
+                                nextId = observer.root.firstElementChild.id;
+                            } else {
+                                nextId = nextSibling.id;
+                            }
+
+                            // console.log("prev", prevId);
+                            // console.log("next", nextId);
+                            // let currentSlideNumber = entry.target.id;
+
+                            slideNumber = parseInt(entry.target.id.split("_")[1]);
+
+                            // console.log("current", parseInt(currentSlide.split('_')[1]))
+                        }
+                    });
+                }
+
+                const observer = new IntersectionObserver(callback, options);
+
+                const divs = document.querySelectorAll(".carousel-slide");
+
+                for (let div of divs) {
+                    observer.observe(div);
+                }
+            </script>
+        </main>
+
+        <!-- https://github.com/mmdevcodes/a11y-slider -->
+        <script src="//unpkg.com/a11y-slider@latest/dist/a11y-slider.js"></script>
+    </body>
 </html>
