@@ -83,49 +83,43 @@
                         <button onclick="prevSlide()">PREV</button>
                         <button onclick="nextSlide()">NEXT</button>
                     </div>
+                    <div>
+                        <button class="carousel-dot" value="slide-1" onclick="gotoSlide(this.value)"><i class="fa-solid fa-circle"></i></button>
+                        <button class="carousel-dot" value="slide-2" onclick="gotoSlide(this.value)"><i class="fa-solid fa-circle"></i></button>
+                        <button class="carousel-dot" value="slide-3" onclick="gotoSlide(this.value)"><i class="fa-solid fa-circle"></i></button>
+                    </div>
                 </div>
             </div>
         </section>
 
         <script>
-            let currentSlide = 1;
+            let currentSlide = "";
             let slideCount = 3;
+            let slideNumber = 0; 
 
             function prevSlide() {
-                currentSlide -= 1;
-                if (currentSlide < 1) {
-                    currentSlide = slideCount;
+                slideNumber -= 1;
+                if (slideNumber < 1) {
+                    slideNumber = slideCount;
                 }
-                let slide = document.getElementById("slide-" + currentSlide);
+                let slide = document.getElementById("slide-" + slideNumber);
                 slide.scrollIntoView({ behavior: "smooth" , block: "nearest"});
             }
 
             function nextSlide() {
-                currentSlide += 1;
-                if (currentSlide > slideCount) {
-                    currentSlide = 1;
+                slideNumber += 1;
+                if (slideNumber > slideCount) {
+                    slideNumber = 1;
                 }
-                let slide = document.getElementById("slide-" + currentSlide);
+                let slide = document.getElementById("slide-" + slideNumber);
                 slide.scrollIntoView({ behavior: "smooth" , block: "nearest"});
             }
 
-            // function getSlider() {
-            //     let div = document.getElementById("slide-2");
-            //     console.log(div.getBoundingClientRect());
-            // }
-
-            // function getSlideHeight(slide) {
-            //     const carousel = document.getElementById("carousel");
-            //     const scrollTop = carousel.scrollTop;
-            //     const scrollBottom = scrollTop + carousel.clientHeight;
-            //     const rect = carousel.getBoundingClientRect();
-            //     const slideRect = slide.getBoundingClientRect();
-            //     let r = {};
-            //     console.log(rect, slideRect);
-            // }
-
-            // window.onload = () => {
-            // };
+            function gotoSlide(slideId) {
+                let slide = document.getElementById(slideId)
+                console.log(slide)
+                slide.scrollIntoView({ behavior: "smooth" , block: "nearest"})
+            }
 
             const carousel = document.getElementById("carousel");
             const options = {
@@ -135,8 +129,10 @@
 
             function callback(entries, observer) {
                 entries.forEach((entry) => {
-                    let current = entry.target.id
-                    console.log("current", current)
+                    let currentSlide = entry.target.id
+                    slideNumber = currentSlide.split("-")[1]
+                    // console.log("current", currentSlide)
+
                     if (entry.isIntersecting) {
                         const nextSibling = entry.target.nextElementSibling;
                         const prevSibling = entry.target.previousElementSibling;
@@ -145,23 +141,19 @@
                         let nextId = ""
 
                         if (!prevSibling) {
-                            // console.log(observer.root.lastElementChild)
                             prevId = observer.root.lastElementChild.id;
                         } else {
                             prevId = prevSibling.id;
                         }
 
                         if (!nextSibling) {
-                            // console.log(observer.root.firstElementChild)
                             nextId = observer.root.firstElementChild.id;
                         } else {
                             nextId = nextSibling.id;
                         }
 
-                        console.log("prev", prevId);
-                        console.log("next", nextId);
-                        // check for next and prev siblings
-                        // if null for either, set to first or last element
+                        // console.log("prev", prevId);
+                        // console.log("next", nextId);
                     }
                 });
             }
