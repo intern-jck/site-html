@@ -25,11 +25,10 @@ li {
     border: 4px solid black;
     background-color: red;
     height: 20rem;
-    width: 100%;
+    /* width: 100%; */
 
     position: relative;
     flex: 0 0 100%;
-    counter-increment: item;
     scroll-snap-align: center;
 }
 
@@ -40,28 +39,4 @@ li {
 .carousel-dots {
     border: 2px solid blue;
     cursor: pointer;
-    /* transition: opacity 0.2s; */
 }
-
-/* .carousel-slide:nth-child(even) {
-    background-color: blue;
-} */
-
-/* .carousel-slide:before {
-    content: counter(item);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -40%, 70px);
-    color: #fff;
-    font-size: 2rem;
-} */
-
-/* .slide-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    scroll-snap-align: center;
-} */
