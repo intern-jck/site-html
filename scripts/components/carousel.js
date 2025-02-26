@@ -8,13 +8,27 @@ class Carousel {
         this.slideNumber = 0;
         this.test = "test";
 
-        // this.carousel = document.getElementById(this.name);
+        this.create();
+        // Init observer
+        // this.element = document.getElementById(`${this.name}-list`);
         // this.options = {
-        //     root: this.carousel,
+        //     root: this.element,
         //     threshold: 0.85,
         // };
+
         // this.observer = new IntersectionObserver(this.handleIntersection.bind(this), this.options);
-        this.create();
+
+        // const divs = document.querySelectorAll(`.${this.name}-slide`);
+        // console.log(divs)
+        // for (let i = 0; i <= nodes.length; i++) {
+        //     const div = document.querySelector(`#${this.name}-slide-${i}`)
+        //     console.log(div)
+        //     this.observer.observe(div);
+        // }
+        // for (let div in divs) {
+            // console.log(div)
+            // this.observer.observe(div);
+        // }
     }
 
     prevSlide() {
@@ -39,6 +53,11 @@ class Carousel {
 
     gotoSlide(slideId) {
         console.log("goto:", slideId);
+
+        // Update slide number
+        let arr = slideId.split("-")
+        this.slideNumber = parseInt(arr[arr.length - 1])
+
         let slide = document.getElementById(slideId);
         slide.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
@@ -50,12 +69,11 @@ class Carousel {
         // Carousel List
         const carousel = document.createElement("ul");
         carousel.classList = "carousel";
+        carousel.id = `${this.name}-list`;
 
         // Carousel Items/Slides
         for (let i = 0; i < this.slideCount; i++) {
-            // console.log(this.nodes[i]);
             const slide = document.createElement("li");
-            // slide.classList = "carousel-slide";
             slide.classList = `${this.name}-slide carousel-slide`;
             slide.id = `${this.name}-slide-${i + 1}`;
             slide.append(nodes[i]);
@@ -104,43 +122,37 @@ class Carousel {
         carouselContainer.append(carousel);
         carouselContainer.append(carouselControls);
         carouselContainer.append(carouselDots);
-        // this.carousel.append(carousel);
-
-        // document.getElementById(this.name).append(carouselContainer);
-
-        // this.createObserver();
-        // this.initObserver();
     }
 
-    // handleIntersection(entries, observer) {
-    //     console.log(entries);
-    //     entries.forEach((entry) => {
-    //         if (entry.isIntersecting) {
-    //             // const nextSibling = entry.target.nextElementSibling;
-    //             // const prevSibling = entry.target.previousElementSibling;
+    handleIntersection(entries, observer) {
+        console.log(entries);
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // const nextSibling = entry.target.nextElementSibling;
+                // const prevSibling = entry.target.previousElementSibling;
 
-    //             // let prevId = "";
-    //             // let nextId = "";
+                // let prevId = "";
+                // let nextId = "";
 
-    //             // if (!prevSibling) {
-    //             //     prevId = observer.root.lastElementChild.id;
-    //             // } else {
-    //             //     prevId = prevSibling.id;
-    //             // }
+                // if (!prevSibling) {
+                //     prevId = observer.root.lastElementChild.id;
+                // } else {
+                //     prevId = prevSibling.id;
+                // }
 
-    //             // if (!nextSibling) {
-    //             //     nextId = observer.root.firstElementChild.id;
-    //             // } else {
-    //             //     nextId = nextSibling.id;
-    //             // }
+                // if (!nextSibling) {
+                //     nextId = observer.root.firstElementChild.id;
+                // } else {
+                //     nextId = nextSibling.id;
+                // }
 
-    //             const targetId = entry.target.id;
+                const targetId = entry.target.id;
 
-    //             this.slideNumber = parseInt(targetId.split("-")[targetId.length - 1]);
-    //             console.log(targetId);
-    //         }
-    //     });
-    // }
+                this.slideNumber = parseInt(targetId.split("-")[targetId.length - 1]);
+                console.log(targetId);
+            }
+        });
+    }
 
     // initObserver() {
     //     // this.slideCount = this.nodes.length;
