@@ -209,6 +209,11 @@ a:hover {
     object-fit: contain;
 }
 
+/* #home-carousel {
+    border: 4px solid black;
+    height: 40rem;
+} */
+
 @media (max-width: 50em) {
     .home-img {
         width: 100%;

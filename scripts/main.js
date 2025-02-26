@@ -40,40 +40,15 @@ function createCard(data, clickHandler) {
     return cardDiv;
 }
 
-function createCarousel(id, nodes) {
-
-    const carousel = document.createElement("div");
-    carousel.classList = "carousel";
-
-    for (let i = 0; i < nodes.length; i++) {
-        console.log(nodes[i]);
-    }
-
-    const leftButton = document.createElement("button");
-    leftButton.classList = "carousel-prev";
-
-    const leftIcon = document.createElement("i");
-    leftIcon.classList = "fa-solid fa-caret-left";
-    leftButton.append(leftIcon);
-    leftButton.onclick = (event) => {
-        if (currentSlide > 0) {
-            currentSlide -= 1;
-        }
-        showSlide(slides, currentSlide);
-    };
-
-    const rightButton = document.createElement("button");
-    rightButton.classList = "carousel-next";
-
-    const rightIcon = document.createElement("i");
-    rightIcon.classList = "fa-solid fa-caret-right";
-    rightButton.append(rightIcon);
-    rightButton.onclick = (event) => {
-        if (currentSlide < slides.length - 1) {
-            currentSlide += 1;
-        }
-        showSlide(slides, currentSlide);
-    };
-
-    return carousel;
+// Carousel Test
+const nodes = [];
+for (let i = 0; i < 5; i++) {
+    const slideDiv = document.createElement("div");
+    slideDiv.classList = "slide-content";
+    const slideHeader = document.createElement("h3");
+    slideHeader.textContent = `Slide ${i}`
+    slideDiv.append(slideHeader)
+    nodes.push(slideDiv)
 }
+
+const homeCarousel = new Carousel("home-carousel", nodes);
