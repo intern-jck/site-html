@@ -7,7 +7,8 @@ window.onload = () => {
 // Utility Functions
 
 // Remove a target div's child elements
-function clearDiv(parent) {
+function clearDiv(parentId) {
+    const parent = document.getElementById(parentId);
     if (parent.firstChild === null) {
         return;
     }
@@ -46,7 +47,14 @@ function getProjects() {
             return response.json();
         })
         .then((data) => {
+            // Clear out the container
+            clearDiv("projects-container");
             // Create a carousel to show project cards
+            const projectsContainer = document.getElementById("projects-container");
+            const projectsCarousel = document.createElement("div");
+            projectsCarousel.id = "project-carousel";
+            projectsCarousel.classList = "project-carousel";
+            projectsContainer.append(projectsCarousel);
             const nodes = [];
             for (let item of data) {
                 const card = createCard(item, showProject);
@@ -60,69 +68,68 @@ function getProjects() {
 
 // Show the input project's details
 const showProject = (project) => {
+    clearDiv("projects-container");
     const projectsContainer = document.getElementById("projects-container");
-
-    clearDiv(projectsContainer);
-
-    // addBackButton(projectContainer);
 
     const projectContainer = document.createElement("div");
     projectContainer.id = "project-container";
     projectContainer.classList = "project-container";
 
+    const closeButton = document.createElement("button");
+    const closeIcon = document.createElement("i");
+    closeIcon.classList = "fa-solid fa-xmark";
+    closeButton.id = "close-button";
+    closeButton.classList = "close-button";
+    closeButton.onclick = (event) => {
+        event.preventDefault();
+        getProjects();
+    };
+    closeButton.append(closeIcon);
+    projectContainer.appendChild(closeButton);
+
     const photosContainer = document.createElement("div");
     photosContainer.id = "project-photos-container";
     photosContainer.classList = "project-photos-container";
 
-    const infoContainer = docuement.createElement("div");
+    const infoContainer = document.createElement("div");
+    infoContainer.id = "project-info-container"
     infoContainer.classList = "project-info-container";
 
+    projectContainer.append(closeButton);
+    projectContainer.append(photosContainer);
+    projectContainer.append(infoContainer);
     projectsContainer.append(projectContainer);
 
     // Carousel
-    // addCarousel(project.photos, projectDiv);
+    createPhotosCarousel(project.photos, "project-photos-container");
 
     // Info
-    // addInfo(project, projectDiv, "project");
+    createProjectInfo(project, "project-info-container");
 };
 
-/*
-
-old code
-
-// Creates a carousel with the input data
-function createProjectsSlider(data) {
-    // Grab the container div
-    const projectContainer = document.getElementById("projects-container");
-    clearDiv(projectContainer);
-
-    const projectsList = document.createElement("ul");
-    projectsList.id = "projects-list";
-    projectsList.classList = "projects-list slider";
+function createPhotosCarousel(photos, containerId) {
+    const container = document.getElementById(containerId);
+    const projectPhotosCarousel = document.createElement("div");
+    projectPhotosCarousel.id = "project-photos-carousel";
+    projectPhotosCarousel.classList = "project-photos-carousel";
+    container.append(projectPhotosCarousel);
 
     const nodes = [];
-
-    data.forEach((project, i) => {
-        const li = document.createElement("li");
-
-        const card = createCard(project, showProject);
-        nodes.push(card);
-
-        li.appendChild(card);
-        projectsList.appendChild(li);
-        nodes.push(li);
-    });
-
-    // const projectCarousel = new Carousel("project-carousel", nodes);
-    projectContainer.appendChild(projectsList);
-
-    const slider = new A11YSlider(document.querySelector(".projects-list"), {
-        dots: false,
-        adaptiveHeight: false,
-    });
-
-    const list = projectContainer.querySelector("projects-list");
-    console.log("list:", list);
+    for (let i = 0; i < photos.length; i++) {
+        const photo = document.createElement("img");
+        photo.src = photos[i];
+        nodes.push(photo);
+    }
+    const carousel = new Carousel("project-photos-carousel", nodes);
 }
 
-*/
+function createProjectInfo(project, containerId) {
+    const container = document.getElementById(containerId);
+    const projectInfo = document.createElement("div");
+    projectInfo.id = "project-info";
+    projectInfo.classList = "project-info";
+    container.append(projectInfo)
+
+    // add all the info
+    addInfo(project, projectInfo, project.type);
+}

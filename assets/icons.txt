@@ -24,3 +24,16 @@ speaker
 <i class="fa-solid fa-computer"></i>
 
 <i class="fa-solid fa-robot"></i>
+
+<i class="fa-solid fa-caret-up"></i>
+<i class="fa-solid fa-caret-right"></i>
+<i class="fa-solid fa-caret-left"></i>
+<i class="fa-solid fa-caret-down"></i>
+
+
+
+
+
+
+
+
