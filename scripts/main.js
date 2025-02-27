@@ -40,15 +40,3 @@ function createCard(data, clickHandler) {
     return cardDiv;
 }
 
-// Carousel Test
-const nodes = [];
-for (let i = 0; i < 5; i++) {
-    const slideDiv = document.createElement("div");
-    slideDiv.classList = "slide-content";
-    const slideHeader = document.createElement("h3");
-    slideHeader.textContent = `Slide ${i}`
-    slideDiv.append(slideHeader)
-    nodes.push(slideDiv)
-}
-
-const homeCarousel = new Carousel("home-carousel", nodes);

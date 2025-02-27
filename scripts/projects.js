@@ -11,7 +11,7 @@ const clearDiv = (parent) => {
     }
 };
 
-const getProjects = () => {
+function getProjects() {
     fetch(PROJECTS_URL)
         .then((response) => {
             return response.json();
@@ -30,6 +30,8 @@ function createProjectsSlider(data) {
     projectsList.id = "projects-list";
     projectsList.classList = "projects-list slider";
 
+    const nodes = []
+
     data.forEach((project, i) => {
         const li = document.createElement("li");
 
@@ -37,7 +39,11 @@ function createProjectsSlider(data) {
         li.appendChild(card);
 
         projectsList.appendChild(li);
+        nodes.push(li)
     });
+
+    
+    const projectCarousel = new Carousel("project-carousel", nodes);
 
     projectContainer.appendChild(projectsList);
 
@@ -50,7 +56,7 @@ function createProjectsSlider(data) {
     console.log("list:", list);
 }
 
-const addBackButton = (parentDiv) => {
+function addBackButton(parentDiv) {
     console.log("back");
     const backButton = document.createElement("button");
     backButton.textContent = "BACK";
@@ -63,7 +69,7 @@ const addBackButton = (parentDiv) => {
     parentDiv.appendChild(backButton);
 };
 
-const removeBackButton = () => {
+function removeBackButton() {
     if (document.getElementById("back-button")) {
         document.getElementById("back-button").remove();
     }
@@ -89,4 +95,17 @@ const showProject = (project) => {
 
 window.onload = () => {
     getProjects();
+
+    // // Carousel Test
+    // const nodes = [];
+    // for (let i = 0; i < 5; i++) {
+    //     const slideDiv = document.createElement("div");
+    //     slideDiv.classList = "slide-content";
+    //     const slideHeader = document.createElement("h3");
+    //     slideHeader.textContent = `Slide ${i}`;
+    //     slideDiv.append(slideHeader);
+    //     nodes.push(slideDiv);
+    // }
+
+    // const projectCarousel = new Carousel("project-carousel", nodes);
 };

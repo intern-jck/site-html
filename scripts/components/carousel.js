@@ -35,8 +35,8 @@ class Carousel {
         console.log("goto:", slideId);
 
         // Update slide number
-        let arr = slideId.split("-")
-        this.slideNumber = parseInt(arr[arr.length - 1])
+        let arr = slideId.split("-");
+        this.slideNumber = parseInt(arr[arr.length - 1]);
 
         let slide = document.getElementById(slideId);
         slide.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -56,7 +56,7 @@ class Carousel {
             const slide = document.createElement("li");
             slide.classList = `${this.name}-slide carousel-slide`;
             slide.id = `${this.name}-slide-${i + 1}`;
-            slide.append(nodes[i]);
+            slide.append(this.nodes[i]);
             carousel.append(slide);
         }
 
@@ -103,5 +103,4 @@ class Carousel {
         carouselContainer.append(carouselControls);
         carouselContainer.append(carouselDots);
     }
-
 }
