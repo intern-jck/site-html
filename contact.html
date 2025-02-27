@@ -1,91 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" />
+    <title>jck site</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="#">
+    <script
+      src="https://kit.fontawesome.com/cdcc65decb.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
 
-  <link rel="stylesheet" href="../styles/main.css">
-  <link rel="stylesheet" href="../styles/nav.css">
-  <link rel="stylesheet" href="../styles/pages/contact.css">
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/utils.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
 
-  <script type="text/javascript" src="../scripts/nav.js" defer></script>
+    <script type="text/javascript" src="/scripts/main.js"></script>
+  </head>
 
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/cdcc65decb.js" crossorigin="anonymous"></script>
+  <body>
+    <header class="primary-header">
+      <div class="container">
+        <div class="nav-wrapper">
+          <div class="nav-brand">
+            <a href="/">home</a>
+          </div>
 
-  <title>JCK Site</title>
-</head>
+          <button
+            class="nav-toggle"
+            aria-controls="primary-navigation"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars fa-3x"></i>
+          </button>
 
-<body>
+          <nav id="navbar" class="navbar">
+            <ul aria-label="Primary" role="list" class="nav-list">
+              <li><a href="/projects.html">projects</a></li>
+              <li><a href="/photos.html">photos</a></li>
+              <li><a href="/contact.html">contact</a></li>
+            </ul>
+          </nav>
 
-  <nav id="navbar" class="navbar">
-    <div id="nav-ham">
-      <button onclick="showMenu()">
-        <i class="fa-solid fa-bars fa-3x"></i>
-      </button>
-    </div>
-    <ul id="nav-menu">
-      <li>
-        <a href="/">
-          Home
+          <div class="nav-social">
+            <a href="https://github.com/intern-jck">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/justinckirk/">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="page-content">
+      <div class="page-header"></div>
+
+      <div class="contact-links">
+        <a href="mailto:justin.c.kirk@gmail.com" target="_blank">
+          <i class="fa-solid fa-envelope fa-3x"></i>
+          email
         </a>
-      </li>
-      <!-- <li>
-        <a href="./work.html">
-          Work
+        <a href="https://github.com/intern-jck/site-html" target="_blank">
+          <i class="fa-brands fa-github fa-3x"></i>
+          github
         </a>
-      </li>
-      <li>
-        <a href="./code.html">
-          Code
+        <a href="https://www.instagram.com/internjck/" target="_blank">
+          <i class="fa-brands fa-instagram fa-3x"></i>
+          instagram
         </a>
-      </li> -->
-      <li>
-        <a href="./projects.html">
-          Projects
+        <a href="https://www.linkedin.com/in/justinckirk/" target="_blank">
+          <i class="fa-brands fa-linkedin fa-3x"></i>
+          linkedin
         </a>
-      </li>
-      <li>
-        <a href="./photos.html">
-          Photos
-        </a>
-      </li>
-      <li>
-        <a href="./contact.html">
-          Contact
-        </a>
-      </li>
-    </ul>
-  </nav>
-
-  <section class="page-content">
-
-    <div class="page-header">
-    </div>
-
-    <div class="contact-links">
-      <a href="mailto:justin.c.kirk@gmail.com" target="_blank">
-        <i class="fa-solid fa-envelope fa-3x"></i>
-        email
-      </a>
-      <a href="https://github.com/intern-jck/site-html" target="_blank">
-        <i class="fa-brands fa-github fa-3x"></i>
-        github
-      </a>
-      <a href="https://www.instagram.com/internjck/" target="_blank">
-        <i class="fa-brands fa-instagram fa-3x"></i>
-        instagram
-      </a>
-      <a href="https://www.linkedin.com/in/justinckirk/" target="_blank">
-        <i class="fa-brands fa-linkedin fa-3x"></i>
-        linkedin
-      </a>
-    </div>
-  </section>
-
-</body>
-
+      </div>
+    </section>
+  </body>
 </html>
