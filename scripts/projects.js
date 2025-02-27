@@ -46,20 +46,49 @@ function getProjects() {
             return response.json();
         })
         .then((data) => {
-            // Create a carousel to show projects
-            const projectsContainer = document.getElementById("projects-container");
+            // Create a carousel to show project cards
             const nodes = [];
             for (let item of data) {
                 const card = createCard(item, showProject);
-                // projectsContainer.appendChild(card);
-                nodes.push(card)
+                nodes.push(card);
             }
 
             const projectCarousel = new Carousel("project-carousel", nodes);
-            //    createProjectsSlider(data);
         })
         .catch((error) => console.log("fetching projects url", error));
 }
+
+// Show the input project's details
+const showProject = (project) => {
+    const projectsContainer = document.getElementById("projects-container");
+
+    clearDiv(projectsContainer);
+
+    // addBackButton(projectContainer);
+
+    const projectContainer = document.createElement("div");
+    projectContainer.id = "project-container";
+    projectContainer.classList = "project-container";
+
+    const photosContainer = document.createElement("div");
+    photosContainer.id = "project-photos-container";
+    photosContainer.classList = "project-photos-container";
+
+    const infoContainer = docuement.createElement("div");
+    infoContainer.classList = "project-info-container";
+
+    projectsContainer.append(projectContainer);
+
+    // Carousel
+    // addCarousel(project.photos, projectDiv);
+
+    // Info
+    // addInfo(project, projectDiv, "project");
+};
+
+/*
+
+old code
 
 // Creates a carousel with the input data
 function createProjectsSlider(data) {
@@ -96,21 +125,4 @@ function createProjectsSlider(data) {
     console.log("list:", list);
 }
 
-// Show the input project's details
-const showProject = (project) => {
-    const projectContainer = document.getElementById("projects-container");
-
-    clearDiv(projectContainer);
-
-    addBackButton(projectContainer);
-
-    const projectDiv = document.createElement("div");
-    projectDiv.setAttribute("id", "project-div");
-    projectContainer.append(projectDiv);
-
-    // Carousel
-    addCarousel(project.photos, projectDiv);
-
-    // Info
-    addInfo(project, projectDiv, "project");
-};
+*/

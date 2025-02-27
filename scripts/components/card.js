@@ -56,7 +56,6 @@ function createCard(data, clickHandler) {
     card.append(cardType);
     card.append(cardShort);
     card.append(cardFooter);
-    // card.append(cardContent);
 
     return card;
 }

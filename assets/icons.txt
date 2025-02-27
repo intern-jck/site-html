@@ -12,9 +12,12 @@ speaker
 <i class="fa-solid fa-truck-pickup"></i>
 
 
-
-
+<i class="fa-solid fa-xmark"></i>
+<i class="fa-regular fa-circle-xmark"></i>
+<i class="fa-regular fa-rectangle-xmark"></i>
+<i class="fa-solid fa-circle-xmark"></i>
 <i class="fa-solid fa-lightbulb"></i>
+
 <i class="fa-solid fa-gamepad"></i>
 <i class="fa-solid fa-video"></i>
 
