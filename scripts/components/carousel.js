@@ -48,13 +48,13 @@ class Carousel {
 
         // Carousel List
         const carousel = document.createElement("ul");
-        carousel.classList = "carousel";
+        carousel.classList = `carousel ${this.name}-list`;
         carousel.id = `${this.name}-list`;
 
         // Carousel Items/Slides
         for (let i = 0; i < this.slideCount; i++) {
             const slide = document.createElement("li");
-            slide.classList = `${this.name}-slide carousel-slide`;
+            slide.classList = `carousel-slide ${this.name}-slide`;
             slide.id = `${this.name}-slide-${i + 1}`;
             slide.append(this.nodes[i]);
             carousel.append(slide);
@@ -62,32 +62,32 @@ class Carousel {
 
         // Carousel Controls
         const prevButton = document.createElement("button");
-        prevButton.classList = `${this.name}-prev-button`;
+        prevButton.classList = `carousel-slide-button ${this.name}-prev-button`;
         prevButton.textContent = "PREV";
         prevButton.onclick = () => {
             this.prevSlide();
         };
 
         const nextButton = document.createElement("button");
-        nextButton.classList = `${this.name}-next-button`;
+        nextButton.classList = `carousel-slide-button ${this.name}-next-button`;
         nextButton.textContent = "NEXT";
         nextButton.onclick = () => {
             this.nextSlide();
         };
 
         const carouselControls = document.createElement("div");
-        carouselControls.classList = "carousel-controls";
+        carouselControls.classList = `carousel-controls ${this.name}-controls`;
         carouselControls.append(prevButton);
         carouselControls.append(nextButton);
 
         // Carousel Dots
         const carouselDots = document.createElement("div");
-        carouselDots.classList = "carousel-dots";
+        carouselDots.classList = `carousel-dots ${this.name}-dots`;
         for (let i = 0; i < this.slideCount; i++) {
             const dot = document.createElement("button");
             const dotIcon = document.createElement("i");
             dotIcon.classList = "fa-solid fa-circle";
-            dot.classList = `${this.name}-dot`;
+            dot.classList = `carousel-dot ${this.name}-dot`;
             dot.value = `${this.name}-slide-${i + 1}`;
             dot.onclick = () => {
                 this.gotoSlide(dot.value);
