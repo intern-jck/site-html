@@ -1,7 +1,13 @@
 const PROJECTS_URL = "https://raw.githubusercontent.com/intern-jck/jsons/main/jcksite/all_projects.json";
 
-// Helper function to clear all child elements from a parent div.
-const clearDiv = (parent) => {
+window.onload = () => {
+    getProjects();
+};
+
+// Utility Functions
+
+// Remove a target div's child elements
+function clearDiv(parent) {
     if (parent.firstChild === null) {
         return;
     }
@@ -9,20 +15,55 @@ const clearDiv = (parent) => {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
-};
+}
 
+// Remove the back button from the page
+function removeBackButton() {
+    if (document.getElementById("back-button")) {
+        document.getElementById("back-button").remove();
+    }
+}
+
+// Adds the back button to the page
+function addBackButton(parentDiv) {
+    const backButton = document.createElement("button");
+    backButton.textContent = "BACK";
+    backButton.setAttribute("id", "back-button");
+
+    backButton.onclick = (event) => {
+        getProjects();
+    };
+
+    parentDiv.appendChild(backButton);
+}
+
+// Project Functions
+
+// Fetch the projects json add create project cards
 function getProjects() {
     fetch(PROJECTS_URL)
         .then((response) => {
             return response.json();
         })
         .then((data) => {
-            createProjectsSlider(data);
+            // Create a carousel to show projects
+            const projectsContainer = document.getElementById("projects-container");
+            const nodes = [];
+            for (let item of data) {
+                const card = createCard(item, showProject);
+                // projectsContainer.appendChild(card);
+                nodes.push(card)
+            }
+
+            const projectCarousel = new Carousel("project-carousel", nodes);
+            //    createProjectsSlider(data);
         })
         .catch((error) => console.log("fetching projects url", error));
-};
+}
 
+// Creates a carousel with the input data
 function createProjectsSlider(data) {
+    // Grab the container div
     const projectContainer = document.getElementById("projects-container");
     clearDiv(projectContainer);
 
@@ -30,21 +71,20 @@ function createProjectsSlider(data) {
     projectsList.id = "projects-list";
     projectsList.classList = "projects-list slider";
 
-    const nodes = []
+    const nodes = [];
 
     data.forEach((project, i) => {
         const li = document.createElement("li");
 
         const card = createCard(project, showProject);
-        li.appendChild(card);
+        nodes.push(card);
 
+        li.appendChild(card);
         projectsList.appendChild(li);
-        nodes.push(li)
+        nodes.push(li);
     });
 
-    
-    const projectCarousel = new Carousel("project-carousel", nodes);
-
+    // const projectCarousel = new Carousel("project-carousel", nodes);
     projectContainer.appendChild(projectsList);
 
     const slider = new A11YSlider(document.querySelector(".projects-list"), {
@@ -56,25 +96,7 @@ function createProjectsSlider(data) {
     console.log("list:", list);
 }
 
-function addBackButton(parentDiv) {
-    console.log("back");
-    const backButton = document.createElement("button");
-    backButton.textContent = "BACK";
-    backButton.setAttribute("id", "back-button");
-
-    backButton.onclick = (event) => {
-        getProjects();
-    };
-
-    parentDiv.appendChild(backButton);
-};
-
-function removeBackButton() {
-    if (document.getElementById("back-button")) {
-        document.getElementById("back-button").remove();
-    }
-};
-
+// Show the input project's details
 const showProject = (project) => {
     const projectContainer = document.getElementById("projects-container");
 
@@ -91,21 +113,4 @@ const showProject = (project) => {
 
     // Info
     addInfo(project, projectDiv, "project");
-};
-
-window.onload = () => {
-    getProjects();
-
-    // // Carousel Test
-    // const nodes = [];
-    // for (let i = 0; i < 5; i++) {
-    //     const slideDiv = document.createElement("div");
-    //     slideDiv.classList = "slide-content";
-    //     const slideHeader = document.createElement("h3");
-    //     slideHeader.textContent = `Slide ${i}`;
-    //     slideDiv.append(slideHeader);
-    //     nodes.push(slideDiv);
-    // }
-
-    // const projectCarousel = new Carousel("project-carousel", nodes);
 };

@@ -1,0 +1,23 @@
+<i class="fa-brands fa-raspberry-pi"></i>
+<i class="fa-solid fa-guitar"></i>
+<i class="fa-solid fa-cube"></i>
+<i class="fa-solid fa-cubes"></i>
+
+laser?
+<i class="fa-solid fa-bolt-lightning"></i>
+<i class="fa-solid fa-bolt"></i>
+speaker
+<i class="fa-solid fa-volume-high"></i>
+
+<i class="fa-solid fa-truck-pickup"></i>
+
+
+
+
+<i class="fa-solid fa-lightbulb"></i>
+<i class="fa-solid fa-gamepad"></i>
+<i class="fa-solid fa-video"></i>
+
+<i class="fa-solid fa-computer"></i>
+
+<i class="fa-solid fa-robot"></i>

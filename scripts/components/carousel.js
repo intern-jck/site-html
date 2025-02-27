@@ -104,3 +104,20 @@ class Carousel {
         carouselContainer.append(carouselDots);
     }
 }
+
+/*
+
+// Carousel Test
+const nodes = [];
+for (let i = 0; i < 5; i++) {
+    const slideDiv = document.createElement("div");
+    slideDiv.classList = "slide-content";
+    const slideHeader = document.createElement("h3");
+    slideHeader.textContent = `Slide ${i}`;
+    slideDiv.append(slideHeader);
+    nodes.push(slideDiv);
+}
+
+const projectCarousel = new Carousel("project-carousel", nodes);
+
+*/

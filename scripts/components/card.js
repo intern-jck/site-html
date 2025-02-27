@@ -1,20 +1,5 @@
-const primaryHeader = document.querySelector(".primary-header");
-const navToggle = document.querySelector(".nav-toggle");
-const primaryNav = document.querySelector(".navbar");
-
-// Navigation
-navToggle.addEventListener("click", () => {
-    console.log("toggle clicked");
-    primaryNav.hasAttribute("data-visible")
-        ? navToggle.setAttribute("aria-expanded", false)
-        : navToggle.setAttribute("aria-expanded", true);
-    primaryNav.toggleAttribute("data-visible");
-});
-
-/*
 // Components
 function createCard(data, clickHandler) {
-    console.log(data);
 
     // Card container
     const card = document.createElement("div");
@@ -50,7 +35,7 @@ function createCard(data, clickHandler) {
     const cardType = document.createElement("div");
     cardType.classList = "card-type";
     const type = document.createElement("p");
-    type.textContent = data.tech[0][0];
+    type.textContent = data.tech[0] ? data.tech[0][0] : "NO TECH";
     cardType.append(type);
 
     // Card Short
@@ -75,4 +60,3 @@ function createCard(data, clickHandler) {
 
     return card;
 }
-*/
