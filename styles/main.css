@@ -4,7 +4,7 @@
     --background-color: white;
     --primary-color: darkblue;
     --secondary-color: darkgreen;
-    --active-color: red;
+    --active-color: green;
     --icon-color: black;
 
     --ff-primary: monospace;
@@ -104,7 +104,7 @@ a:hover {
 }
 
 .nav-wrapper {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     height: 3rem;
     display: flex;
     align-items: center;
@@ -112,8 +112,10 @@ a:hover {
 }
 
 .nav-brand {
+    padding-left: 1rem;
     max-width: 10rem;
     min-width: 8rem;
+    font-size: 1.4rem;
 }
 
 .nav-toggle {
@@ -151,9 +153,11 @@ a:hover {
 }
 
 .nav-social {
+    padding-right: 1rem;
     max-width: 10rem;
     min-width: 8rem;
     text-align: end;
+    font-size: 1.6rem;
 }
 
 @media (max-width: 50em) {
@@ -268,4 +272,8 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.contact-links > a:hover {
+    color: var(--active-color);
 }
