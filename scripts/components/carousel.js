@@ -32,8 +32,6 @@ class Carousel {
     }
 
     gotoSlide(slideId) {
-        console.log("goto:", slideId);
-
         // Update slide number
         let arr = slideId.split("-");
         this.slideNumber = parseInt(arr[arr.length - 1]);
@@ -62,15 +60,21 @@ class Carousel {
 
         // Carousel Controls
         const prevButton = document.createElement("button");
-        prevButton.classList = `carousel-slide-button ${this.name}-prev-button`;
-        prevButton.textContent = "PREV";
+        prevButton.classList = `carousel-prev-button ${this.name}-prev-button`;
+        const prevIcon = document.createElement("i");
+        prevIcon.classList = "fa-solid fa-caret-left";
+        prevButton.append(prevIcon);
+
         prevButton.onclick = () => {
             this.prevSlide();
         };
 
         const nextButton = document.createElement("button");
-        nextButton.classList = `carousel-slide-button ${this.name}-next-button`;
-        nextButton.textContent = "NEXT";
+        nextButton.classList = `carousel-next-button ${this.name}-next-button`;
+        const nextIcon = document.createElement("i");
+        nextIcon.classList = "fa-solid fa-caret-right";
+        nextButton.append(nextIcon);
+
         nextButton.onclick = () => {
             this.nextSlide();
         };

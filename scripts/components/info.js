@@ -102,7 +102,7 @@ function getModelType(type) {
 }
 
 function addInfo(info, parentDiv, modelType) {
-    console.log("adding info:", info, modelType);
+    // console.log("adding info:", info, modelType);
     // Get the model for the info data
     // const model = getModelType(modelType);
 
@@ -204,5 +204,4 @@ function addInfo(info, parentDiv, modelType) {
     });
 
     parentDiv.append(infoContainer);
-    console.log(parentDiv)
 }

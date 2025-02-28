@@ -49,6 +49,7 @@ function getProjects() {
         .then((data) => {
             // Clear out the container
             clearDiv("projects-container");
+
             // Create a carousel to show project cards
             const projectsContainer = document.getElementById("projects-container");
             const projectsCarousel = document.createElement("div");
@@ -72,8 +73,8 @@ const showProject = (project) => {
     const projectsContainer = document.getElementById("projects-container");
 
     const projectContainer = document.createElement("div");
-    projectContainer.id = "project-container";
-    projectContainer.classList = "project-container";
+    projectContainer.id = "project";
+    projectContainer.classList = "project";
 
     const closeButton = document.createElement("button");
     const closeIcon = document.createElement("i");
@@ -84,16 +85,17 @@ const showProject = (project) => {
         event.preventDefault();
         getProjects();
     };
+
     closeButton.append(closeIcon);
     projectContainer.appendChild(closeButton);
 
     const photosContainer = document.createElement("div");
-    photosContainer.id = "project-photos-container";
-    photosContainer.classList = "project-photos-container";
+    photosContainer.id = "project-photos";
+    photosContainer.classList = "project-photos";
 
     const infoContainer = document.createElement("div");
-    infoContainer.id = "project-info-container"
-    infoContainer.classList = "project-info-container";
+    infoContainer.id = "project-info";
+    infoContainer.classList = "project-info";
 
     projectContainer.append(closeButton);
     projectContainer.append(photosContainer);
@@ -101,35 +103,35 @@ const showProject = (project) => {
     projectsContainer.append(projectContainer);
 
     // Carousel
-    createPhotosCarousel(project.photos, "project-photos-container");
+    createPhotosCarousel(project.photos, "project-photos");
 
     // Info
-    createProjectInfo(project, "project-info-container");
+    createProjectInfo(project, "project-info");
 };
 
 function createPhotosCarousel(photos, containerId) {
-    const container = document.getElementById(containerId);
-    const projectPhotosCarousel = document.createElement("div");
-    projectPhotosCarousel.id = "project-photos-carousel";
-    projectPhotosCarousel.classList = "project-photos-carousel";
-    container.append(projectPhotosCarousel);
-
     const nodes = [];
     for (let i = 0; i < photos.length; i++) {
+        // const container = document.createElement("div");
+        // container.classList = "photos-carousel-slide";
+
         const photo = document.createElement("img");
         photo.src = photos[i];
+        // container.append(photo);
         nodes.push(photo);
     }
-    const carousel = new Carousel("project-photos-carousel", nodes);
+
+    const carousel = new Carousel(containerId, nodes);
 }
 
 function createProjectInfo(project, containerId) {
     const container = document.getElementById(containerId);
-    const projectInfo = document.createElement("div");
-    projectInfo.id = "project-info";
-    projectInfo.classList = "project-info";
-    container.append(projectInfo)
+    // const projectInfo = document.createElement("div");
+
+    // projectInfo.id = "project-info";
+    // projectInfo.classList = "project-info";
+    // container.append(projectInfo);
 
     // add all the info
-    addInfo(project, projectInfo, project.type);
+    addInfo(project, container, project.type);
 }
