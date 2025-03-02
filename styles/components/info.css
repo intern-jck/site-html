@@ -1,61 +1,77 @@
-.info-container {
-  /* border: 4px solid black; */
-  /* padding: 0.5rem; */
-  /* width: 48%; */
-  /* height: 100%; */
-  /* overflow-y: scroll; */
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+.project-info {
+    /* border: 4px solid black; */
+    /* padding: 0.5rem; */
+    /* width: 48%; */
+    /* height: 100%; */
+    /* overflow-y: scroll; */
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.info-row {
+    /* border: 2px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 1rem; */
 }
 
 .info-key {
-  width: 5rem;
-  margin: 0.25rem;
-  font-size: 1.4rem;
-  font-weight: bold;
+    /* border: 2px solid blue; */
+    /* width: 5rem; */
+    /* margin: 0.25rem; */
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .info-value {
-  font-size: 1.2rem;
-  margin-left: 1rem;
+    /* border: 2px solid blue; */
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    font-weight: 200;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
 }
 
-.tech-tag-div {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  gap: 1rem;
+.tech-tags {
+    /* border: 4px solid green; */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 1rem;
 }
 
 .tech-tag {
-  border: 2px solid black;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  font-weight: bold;
+    border: 2px solid black;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    /* margin-left: 0.8rem; */
+    /* margin-right: 0.8rem; */
+    font-weight: bold;
+    white-space: nowrap;
 }
 
 .resource-div {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 1rem;
 }
 
 .resource {
-  border: 2px solid black;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  font-weight: bold;
+    border: 2px solid black;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-weight: bold;
 }
 @media screen and (max-width: 400px) {
-  .info-container {
-    width: 100%;
-  }
+    .info-container {
+        width: 100%;
+    }
 }
 
 @media (min-width: 401px) and (max-width: 900px) {
-  .info-container {
-    width: 100%;
-  }
+    .info-container {
+        width: 100%;
+    }
 }

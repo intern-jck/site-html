@@ -63,6 +63,9 @@ function getProjects() {
             }
 
             const projectCarousel = new Carousel("project-carousel", nodes);
+            // showProject(data[13]);
+
+
         })
         .catch((error) => console.log("fetching projects url", error));
 }
@@ -133,5 +136,6 @@ function createProjectInfo(project, containerId) {
     // container.append(projectInfo);
 
     // add all the info
-    addInfo(project, container, project.type);
+    // addInfo(project, container, project.type);
+    addInfo2(project);
 }
