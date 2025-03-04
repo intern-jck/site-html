@@ -85,7 +85,7 @@ a:hover {
 }
 
 .container {
-    --max-width: 1110px;
+    --max-width: 80rem;
     --container-padding: 1rem;
 
     width: min(var(--max-width), 100% - (var(--container-padding) * 2));
@@ -93,7 +93,6 @@ a:hover {
 }
 
 /* Navbar */
-
 .primary-header {
     background-color: white;
     position: fixed;

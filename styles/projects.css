@@ -1,9 +1,21 @@
 /* Projects */
-.project-carousel {
+.projects-container {
+    /* border: 2px solid orange; */
+}
+
+.project-cards {
+    /* border: 2px solid black; */
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: start;
+    gap: 1rem;
+}
+
+/* Project Carousel Styles */
+/* .project-carousel {
     border: 4px solid black;
-    /* height: 40rem; */
-    /* display: grid; */
-    /* grid-template-rows: 7fr 1fr */
     position: relative;
     padding: 2rem;
 }
@@ -14,7 +26,6 @@
 }
 
 .project-carousel-controls {
-    /* border: 2px solid blue; */
     width: 100%;
     position: absolute;
     top: 50%;
@@ -52,16 +63,15 @@
 
 .project-carousel-dot:hover {
     color: green;
-}
+} */
 
 /* Project */
 .project {
     border: 4px solid black;
     padding: 1rem;
     height: 70vh;
-    position: relative;
-
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 1rem;
@@ -77,36 +87,26 @@
 }
 
 .project-photos {
-    /* border: 2px solid blue; */
+    position: relative;
     width: 48%;
     height: 100%;
-    /* padding: 1rem; */
-
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
-    position: relative;
 }
 
 .project-photos-list {
-    /* border: 2px solid green; */
+    border: 2px solid orange;
     width: 100%;
     height: 100%;
-
     display: flex;
-    position: relative;
-    /* padding: 1rem; */
+    /* position: relative; */
     gap: 1rem;
 }
 
 .project-photos-slide {
-    /* border: 2px solid red; */
     flex: 0 0 100%;
-    /* max-height: 50%; */
-    /* height: 30rem; */
-    /* padding: 1rem; */
     scroll-snap-align: center;
     display: flex;
     justify-content: center;
@@ -118,16 +118,20 @@
 }
 
 .project-photos-controls {
-    /* border: 2px solid green; */
+    border: 2px solid orange;
     width: 100%;
 
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    /* position: absolute; */
+    /* bottom: 1%; */
+    /* transform: translateY(-50%); */
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.project-photos-controls i {
+    border: 2px solid orange;
+    margin: 0;
 }
 
 .project-photos-prev-button,
@@ -143,9 +147,12 @@
 }
 
 .project-photos-dots {
-    /* padding-top: 2rem; */
-    margin: 1rem;
-
+    border: 2px solid orange;
+    max-width: 75%;
+    /* margin: 1rem; */
+    position: absolute;
+    bottom: 1rem;
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,7 +169,6 @@
 }
 
 .project-info {
-    /* border: 2px solid black; */
     width: 48%;
     height: 100%;
     overflow-y: scroll;
@@ -173,31 +179,22 @@
 }
 
 .info-row {
-    /* border: 2px solid black; */
     display: flex;
     flex-wrap: wrap;
-    /* gap: 1rem; */
 }
 
 .info-key {
-    /* border: 2px solid blue; */
-    /* width: 5rem; */
-    /* margin: 0.25rem; */
     font-size: 1.2rem;
     font-weight: bold;
 }
 
 .info-value {
-    /* border: 2px solid blue; */
     margin-left: 1rem;
     font-size: 1.2rem;
     font-weight: 200;
-    /* display: flex; */
-    /* flex-wrap: wrap; */
 }
 
 .tech-tags {
-    /* border: 4px solid green; */
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -208,8 +205,6 @@
     border: 2px solid black;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    /* margin-left: 0.8rem; */
-    /* margin-right: 0.8rem; */
     font-weight: bold;
     white-space: nowrap;
 }

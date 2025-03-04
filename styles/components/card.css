@@ -12,13 +12,20 @@
 }
 
 .card-header {
-    border: 2px solid black;
+    border: 3px solid black;
     padding-left: 1rem;
     padding-right: 1rem;
     grid-row: 1;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+}
+
+.card-header p {
+    margin-right: auto;
+}
+
+.card-header i {
+    margin-left: 0.6rem;
 }
 
 .card-img {

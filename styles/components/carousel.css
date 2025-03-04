@@ -9,23 +9,3 @@
 li {
     list-style: none;
 }
-
-/* .carousel-slide {
-    border: 4px solid black;
-    background-color: red;
-    height: 20rem;
-    width: 100%;
-
-    position: relative;
-    flex: 0 0 100%;
-    scroll-snap-align: center;
-} */
-
-/* .carousel-controls {
-    border: 2px solid blue;
-} */
-
-/* .carousel-dots {
-    border: 2px solid blue;
-    cursor: pointer;
-} */

@@ -19,24 +19,24 @@ function clearDiv(parentId) {
 }
 
 // Remove the back button from the page
-function removeBackButton() {
-    if (document.getElementById("back-button")) {
-        document.getElementById("back-button").remove();
-    }
-}
+// function removeBackButton() {
+//     if (document.getElementById("back-button")) {
+//         document.getElementById("back-button").remove();
+//     }
+// }
 
 // Adds the back button to the page
-function addBackButton(parentDiv) {
-    const backButton = document.createElement("button");
-    backButton.textContent = "BACK";
-    backButton.setAttribute("id", "back-button");
+// function addBackButton(parentDiv) {
+//     const backButton = document.createElement("button");
+//     backButton.textContent = "BACK";
+//     backButton.setAttribute("id", "back-button");
 
-    backButton.onclick = (event) => {
-        getProjects();
-    };
+//     backButton.onclick = (event) => {
+//         getProjects();
+//     };
 
-    parentDiv.appendChild(backButton);
-}
+//     parentDiv.appendChild(backButton);
+// }
 
 // Project Functions
 
@@ -52,19 +52,27 @@ function getProjects() {
 
             // Create a carousel to show project cards
             const projectsContainer = document.getElementById("projects-container");
-            const projectsCarousel = document.createElement("div");
-            projectsCarousel.id = "project-carousel";
-            projectsCarousel.classList = "project-carousel";
-            projectsContainer.append(projectsCarousel);
+            
+            const projectCards = document.createElement("div")
+            projectCards.classList = "project-cards"
+            
+            // const projectsCarousel = document.createElement("div");
+            // projectsCarousel.id = "project-carousel";
+            // projectsCarousel.classList = "project-carousel";
+            // projectsContainer.append(projectsCarousel);
+            
             const nodes = [];
             for (let item of data) {
                 const card = createCard(item, showProject);
-                nodes.push(card);
+                // nodes.push(card);
+                projectCards.append(card)
             }
 
-            const projectCarousel = new Carousel("project-carousel", nodes);
+
+            // const projectCarousel = new Carousel("project-carousel", nodes);
             // showProject(data[13]);
 
+            projectsContainer.append(projectCards)
 
         })
         .catch((error) => console.log("fetching projects url", error));

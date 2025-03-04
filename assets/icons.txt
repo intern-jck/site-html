@@ -2,6 +2,9 @@
 <i class="fa-solid fa-guitar"></i>
 <i class="fa-solid fa-cube"></i>
 <i class="fa-solid fa-cubes"></i>
+<i class="fa-brands fa-linux"></i>
+<i class="fa-brands fa-python"></i>
+
 
 laser?
 <i class="fa-solid fa-bolt-lightning"></i>
@@ -30,10 +33,16 @@ speaker
 <i class="fa-solid fa-caret-left"></i>
 <i class="fa-solid fa-caret-down"></i>
 
+<i class="fa-brands fa-node"></i>
+<i class="fa-brands fa-react"></i>
+<i class="fa-brands fa-youtube"></i>
+
+<i class="fa-brands fa-github"></i>
+<i class="fa-brands fa-js"></i>
+<i class="fa-brands fa-html5"></i>
+<i class="fa-brands fa-css"></i>
+<i class="fa-brands fa-golang"></i>
 
 
-
-
-
-
+<i class="fa-brands fa-bootstrap"></i>
 
