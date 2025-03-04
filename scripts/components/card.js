@@ -1,32 +1,3 @@
-const icons = {
-    Linux: "fa-brands fa-linux",
-    "Raspberry Pi": "fa-brands fa-raspberry-pi",
-    Arduino: "fa-solid fa-robot",
-    "Python 3": "fa-brands fa-python",
-    "Processing IDE": "fa-solid fa-computer",
-    "Retro Pi": "fa-solid fa-gamepad",
-    "Fusion 360": "fa-solid fa-computer",
-    Crankshaft: "fa-solid fa-computer",
-    DMX: "fa-solid fa-computer",
-    "3D Printing": "fa-solid fa-cubes",
-    "Laser Cutting": "fa-solid fa-bolt-lightning",
-    WS2812b: "fa-solid fa-lightbulb",
-    MIDI: "fa-solid fa-volume-high",
-    Teensy: "fa-solid fa-computer",
-    "Open Sound Control": "",
-    ArtNet: "fa-solid fa-computer",
-    Guitar: "fa-solid fa-guitar",
-    Humbuckers: "fa-solid fa-guitar",
-    "Ford Ranger": "fa-solid fa-truck-pickup",
-    JavaScript: "fa-brands fa-js",
-    "Red Bear": "fa-solid fa-volume-high",
-    Celestion: "fa-solid fa-volume-high",
-    Orange: "fa-solid fa-volume-high",
-    HTML: "fa-brands fa-html5",
-    CSS: "fa-brands fa-css",
-    Bootstrap: "fa-brands fa-bootstrap",
-};
-
 // Components
 function createCard(data, clickHandler) {
     // Card container
@@ -42,23 +13,32 @@ function createCard(data, clickHandler) {
     cardName.textContent = data.name;
 
     if (data.tech.length === 0) {
-        console.log("no tech");
         const icon = document.createElement("i");
         icon.classList = "fa-solid fa-ghost";
         cardHeader.append(cardName);
         cardHeader.append(icon);
     } else {
         cardHeader.append(cardName);
+        
         for (let i = 0; i < data.tech.length; i++) {
             let techName = data.tech[i][0];
             let techClass = icons[techName];
-            if (techClass === undefined) {
-                console.log(techName, techClass);
-            }
-
             let icon = document.createElement("i");
             icon.classList = techClass;
             cardHeader.append(icon);
+
+            if (i === 0) {
+                // Add a card class based on the main/first tech tag
+                if (techClass.includes("linux")) {
+                    card.classList.add("card-linux");
+                } else if (techClass.includes("audio-visual")) {
+                    card.classList.add("card-audio-visual");
+                } else if (techClass.includes("digital-fab")) {
+                    card.classList.add("card-digital-fab");
+                } else if (techClass.includes("programming")) {
+                    card.classList.add("card-programming");
+                }
+            }
         }
     }
 

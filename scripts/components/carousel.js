@@ -81,6 +81,7 @@ class Carousel {
 
         const carouselControls = document.createElement("div");
         carouselControls.classList = `carousel-controls ${this.name}-controls`;
+
         carouselControls.append(prevButton);
         carouselControls.append(nextButton);
 
@@ -100,11 +101,14 @@ class Carousel {
             dot.append(dotIcon);
             carouselDots.append(dot);
         }
+        carouselControls.append(prevButton);
+        carouselControls.append(carouselDots);
+        carouselControls.append(nextButton);
 
         // Add all the carousel elements to carousel container
         const carouselContainer = document.getElementById(this.name);
         carouselContainer.append(carousel);
         carouselContainer.append(carouselControls);
-        carouselContainer.append(carouselDots);
+        // carouselContainer.append(carouselDots);
     }
 }

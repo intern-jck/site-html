@@ -18,26 +18,6 @@ function clearDiv(parentId) {
     }
 }
 
-// Remove the back button from the page
-// function removeBackButton() {
-//     if (document.getElementById("back-button")) {
-//         document.getElementById("back-button").remove();
-//     }
-// }
-
-// Adds the back button to the page
-// function addBackButton(parentDiv) {
-//     const backButton = document.createElement("button");
-//     backButton.textContent = "BACK";
-//     backButton.setAttribute("id", "back-button");
-
-//     backButton.onclick = (event) => {
-//         getProjects();
-//     };
-
-//     parentDiv.appendChild(backButton);
-// }
-
 // Project Functions
 
 // Fetch the projects json add create project cards
@@ -56,21 +36,14 @@ function getProjects() {
             const projectCards = document.createElement("div")
             projectCards.classList = "project-cards"
             
-            // const projectsCarousel = document.createElement("div");
-            // projectsCarousel.id = "project-carousel";
-            // projectsCarousel.classList = "project-carousel";
-            // projectsContainer.append(projectsCarousel);
-            
             const nodes = [];
             for (let item of data) {
                 const card = createCard(item, showProject);
-                // nodes.push(card);
                 projectCards.append(card)
             }
 
-
-            // const projectCarousel = new Carousel("project-carousel", nodes);
-            // showProject(data[13]);
+            // Useful for styling project page
+            // showProject(data[0]);
 
             projectsContainer.append(projectCards)
 
@@ -123,12 +96,8 @@ const showProject = (project) => {
 function createPhotosCarousel(photos, containerId) {
     const nodes = [];
     for (let i = 0; i < photos.length; i++) {
-        // const container = document.createElement("div");
-        // container.classList = "photos-carousel-slide";
-
         const photo = document.createElement("img");
         photo.src = photos[i];
-        // container.append(photo);
         nodes.push(photo);
     }
 
@@ -137,13 +106,5 @@ function createPhotosCarousel(photos, containerId) {
 
 function createProjectInfo(project, containerId) {
     const container = document.getElementById(containerId);
-    // const projectInfo = document.createElement("div");
-
-    // projectInfo.id = "project-info";
-    // projectInfo.classList = "project-info";
-    // container.append(projectInfo);
-
-    // add all the info
-    // addInfo(project, container, project.type);
-    addInfo2(project);
+    addInfo(project);
 }
