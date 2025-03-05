@@ -41,9 +41,9 @@
     --size-900: 5rem;
 
     --icon-color-programming: darkblue;
-    --icon-color-audio-visual: darkmagenta;
+    --icon-color-audio-visual: darkred;
     --icon-color-digital-fab: darkcyan;
-    --icon-color-linux: darkgreen;
+    --icon-color-linux: magenta;
 }
 
 @media (min-width: 50em) {
