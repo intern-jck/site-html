@@ -104,19 +104,21 @@ a:hover {
 }
 
 .nav-wrapper {
-    height: 3rem;
-    width: 100%;
-    position: relative;
+    min-height: 4rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* width: 100%; */
+    /* position: relative; */
+    /* justify-content: space-between; */
 }
 
-.nav-brand {
-    padding-left: 1rem;
-    max-width: 10rem;
-    min-width: 8rem;
-    font-size: 1.4rem;
+.nav-home {
+    /* border: 2px solid red; */
+    margin-right: auto;
+    /* padding-left: 1rem; */
+    /* max-width: 10rem; */
+    /* min-width: 8rem; */
+    /* font-size: 1.4rem; */
 }
 
 .nav-toggle {
@@ -124,18 +126,25 @@ a:hover {
 }
 
 .navbar {
-    background-color: white;
+    /* border: 2px solid red; */
     width: 100%;
 }
 
 .nav-list {
+    /* border: 2px solid black; */
     background-color: white;
+    width: 100%;
     font-size: var(--fs-nav);
     font-weight: var(--fw-semi-bold);
     margin-right: 2rem;
+
     display: flex;
     gap: 2rem;
     justify-content: end;
+}
+
+.nav-list li {
+    /* border: 2px solid red; */
 }
 
 .nav-list a {
@@ -154,21 +163,37 @@ a:hover {
 }
 
 .nav-social {
-    padding-right: 1rem;
+    /* padding-right: 1rem;
     max-width: 10rem;
     min-width: 8rem;
     text-align: end;
-    font-size: 1.6rem;
+    font-size: 1.6rem; */
+    display: flex;
+    gap: 1rem;
+    justify-content: end;
 }
 
 @media (max-width: 50em) {
+    .nav-wrapper {
+        /* border: 4px solid purple; */
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
+        /* gap: 2rem; */
+    }
+
     .nav-toggle {
         border: none;
         background-color: white;
-
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+        margin-left: auto;
+        
         display: block;
-        grid-column: 2;
-        cursor: pointer;
+
+        /* margin: auto; */
+        /* cursor: pointer; */
+        /* grid-column: 2; */
     }
 
     .navbar {
@@ -176,20 +201,32 @@ a:hover {
     }
 
     .navbar[data-visible] {
-        border: 2px solid black;
+        /* border: 2px solid blue; */
         background-color: white;
+        margin-top: 2rem;
         display: block;
-        position: absolute;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        top: 3rem;
-        width: 100%;
+        /* padding-bottom: 2rem; */
+        /* position: absolute; */
+        /* top: 3rem; */
+        /* width: 100%; */
+
+        /* flex-direction: column; */
+        /* align-items: center; */
+        /* justify-content: center; */
+    }
+
+    .nav-home {
+        margin: auto;
     }
 
     .nav-list {
+        /* margin: auto; */
+        /* border: 2px solid green; */
+        font-size: 1.6rem;
         flex-direction: column;
         align-items: center;
-        margin: auto;
+        justify-content: center;
+        padding-bottom: 2rem;
     }
 }
 
