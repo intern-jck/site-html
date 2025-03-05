@@ -43,8 +43,9 @@
     --icon-color-programming: darkblue;
     --icon-color-audio-visual: darkmagenta;
     --icon-color-digital-fab: darkcyan;
-    --icon-color-linux: darkorange;
+    --icon-color-linux: darkgreen;
 }
+
 @media (min-width: 50em) {
     :root {
         --fs-body: var(--fs-500);

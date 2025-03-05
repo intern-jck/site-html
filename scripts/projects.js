@@ -1,11 +1,6 @@
-const PROJECTS_URL = "https://raw.githubusercontent.com/intern-jck/jsons/main/jcksite/all_projects.json";
-
-window.onload = () => {
-    getProjects();
-};
+const PROJECTS_URL = "https://raw.githubusercontent.com/intern-jck/jsons/refs/heads/main/jcksite/all_projects.json";
 
 // Utility Functions
-
 // Remove a target div's child elements
 function clearDiv(parentId) {
     const parent = document.getElementById(parentId);
@@ -19,7 +14,6 @@ function clearDiv(parentId) {
 }
 
 // Project Functions
-
 // Fetch the projects json add create project cards
 function getProjects() {
     fetch(PROJECTS_URL)
@@ -32,21 +26,20 @@ function getProjects() {
 
             // Create a carousel to show project cards
             const projectsContainer = document.getElementById("projects-container");
-            
-            const projectCards = document.createElement("div")
-            projectCards.classList = "project-cards"
-            
+
+            const projectCards = document.createElement("div");
+            projectCards.classList = "project-cards";
+
             const nodes = [];
             for (let item of data) {
                 const card = createCard(item, showProject);
-                projectCards.append(card)
+                projectCards.append(card);
             }
 
             // Useful for styling project page
-            // showProject(data[0]);
+            // showProject(data[13]);
 
-            projectsContainer.append(projectCards)
-
+            projectsContainer.append(projectCards);
         })
         .catch((error) => console.log("fetching projects url", error));
 }
@@ -108,3 +101,7 @@ function createProjectInfo(project, containerId) {
     const container = document.getElementById(containerId);
     addInfo(project);
 }
+
+window.onload = () => {
+    getProjects();
+};

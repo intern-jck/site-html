@@ -109,6 +109,5 @@ class Carousel {
         const carouselContainer = document.getElementById(this.name);
         carouselContainer.append(carousel);
         carouselContainer.append(carouselControls);
-        // carouselContainer.append(carouselDots);
     }
 }

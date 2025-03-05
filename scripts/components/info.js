@@ -1,105 +1,9 @@
-const MODELS_URL = "https://raw.githubusercontent.com/intern-jck/site-html/site-dev/assets/data/models.json";
-
-const modelTypes = {
-    general: {
-        link: "",
-        name: "",
-        client: {
-            name: "",
-            url: "",
-        },
-        date: {
-            start_month: "",
-            start_year: "",
-            end_month: "",
-            end_year: "",
-        },
-        short: "",
-        info: "",
-        tech: [],
-        photos: [],
-        resources: [],
-    },
-    work: {
-        name: "",
-        client: {
-            name: "",
-            url: "",
-        },
-        date: {
-            start_month: "",
-            start_year: "",
-            end_month: "",
-            end_year: "",
-        },
-        short: "",
-        info: "",
-        tech: [],
-        photos: [],
-    },
-    code: {
-        name: "",
-        url: "",
-        date: {
-            start_month: "",
-            start_year: "",
-            end_month: "",
-            end_year: "",
-        },
-        short: "",
-        info: "",
-        tech: [],
-        photos: [],
-    },
-    project: {
-        name: "",
-        url: "",
-        date: {
-            start_month: "",
-            start_year: "",
-            end_month: "",
-            end_year: "",
-        },
-        short: "",
-        info: "",
-        tech: [],
-        photos: [],
-        resources: [],
-    },
-    music: {
-        name: "",
-        date: {
-            start_month: "",
-            start_year: "",
-            end_month: "",
-            end_year: "",
-        },
-        short: "",
-        info: "",
-        photos: [],
-        resources: [],
-    },
-};
-
-function getModelType(type) {
-    fetch(MODELS_URL)
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            return data;
-        })
-        .catch();
-}
-
 function addInfo(info) {
-
     const keys = Object.keys(info);
     const projectInfo = document.getElementById("project-info");
     const nodes = [];
 
     if (info["name"].length > 0) {
-
         const nameRow = document.createElement("div");
         nameRow.classList = "info-row";
 
@@ -117,7 +21,6 @@ function addInfo(info) {
     }
 
     if (info["url"].length > 0) {
-
         const urlRow = document.createElement("div");
         urlRow.classList = "info-row";
 
@@ -140,7 +43,6 @@ function addInfo(info) {
     }
 
     if (info["date"]) {
-
         const dateRow = document.createElement("div");
         dateRow.classList = "info-row";
 
@@ -165,14 +67,12 @@ function addInfo(info) {
     }
 
     if (info["tech"].length > 0) {
-
         const techRow = document.createElement("div");
         techRow.classList = "info-row";
 
         const techKey = document.createElement("p");
         techKey.classList = "info-key";
         techKey.textContent = "tech:";
-
 
         techRow.append(techKey);
         info["tech"].map((value) => {
@@ -193,7 +93,6 @@ function addInfo(info) {
     }
 
     if (info["info"].length > 0) {
-
         const infoRow = document.createElement("div");
         infoRow.classList = "info-row";
 
@@ -211,7 +110,6 @@ function addInfo(info) {
     }
 
     if (info["resources"].length > 0) {
-
         const resourcesRow = document.createElement("div");
         resourcesRow.classList = "info-row";
 
@@ -225,7 +123,11 @@ function addInfo(info) {
         info["resources"].map((value) => {
             const tag = document.createElement("a");
             tag.classList = "resource-tag";
-            tag.textContent = value.name;
+
+            const tagIcon = document.createElement("i");
+            tagIcon.classList = icons[value.name];
+            tag.append(tagIcon);
+
             tag.href = value.url;
             tag.target = "_blank";
             resourcesValue.append(tag);
