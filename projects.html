@@ -5,15 +5,19 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="#" />
-        <title>jck site</title>
+        <title>JCK</title>
 
-        <script src="https://kit.fontawesome.com/cdcc65decb.js" crossorigin="anonymous" defer></script>
+        <script src="https://kit.fontawesome.com/cdcc65decb.js" crossorigin="anonymous"></script>
 
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/utils.css" />
         <link rel="stylesheet" href="/styles/main.css" />
+        <link rel="stylesheet" href="/styles/projects.css" />
 
         <script type="text/javascript" src="/scripts/main.js" defer></script>
+        <script type="text/javascript" src="/scripts/components/carousel.js" defer></script>
+        <script type="text/javascript" src="/scripts/components/info.js" defer></script>
+        <script type="text/javascript" src="/scripts/projects.js" defer></script>
     </head>
 
     <body>
@@ -58,11 +62,9 @@
         </header>
 
         <main>
-            <section class="padding-block-900">
+            <section class="padding-block-400">
                 <div class="container">
-                    <div class="home-img">
-                        <img src="https://iili.io/63UZQa.jpg" />
-                    </div>
+                    <div id="projects-container" class="projects-container"></div>
                 </div>
             </section>
         </main>

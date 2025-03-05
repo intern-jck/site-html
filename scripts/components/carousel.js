@@ -1,72 +1,113 @@
-function addCarousel(images, parentDiv) {
-  let currentSlide = 0;
+// Carousel Class
+class Carousel {
+    constructor(name, nodes) {
+        this.name = name;
+        this.nodes = nodes;
+        this.slideId = "";
+        this.slideCount = 0;
+        this.slideNumber = 0;
+        this.test = "test";
 
-  // Container div for carousel slides and controls
-  const carouselContainer = document.createElement('div');
-  carouselContainer.classList = 'carousel-container';
-
-  // Create carousel images and add to slides
-  const carouselSlides = document.createElement('div');
-  carouselSlides.classList = 'carousel-slides';
-  const slides = [];
-
-  for (let i in images) {
-    const carouselImageContainer = document.createElement('div');
-    carouselImageContainer.classList = 'carousel-img';
-    const carouselImage = document.createElement('img');
-    carouselImage.src = images[i];
-    carouselImageContainer.appendChild(carouselImage);
-    carouselSlides.appendChild(carouselImageContainer);
-    slides.push(carouselImageContainer);
-  }
-
-  // Create slide control buttons
-  const carounselControls = document.createElement('div');
-  carounselControls.classList = 'carousel-controls';
-
-  const leftButton = document.createElement('button');
-  leftButton.classList = 'carousel-left-button';
-
-  const leftIcon = document.createElement('i');
-  leftIcon.classList = 'fa-solid fa-caret-left';
-  leftButton.append(leftIcon);
-  leftButton.onclick = (event) => {
-    if (currentSlide > 0) {
-      currentSlide -= 1;
+        this.create();
     }
-    showSlide(slides, currentSlide);
-  };
 
-  const rightButton = document.createElement('button');
-  rightButton.classList = 'carousel-right-button';
-  const rightIcon = document.createElement('i');
-  rightIcon.classList = 'fa-solid fa-caret-right';
-  rightButton.append(rightIcon);
-  rightButton.onclick = (event) => {
-    if (currentSlide < slides.length - 1) {
-      currentSlide += 1;
+    prevSlide() {
+        this.slideNumber -= 1;
+        if (this.slideNumber < 1) {
+            this.slideNumber = this.slideCount;
+        }
+
+        let slideId = `${this.name}-slide-${this.slideNumber}`;
+        this.gotoSlide(slideId);
     }
-    showSlide(slides, currentSlide);
-  };
 
-  // Add everything
-  carounselControls.appendChild(leftButton);
-  carounselControls.appendChild(rightButton);
-  carouselContainer.appendChild(carouselSlides);
-  carouselContainer.appendChild(carounselControls);
-  parentDiv.appendChild(carouselContainer);
+    nextSlide() {
+        this.slideNumber += 1;
+        if (this.slideNumber > this.slideCount) {
+            this.slideNumber = 1;
+        }
 
-  // Show the first slide
-  showSlide(slides, currentSlide);
+        let slideId = `${this.name}-slide-${this.slideNumber}`;
+        this.gotoSlide(slideId);
+    }
+
+    gotoSlide(slideId) {
+        // Update slide number
+        let arr = slideId.split("-");
+        this.slideNumber = parseInt(arr[arr.length - 1]);
+
+        let slide = document.getElementById(slideId);
+        slide.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+    create() {
+        this.slideCount = this.nodes.length;
+        this.slideNumber = 1;
+
+        // Carousel List
+        const carousel = document.createElement("ul");
+        carousel.classList = `carousel ${this.name}-list`;
+        carousel.id = `${this.name}-list`;
+
+        // Carousel Items/Slides
+        for (let i = 0; i < this.slideCount; i++) {
+            const slide = document.createElement("li");
+            slide.classList = `carousel-slide ${this.name}-slide`;
+            slide.id = `${this.name}-slide-${i + 1}`;
+            slide.append(this.nodes[i]);
+            carousel.append(slide);
+        }
+
+        // Carousel Controls
+        const prevButton = document.createElement("button");
+        prevButton.classList = `carousel-prev-button ${this.name}-prev-button`;
+        const prevIcon = document.createElement("i");
+        prevIcon.classList = "fa-solid fa-caret-left";
+        prevButton.append(prevIcon);
+
+        prevButton.onclick = () => {
+            this.prevSlide();
+        };
+
+        const nextButton = document.createElement("button");
+        nextButton.classList = `carousel-next-button ${this.name}-next-button`;
+        const nextIcon = document.createElement("i");
+        nextIcon.classList = "fa-solid fa-caret-right";
+        nextButton.append(nextIcon);
+
+        nextButton.onclick = () => {
+            this.nextSlide();
+        };
+
+        const carouselControls = document.createElement("div");
+        carouselControls.classList = `carousel-controls ${this.name}-controls`;
+
+        carouselControls.append(prevButton);
+        carouselControls.append(nextButton);
+
+        // Carousel Dots
+        const carouselDots = document.createElement("div");
+        carouselDots.classList = `carousel-dots ${this.name}-dots`;
+        for (let i = 0; i < this.slideCount; i++) {
+            const dot = document.createElement("button");
+            const dotIcon = document.createElement("i");
+            dotIcon.classList = "fa-solid fa-circle";
+            dot.classList = `carousel-dot ${this.name}-dot`;
+            dot.value = `${this.name}-slide-${i + 1}`;
+            dot.onclick = () => {
+                this.gotoSlide(dot.value);
+            };
+
+            dot.append(dotIcon);
+            carouselDots.append(dot);
+        }
+        carouselControls.append(prevButton);
+        carouselControls.append(carouselDots);
+        carouselControls.append(nextButton);
+
+        // Add all the carousel elements to carousel container
+        const carouselContainer = document.getElementById(this.name);
+        carouselContainer.append(carousel);
+        carouselContainer.append(carouselControls);
+    }
 }
-
-// For a given index, shift all the images left or right to show the slide at index.
-const showSlide = (slides, index) => {
-  slides.forEach((slide, i) => {
-    slide.style.transform = `translateX(${100 * (i - index)}%)`;
-  });
-};
-
-// window.onload = (event) => {
-//   currentSlide = 0;
-// };
