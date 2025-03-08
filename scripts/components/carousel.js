@@ -101,6 +101,7 @@ class Carousel {
             dot.append(dotIcon);
             carouselDots.append(dot);
         }
+        
         carouselControls.append(prevButton);
         carouselControls.append(carouselDots);
         carouselControls.append(nextButton);
