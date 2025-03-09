@@ -52,6 +52,7 @@ class Carousel {
         console.log(`current: ${this.name}-dot-${id}`);
         let activedot = document.getElementById(`${this.name}-dot-${id}`);
         activedot.classList.add("active-dot");
+        activedot.scrollIntoView({ behavior: "smooth", block: "nearest" });
 
         // update old slide
         this.oldSlide = id;
@@ -109,7 +110,7 @@ class Carousel {
 
         // Carousel Dots
         const carouselDots = document.createElement("div");
-        carouselDots.classList = `carousel-dots ${this.name}-dots`;
+        carouselDots.classList = `carousel-dots ${this.name}-dots carousel`;
         for (let i = 0; i < this.slideCount; i++) {
             const dot = document.createElement("button");
             const dotIcon = document.createElement("i");
