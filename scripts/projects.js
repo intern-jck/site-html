@@ -36,10 +36,10 @@ function getProjects() {
                 projectCards.append(card);
             }
 
-            // Useful for styling project page
-            showProject(data[3]);
+            // Useful for testing and styling project page
+            // showProject(data[8]);
 
-            // projectsContainer.append(projectCards);
+            projectsContainer.append(projectCards);
         })
         .catch((error) => console.log("fetching projects url", error));
 }
@@ -179,6 +179,8 @@ const showProject = (project) => {
 
     // Info
     createProjectInfo(project, "project-info");
+
+    projectsContainer.scrollIntoView({ behavior: "smooth", block: "nearest" });
 };
 
 // Add the project's photos to a carousel
@@ -217,7 +219,7 @@ function createProjectInfo(project, containerId) {
         nodes.push(nameRow);
     }
 
-    if (project["url"].length > 0) {
+    if (project["url"] !== undefined && project["url"].length > 0) {
         const urlRow = document.createElement("div");
         urlRow.classList = "info-row";
 
@@ -306,7 +308,7 @@ function createProjectInfo(project, containerId) {
         nodes.push(infoRow);
     }
 
-    if (project["resources"].length > 0) {
+    if (project["url"] !== undefined && project["resources"].length > 0) {
         const resourcesRow = document.createElement("div");
         resourcesRow.classList = "info-row";
 

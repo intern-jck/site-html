@@ -14,15 +14,6 @@
     --icon-color-robots: darkorange;
 }
 
-/* @media (min-width: 50em) {
-    :root {
-        --fs-body: var(--fs-500);
-        --fs-primary-heading: var(--fs-900);
-        --fs-secondary-heading: var(--fs-800);
-        --fs-nav: var(--fs-700);
-    }
-} */
-
 /* Page Styling */
 body {
     font-size: 100%;
@@ -51,6 +42,10 @@ a:hover {
     color: var(--active-color);
 }
 
+section {
+    padding: 4rem;
+}
+
 .container {
     --max-width: 80rem;
     --container-padding: 1rem;
@@ -59,9 +54,9 @@ a:hover {
     margin-inline: auto;
 }
 
-@media (min-width: 300px) {
-    .container {
-        width: 100%;
+@media (max-width: 50rem) {
+    section {
+        padding: 0;
     }
 }
 
@@ -79,7 +74,6 @@ li {
 
 /* Navbar */
 .primary-header {
-    border: 2px solid black;
     background-color: white;
     position: fixed;
     top: 0;
@@ -125,11 +119,6 @@ li {
 
 .nav-list a:hover,
 .nav-list a:focus {
-    color: var(--active-color);
-}
-
-/* TODO: implement */
-.nav-link .current-page {
     color: var(--active-color);
 }
 

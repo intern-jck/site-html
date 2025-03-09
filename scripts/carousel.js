@@ -18,7 +18,6 @@ class Carousel {
             this.slideNumber = this.slideCount;
         }
 
-        // let slideId = `${this.name}-slide-${this.slideNumber}`;
         this.gotoSlide(this.slideNumber);
     }
 
@@ -28,7 +27,6 @@ class Carousel {
             this.slideNumber = 1;
         }
 
-        // let slideId = `${this.name}-slide-${this.slideNumber}`;
         this.gotoSlide(this.slideNumber);
     }
 
@@ -62,10 +60,6 @@ class Carousel {
         this.slideCount = this.nodes.length;
         this.slideNumber = 1;
         this.oldSlide = this.slideNumber;
-
-        // set dot to active
-        // let dot = document.getElementById(`${this.name}-dot-${this.slideNumber}`)
-        // dot.classList.add('active-dot')
 
         // Carousel List
         const carousel = document.createElement("ul");
@@ -122,7 +116,6 @@ class Carousel {
             }
 
             dot.id = `${this.name}-dot-${i + 1}`;
-            // dot.value = `${this.name}-slide-${i + 1}`;
             dot.value = `${i + 1}`;
             dot.onclick = () => {
                 this.gotoSlide(dot.value);
