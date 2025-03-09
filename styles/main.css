@@ -110,7 +110,7 @@ a:hover {
 }
 
 .nav-wrapper {
-    min-height: 4rem;
+    /* min-height: 4rem; */
     display: flex;
     align-items: center;
     width: 100%;
@@ -164,15 +164,13 @@ a:hover {
 @media (max-width: 50em) {
     .nav-wrapper {
         flex-direction: column;
-        justify-content: center;
-        height: 100%;
     }
 
     .nav-toggle {
         border: none;
         background-color: white;
-        margin-top: 0.6rem;
-        margin-bottom: 0.6rem;
+        margin-top: 0.4rem;
+        margin-bottom: 0.4rem;
         margin-left: auto;
 
         display: block;
@@ -180,25 +178,25 @@ a:hover {
 
     .navbar {
         display: none;
-        border: 2px solid red;
-        /* height: 100vh; */
     }
-
+    
     .navbar[data-visible] {
         margin-top: 2rem;
         display: block;
     }
-
+    
     .nav-home {
-        margin: auto;
+        margin-left: auto;
+        margin-right: 1rem;
     }
 
     .nav-list {
         font-size: 1.6rem;
         flex-direction: column;
-        align-items: center;
+        align-items: end;
         justify-content: center;
         padding-bottom: 2rem;
+        padding-right: 1rem;
     }
 }
 
