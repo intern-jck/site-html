@@ -84,6 +84,7 @@ li {
     padding-right: 1rem;
 
     font-size: 1.2rem;
+    font-weight: bold;
 
     grid-row: 1;
     display: flex;
@@ -126,6 +127,9 @@ li {
     padding-left: 1rem;
     padding-right: 1rem;
     grid-row: 3;
+
+    font-weight: bold;
+
     display: flex;
     align-items: center;
     justify-content: start;
@@ -155,6 +159,26 @@ li {
     display: flex;
     align-items: center;
     justify-content: end;
+}
+
+@media (max-width: 50em) {
+    .card {
+        width: 18rem;
+        /* height: 30rem; */
+        grid-template-rows: 2rem 14rem 2rem 6rem 2rem;
+    }
+
+    .card-header,
+    .card-short,
+    .card-footer {
+        font-size: 1rem;
+    }
+
+    .card-icon-2,
+    .card-icon-3,
+    .card-icon-4 {
+        display: none;
+    }
 }
 
 /* Project */

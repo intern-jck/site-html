@@ -44,7 +44,6 @@ function getProjects() {
         .catch((error) => console.log("fetching projects url", error));
 }
 
-
 // Components
 function createProjectCard(data, clickHandler) {
     // Card container
@@ -67,30 +66,34 @@ function createProjectCard(data, clickHandler) {
     } else {
         cardHeader.append(cardName);
 
-        let techCount = data.tech.length
+        // limit number of icons shown
+        let techCount = data.tech.length;
         if (techCount >= 4) {
             techCount = 4;
         }
-        
+
         for (let i = 0; i < techCount; i++) {
             let techName = data.tech[i][0];
             let techClass = icons[techName];
             let icon = document.createElement("i");
             icon.classList = techClass;
+            icon.classList.add(`card-icon-${i + 1}`)
             cardHeader.append(icon);
 
-            // if (i === 0) {
-            //     // Add a card class based on the main/first tech tag
-            //     if (techClass.includes("linux")) {
-            //         card.classList.add("card-linux");
-            //     } else if (techClass.includes("audio-visual")) {
-            //         card.classList.add("card-audio-visual");
-            //     } else if (techClass.includes("digital-fab")) {
-            //         card.classList.add("card-digital-fab");
-            //     } else if (techClass.includes("programming")) {
-            //         card.classList.add("card-programming");
-            //     }
-            // }
+
+            // Change card background color based on tech icon
+            if (i === 0) {
+                // Add a card class based on the main/first tech tag
+                if (techClass.includes("linux")) {
+                    card.classList.add("card-linux");
+                } else if (techClass.includes("audio-visual")) {
+                    card.classList.add("card-audio-visual");
+                } else if (techClass.includes("digital-fab")) {
+                    card.classList.add("card-digital-fab");
+                } else if (techClass.includes("programming")) {
+                    card.classList.add("card-programming");
+                }
+            }
         }
     }
 
@@ -109,10 +112,10 @@ function createProjectCard(data, clickHandler) {
     // Card Type
     const cardType = document.createElement("div");
     cardType.classList = "card-type";
+
     const type = document.createElement("p");
     type.textContent = data.tech[0] ? data.tech[0][0] : "NO TECH";
     cardType.append(type);
-    
 
     // Card Short
     const cardShort = document.createElement("p");
@@ -122,6 +125,7 @@ function createProjectCard(data, clickHandler) {
     // Card Footer
     const cardFooter = document.createElement("div");
     cardFooter.classList = "card-footer";
+
     const date = document.createElement("p");
     date.textContent = data.date.start_month + "/" + data.date.start_year;
     cardFooter.append(date);
@@ -135,8 +139,6 @@ function createProjectCard(data, clickHandler) {
 
     return card;
 }
-
-
 
 // Show the input project's details
 const showProject = (project) => {
@@ -342,7 +344,6 @@ function createProjectInfo(project, containerId) {
         projectInfo.append(nodes[i]);
     }
 }
-
 
 window.onload = () => {
     getProjects();

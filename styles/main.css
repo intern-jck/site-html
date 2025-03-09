@@ -40,10 +40,10 @@
     --size-800: 4rem;
     --size-900: 5rem;
 
-    --icon-color-programming: darkblue;
+    --icon-color-programming: darkorange;
     --icon-color-audio-visual: darkred;
-    --icon-color-digital-fab: darkcyan;
-    --icon-color-linux: magenta;
+    --icon-color-digital-fab: darkgreen;
+    --icon-color-linux: darkblue;
 }
 
 @media (min-width: 50em) {
@@ -111,7 +111,6 @@ a:hover {
 
 .nav-wrapper {
     min-height: 4rem;
-    border: 2px solid purple;
     display: flex;
     align-items: center;
     width: 100%;
@@ -166,6 +165,7 @@ a:hover {
     .nav-wrapper {
         flex-direction: column;
         justify-content: center;
+        height: 100%;
     }
 
     .nav-toggle {
@@ -180,10 +180,11 @@ a:hover {
 
     .navbar {
         display: none;
+        border: 2px solid red;
+        /* height: 100vh; */
     }
 
     .navbar[data-visible] {
-        background-color: white;
         margin-top: 2rem;
         display: block;
     }
@@ -198,14 +199,6 @@ a:hover {
         align-items: center;
         justify-content: center;
         padding-bottom: 2rem;
-    }
-}
-
-@media (min-width: 300px) {
-    .nav-wrapper {
-        /* border: 2px solid red; */
-        /* background-color: red; */
-        width: 100%;
     }
 }
 
