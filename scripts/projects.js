@@ -37,9 +37,9 @@ function getProjects() {
             }
 
             // Useful for styling project page
-            // showProject(data[13]);
+            showProject(data[3]);
 
-            projectsContainer.append(projectCards);
+            // projectsContainer.append(projectCards);
         })
         .catch((error) => console.log("fetching projects url", error));
 }
@@ -77,9 +77,8 @@ function createProjectCard(data, clickHandler) {
             let techClass = icons[techName];
             let icon = document.createElement("i");
             icon.classList = techClass;
-            icon.classList.add(`card-icon-${i + 1}`)
+            icon.classList.add(`card-icon-${i + 1}`);
             cardHeader.append(icon);
-
 
             // Change card background color based on tech icon
             if (i === 0) {
@@ -140,7 +139,7 @@ function createProjectCard(data, clickHandler) {
     return card;
 }
 
-// Show the input project's details
+// Show a project's details
 const showProject = (project) => {
     clearDiv("projects-container");
     const projectsContainer = document.getElementById("projects-container");
@@ -182,6 +181,7 @@ const showProject = (project) => {
     createProjectInfo(project, "project-info");
 };
 
+// Add the project's photos to a carousel
 function createPhotosCarousel(photos, containerId) {
     const nodes = [];
     for (let i = 0; i < photos.length; i++) {
@@ -193,16 +193,11 @@ function createPhotosCarousel(photos, containerId) {
     const carousel = new Carousel(containerId, nodes);
 }
 
+// Add the project's info
 function createProjectInfo(project, containerId) {
-    const container = document.getElementById(containerId);
-    addInfo(project);
-}
-
-function createProjectInfo(project, containerId) {
-    const container = document.getElementById(containerId);
+    const projectInfo = document.getElementById(containerId);
 
     const keys = Object.keys(project);
-    const projectInfo = document.getElementById("project-info");
     const nodes = [];
 
     if (project["name"].length > 0) {

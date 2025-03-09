@@ -6,6 +6,7 @@ class Carousel {
         this.slideId = "";
         this.slideCount = 0;
         this.slideNumber = 0;
+        this.oldSlide = 0;
         this.test = "test";
 
         this.create();
@@ -17,8 +18,8 @@ class Carousel {
             this.slideNumber = this.slideCount;
         }
 
-        let slideId = `${this.name}-slide-${this.slideNumber}`;
-        this.gotoSlide(slideId);
+        // let slideId = `${this.name}-slide-${this.slideNumber}`;
+        this.gotoSlide(this.slideNumber);
     }
 
     nextSlide() {
@@ -27,22 +28,43 @@ class Carousel {
             this.slideNumber = 1;
         }
 
-        let slideId = `${this.name}-slide-${this.slideNumber}`;
-        this.gotoSlide(slideId);
+        // let slideId = `${this.name}-slide-${this.slideNumber}`;
+        this.gotoSlide(this.slideNumber);
     }
 
-    gotoSlide(slideId) {
+    gotoSlide(id) {
+        // remove active from current dot
+        let slideId = `${this.name}-slide-${id}`;
+        console.log("goto: ", slideId);
+
+        console.log(`old: ${this.name}-dot-${this.oldSlide}`);
+        let currentdot = document.getElementById(`${this.name}-dot-${this.oldSlide}`);
+        currentdot.classList.remove("active-dot");
+
         // Update slide number
         let arr = slideId.split("-");
         this.slideNumber = parseInt(arr[arr.length - 1]);
 
         let slide = document.getElementById(slideId);
         slide.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+        // set dot to active
+        console.log(`current: ${this.name}-dot-${id}`);
+        let activedot = document.getElementById(`${this.name}-dot-${id}`);
+        activedot.classList.add("active-dot");
+
+        // update old slide
+        this.oldSlide = id;
     }
 
     create() {
         this.slideCount = this.nodes.length;
         this.slideNumber = 1;
+        this.oldSlide = this.slideNumber;
+
+        // set dot to active
+        // let dot = document.getElementById(`${this.name}-dot-${this.slideNumber}`)
+        // dot.classList.add('active-dot')
 
         // Carousel List
         const carousel = document.createElement("ul");
@@ -93,7 +115,14 @@ class Carousel {
             const dotIcon = document.createElement("i");
             dotIcon.classList = "fa-solid fa-circle";
             dot.classList = `carousel-dot ${this.name}-dot`;
-            dot.value = `${this.name}-slide-${i + 1}`;
+
+            if (i === 0) {
+                dot.classList.add("active-dot");
+            }
+
+            dot.id = `${this.name}-dot-${i + 1}`;
+            // dot.value = `${this.name}-slide-${i + 1}`;
+            dot.value = `${i + 1}`;
             dot.onclick = () => {
                 this.gotoSlide(dot.value);
             };
@@ -101,7 +130,7 @@ class Carousel {
             dot.append(dotIcon);
             carouselDots.append(dot);
         }
-        
+
         carouselControls.append(prevButton);
         carouselControls.append(carouselDots);
         carouselControls.append(nextButton);
