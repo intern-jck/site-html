@@ -36,8 +36,8 @@ function getProjects() {
                 projectCards.append(card);
             }
 
-            // Useful for styling project page
-            // showProject(data[13]);
+            // Useful for testing and styling project page
+            // showProject(data[8]);
 
             projectsContainer.append(projectCards);
         })
@@ -77,9 +77,8 @@ function createProjectCard(data, clickHandler) {
             let techClass = icons[techName];
             let icon = document.createElement("i");
             icon.classList = techClass;
-            icon.classList.add(`card-icon-${i + 1}`)
+            icon.classList.add(`card-icon-${i + 1}`);
             cardHeader.append(icon);
-
 
             // Change card background color based on tech icon
             if (i === 0) {
@@ -140,7 +139,7 @@ function createProjectCard(data, clickHandler) {
     return card;
 }
 
-// Show the input project's details
+// Show a project's details
 const showProject = (project) => {
     clearDiv("projects-container");
     const projectsContainer = document.getElementById("projects-container");
@@ -180,8 +179,11 @@ const showProject = (project) => {
 
     // Info
     createProjectInfo(project, "project-info");
+
+    projectsContainer.scrollIntoView({ behavior: "smooth", block: "nearest" });
 };
 
+// Add the project's photos to a carousel
 function createPhotosCarousel(photos, containerId) {
     const nodes = [];
     for (let i = 0; i < photos.length; i++) {
@@ -193,16 +195,11 @@ function createPhotosCarousel(photos, containerId) {
     const carousel = new Carousel(containerId, nodes);
 }
 
+// Add the project's info
 function createProjectInfo(project, containerId) {
-    const container = document.getElementById(containerId);
-    addInfo(project);
-}
-
-function createProjectInfo(project, containerId) {
-    const container = document.getElementById(containerId);
+    const projectInfo = document.getElementById(containerId);
 
     const keys = Object.keys(project);
-    const projectInfo = document.getElementById("project-info");
     const nodes = [];
 
     if (project["name"].length > 0) {
@@ -222,7 +219,7 @@ function createProjectInfo(project, containerId) {
         nodes.push(nameRow);
     }
 
-    if (project["url"].length > 0) {
+    if (project["url"] !== undefined && project["url"].length > 0) {
         const urlRow = document.createElement("div");
         urlRow.classList = "info-row";
 
@@ -311,7 +308,7 @@ function createProjectInfo(project, containerId) {
         nodes.push(infoRow);
     }
 
-    if (project["resources"].length > 0) {
+    if (project["url"] !== undefined && project["resources"].length > 0) {
         const resourcesRow = document.createElement("div");
         resourcesRow.classList = "info-row";
 
