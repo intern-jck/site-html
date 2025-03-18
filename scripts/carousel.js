@@ -33,9 +33,7 @@ class Carousel {
     gotoSlide(id) {
         // remove active from current dot
         let slideId = `${this.name}-slide-${id}`;
-        console.log("goto: ", slideId);
 
-        console.log(`old: ${this.name}-dot-${this.oldSlide}`);
         let currentdot = document.getElementById(`${this.name}-dot-${this.oldSlide}`);
         currentdot.classList.remove("active-dot");
 
@@ -47,7 +45,6 @@ class Carousel {
         slide.scrollIntoView({ behavior: "smooth", block: "nearest" });
 
         // set dot to active
-        console.log(`current: ${this.name}-dot-${id}`);
         let activedot = document.getElementById(`${this.name}-dot-${id}`);
         activedot.classList.add("active-dot");
         activedot.scrollIntoView({ behavior: "smooth", block: "nearest" });
